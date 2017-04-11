@@ -34,7 +34,7 @@ def tsv_to_csv(my_file):
 
 def edges(my_file):
 
-	file = folder + "/data/" + my_file + ".tsv"
+	file = folder + "/test/" + my_file + ".tsv"
 	output = folder + "/" + my_file + "_edges.tsv"
 
 	with open(file, "rb") as in_file, open(output, "wb") as out_file:  # , encoding="utf-8"
@@ -80,7 +80,7 @@ def edges(my_file):
 
 def nodes(my_file):
 
-	file = folder + "/data/" + my_file + ".tsv"
+	file = folder + "/test/" + my_file + ".tsv"
 	output = folder + "/" + my_file + "_nodes.tsv"
 
 	with open(file, "rt") as in_file, open(output, "wb") as out_file:
@@ -114,5 +114,5 @@ def nodes(my_file):
 # -----------------------------------
 # Launch scripts
 
-edges("eth-biblioteck-uploads2016")
-nodes("eth-biblioteck-uploads2016")
+edges("to_gephi_test") # to_gephi_test eth-biblioteck-uploads2016
+#nodes("eth-biblioteck-uploads2016")

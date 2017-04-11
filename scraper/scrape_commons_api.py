@@ -44,6 +44,9 @@ glam_user = "aiuser=ETH-Bibliothek"
 api_fileInfo = "prop=imageinfo"
 
 # -----------------------------------
+# Main variables
+
+# -----------------------------------
 # SCRIPTS
 
 def get_data(api,my_limit):
@@ -172,9 +175,10 @@ def every_hour(day,mon,my_limit):
 		get_data(api,my_limit)
 
 def img_info(f_name):
+	index = 0
+
 	f_in = folder + "/data/" + f_name + ".tsv"  # test / data
 	f_out = folder + "/test/" + f_name + "-output_.tsv" 
-	index = 0
 	
 	with open(f_in, "r") as f1:
 		with open(f_out, "w") as f2:
@@ -212,15 +216,17 @@ def img_info(f_name):
 
 								output =  title + t + timestamp + t + categories + t + license + n
 							except:
-									pass
+								print("error 2")
+								pass
 
 						f2.write(output)
 
 					except:
+						#print("error 1")
 						pass
 
 # -----------------------------------
 # Launch scripts
 
 #get_data(api,my_limit);
-img_info("Media_contributed_by_the_Swiss_Federal_Archives") 
+img_info("Media_contributed_by_the_ETH-Bibliothek_2") 

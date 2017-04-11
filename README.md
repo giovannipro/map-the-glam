@@ -2,9 +2,13 @@
 Visualizing the contributions of cultural institutions in Wikimedia Projects.
 
 ## Installation
+- Go to the project folder in your computer
+	```
+	$ cd < path_to_the_folder >
+	```
 - Install the bower dependencies
 	```
-	$ bower 
+	$ bower install
 	```
 - Run local server 
 	```
@@ -15,13 +19,14 @@ Visualizing the contributions of cultural institutions in Wikimedia Projects.
 	http:localhost:8000< path_to_the_folder >
 	```
 
-### This project uses:
+## This project uses:
 -	[Bower](https://bower.io/)
 -	[JQuery](https://jquery.com/)
--	[D3](https://d3js.org/)
--	[Handlebars](http://handlebarsjs.com/)
 
-#### Bower (install and update packages)
+[//]: # ([D3](https://d3js.org/))
+[//]: # ([Handlebars](http://handlebarsjs.com/))
+
+### Bower (install and update packages)
 -	cd < path_to_the_folder >
 -	bower install < package_name >
 -	bower update
