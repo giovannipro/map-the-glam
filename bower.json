@@ -10,7 +10,8 @@
   "private": false,
   "dependencies": {
     "jquery": "#3.1.1",
-    "d3": "4.4.0"
+    "d3": "4.4.0",
+    "neat": "2.0.0"
   },
   "keywords": [
     "Cultural institutions",

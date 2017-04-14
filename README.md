@@ -16,17 +16,22 @@ Visualizing the contributions of cultural institutions in Wikimedia Projects.
 	```
 - Access the webpage at
 	```
-	http:localhost:8000< path_to_the_folder >
+	http:localhost:8000 < path_to_the_folder >
 	```
 
 ## This project uses:
 -	[Bower](https://bower.io/)
 -	[JQuery](https://jquery.com/)
+-	[Neat](http://neat.bourbon.io/)
 
-[//]: # ([D3](https://d3js.org/))
-[//]: # ([Handlebars](http://handlebarsjs.com/))
+[comment]: <> "[D3](https://d3js.org/)"
+[comment]: <> "[Handlebars](http://handlebarsjs.com/)"
 
 ### Bower (install and update packages)
 -	cd < path_to_the_folder >
 -	bower install < package_name >
 -	bower update
+
+### Neat 
+- 	update sass file
+-	build the css (cmd + alt + B in Sublime Text)
