@@ -20,6 +20,7 @@ folder = os.path.dirname(os.path.realpath(__file__))
 t = "\t"
 n = "\n"
 lic = ""
+s = " "
 
 def unix_time(mytime):
 	u_time = time.mktime(datetime.datetime.strptime(mytime, "%d_%m_%Y_%H:%M").timetuple())
@@ -39,6 +40,7 @@ base_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json"
 
 commons_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=allimages&aisort=timestamp"
 proprierties = "iiprop=mediatype|extmetadata|timestamp&prop=imageinfo"  # |commonmetadata|metadata|
+proprierties_2 = "iiprop=mediatype|extmetadata|timestamp|user|size|mime|metadata&prop=imageinfo&iimetadataversion=latest"
 glam_user = "aiuser=ETH-Bibliothek"
 
 api_fileInfo = "prop=imageinfo"
@@ -225,8 +227,147 @@ def img_info(f_name):
 						#print("error 1")
 						pass
 
+def more_img_info(f_name):
+	index = 0
+
+	f_in = folder + "/" + f_name + ".tsv"  # test / data
+	f_out = folder + "/" + f_name + "-output_1.tsv" 
+	
+	with open(f_in, "r") as f1:
+		with open(f_out, "w") as f2:
+
+			for file in f1:
+				# f2.write(line) 
+				# print(line)
+
+				f = file.replace(s,"_").replace("&","%26").replace("+","%2B")
+
+				request = base_api + "&" + api_fileInfo + "&" + proprierties_2 + "&titles=" + f
+				#print(request)
+
+				response = urlopen(request).read()
+				data = json.loads(response)
+			
+				index += 1
+				print(index)
+				# print(request)
+				# print(data)
+				
+				for x in data["query"]["pages"]:
+					id_ = str(x)
+				
+				for y in data["query"]["pages"].values():
+
+					try:
+						title = y["title"]
+						values = y["imageinfo"]
+						#print(values)
+
+						for z in values:
+							try:
+								timestamp = z["timestamp"]
+								user = z["user"]
+								license = z["extmetadata"]["LicenseShortName"]["value"]
+								categories = z["extmetadata"]["Categories"]["value"]
+								size = str(z["size"]) # byte
+								width = str(z["width"])
+								height = str(z["height"])
+								source = z["metadata"]
+
+								for so in source:
+									try:
+										name = so["name"]
+										value = so["value"]
+										#print(value)
+
+										if name == "exif":
+											for va in value:  # all metadata
+												a = va["name"] 
+												b = va["value"]
+												# print(a + "-" + b)
+
+												if a == "Make":
+													sou = b
+													#print(sou)
+
+									except:
+										#print("  " + request)
+										pass
+
+								output =  title + t + timestamp + t + user + t + license + t + categories + t + size + t + width + t + height + t + sou
+								output_ = output + n
+
+							except IOError:
+								print('An error occured trying to read the file.' + n + request)
+								pass
+
+							except ImportError:
+								print ("NO module found" + n + request)
+								pass
+								
+							except EOFError:
+								print('Why did you do an EOF on me?' + n + request)
+								pass
+
+							except KeyboardInterrupt:
+								print('You cancelled the operation.' + n + request)
+								pass
+
+							except:
+								#print(request)
+								pass
+
+						#print(output)
+						f2.write(output_)
+
+					except IOError:
+						print('An error occured trying to read the file.')
+						pass
+
+					except ImportError:
+						print "NO module found"
+						pass
+						
+					except EOFError:
+						print('Why did you do an EOF on me?')
+						pass
+
+					except KeyboardInterrupt:
+						print('You cancelled the operation.')
+						pass
+
+					except:
+						print(request)
+						pass
+
+def files_containing_word(word):
+	index = 0
+
+	api = "https://en.wikipedia.org/w/api.php?action=query&list=allimages&ailimit=50&aiprop=dimensions%7Cmime&format=json&aifrom="
+
+	request = api + word
+	print(request)
+
+	response = urlopen(request).read()
+	data = json.loads(response)
+
+	index += 1
+	print(index)
+
+
+
 # -----------------------------------
 # Launch scripts
 
-#get_data(api,my_limit);
-img_info("Media_contributed_by_the_ETH-Bibliothek_2") 
+# get_data(api,my_limit);
+# img_info("Media_contributed_by_the_ETH-Bibliothek_2") 
+# files_containing_word("in der Serengeti")
+more_img_info("data/raw/B_20170419_Media_contributed_by_the_Swiss_Federal_Archives") 
+
+'''
+test/test 
+data/raw/20170407_a_Media_contributed_by_the_ETH-Bibliothek
+20170419_Media_contributed_by_the_Swiss_Federal_Archives
+
+'''
+

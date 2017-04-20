@@ -69,8 +69,38 @@ def get_use(file,project):
 				#print("error 2")
 				pass
 
+def get_img_typology(file):
+	f_out = folder + "/typology" + ".tsv"
+
+	url = "https://commons.wikimedia.org/wiki/" + file
+	html = urlopen(url) 
+	bsObj = BeautifulSoup(html,"html.parser")
+	#print bsObj
+
+	with open(f_out, "a") as f:
+		raw_data = bsObj.find("table",{"id":"mw_metadata"}).find("tr",{"class":"exif-make"}).find("td")
+
+		fil = file.replace(s,"_").replace(n,"")
+
+		# header = file,size,user
+
+		for item in raw_data:
+			try:
+				tex = item.get_text().replace(s, "_")
+				text = tex.replace(n," ")
+
+				output = fil + t + text
+				output_ = output + n
+
+				f.write(output_)
+				#print(output)
+			
+			except:
+				print(url)
+				pass
+
 def get_list(tsv_list):
-	file = folder + "/data/" + tsv_list + ".tsv"
+	file = folder + "/" + tsv_list + ".tsv"
 	index = 0
 
 	with open(file, "rb") as in_file:
@@ -85,15 +115,19 @@ def get_list(tsv_list):
 				img = str(image)
 				#print (img)
 
-				get_use(img,"commons") # commons other
-				print(index)
+				# get_use(img,"commons") # commons other
+				get_img_typology(img)
+				print(str(index))
 
 			except:
 				print (str(index))
-				#continue
+				pass
+
 
 # -----------------------------------
 # Launch scripts
 
 #get_use("Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg","others")  #commons others
-get_list("eth_files_2016") # test eth_files_2016
+get_list("data/raw/20170407_a_Media_contributed_by_the_ETH-Bibliothek") # test/test data/raw/20170407_a_Media_contributed_by_the_ETH-Bibliothek
+
+

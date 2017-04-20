@@ -26,12 +26,12 @@ commons_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&
 limit = 500
 cont = 0
 
-f_out = folder + "/data/" + str(category) + ".tsv"
-
 # -----------------------------------
 # Script
 
 def get_files(category,cont):
+
+	f_out = folder + "/data/" + str(category) + ".tsv"
 
 	if cont == 0:
 		request = commons_api + category + "&cmlimit=" + str(limit)
@@ -118,4 +118,4 @@ def inloop(x):
 # -----------------------------------
 # Launch scripts
 
-get_files("Media_contributed_by_the_ETH-Bibliothek",0) # Media_contributed_by_the_Swiss_Federal_Archives
+get_files("Media_contributed_by_the_Swiss_National_Library",0) # Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_ETH-Bibliothek
