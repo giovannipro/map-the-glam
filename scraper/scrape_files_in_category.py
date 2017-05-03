@@ -36,7 +36,7 @@ def get_files(category,cont):
 	if cont == 0:
 		request = commons_api + category + "&cmlimit=" + str(limit)
 	else:
-		request = commons_api + category + "&cmlimit=" + str(limit) + "&cmcontinue=" + str(cont)
+		request = commons_api + category + "&cmlimit=" + str(limit) + "&rvcontinue=" + str(cont)
 
 	response = urlopen(request).read()
 	data = json.loads(response)

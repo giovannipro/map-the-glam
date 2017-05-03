@@ -30,10 +30,8 @@ function dv_1b(){
 		.attr("width", width + margin.left + margin.right)
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+		
 	//console.log(w);
-
-	
 }
 
 $( document ).ready(function() {
