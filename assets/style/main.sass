@@ -1,15 +1,22 @@
 @import "../../bower_components/neat/core/_neat.scss"
 
-$background: #fafafa
+$background: #fcfcfc
+$background_docu: darken( $background, 20% )
+$text: #001c26
+$bar: #cccdcf
+
 $empty: #d4edff
-$back_footer: #d6d6d6
 $gray: #4e4e4e
 
-$f_m: 1em
+$x: 12px
+$f_m: 14px
 
-$f_xl: $f_m * 2.2
-$f_l: $f_m * 1.2
-$f_s: $f_m / 1.1
+$f_xxl: $f_m * (1.5 * 3)
+$f_xl: $f_m * (1.5 * 2)
+$f_l: $f_m * (1.5 * 1)
+
+$f_s: $f_m / (1.5 * 1)
+$f_xs: $f_m / (1.5 * 2)
 
 $mobile: 500px
 $tablet: 768px
@@ -18,23 +25,23 @@ $desktop: 100px
 $f_mobile: 0.5
 
 // ---------------------------
-	Utility
+//	Utility
 
 	@include grid-visual
 
 //	---------------------------
-	Typography
+//	Typography
 
 h1
 	font-size: $f_xl
-	margin: 0.5em 0
+	margin: ($f_m * 3) 0 0
 	@media screen and (max-width: $mobile)
 		font-size: $f_xl * $f_mobile
 
 h2
 	font-size: $f_l
 	font-weight: normal
-	margin: 0.5em 0
+	margin: 0.5em 0 0
 	@media screen and (max-width: $mobile)
 		font-size: $f_xl * $f_mobile
 h3
@@ -45,47 +52,91 @@ h3
 		font-size: $f_xl * $f_mobile
 
 p
-	font-size: $f_m
-	@media screen and (max-width: $mobile)
-		font-size: $f_xl * $f_mobile
+	// font-size: $f_m
+	line-height: 1.5em
+	margin: ($x * 2) 0 0
+
+ul
+	line-height: 1.5em
 
 button
-	font-family: 'Titillium Web', sans-serif
+	font-family: 'Open Sans', sans-serif
 	margin: 0
 	padding: 0
 	background-color: transparent
 
+a, a:visited
+	color: $text
+	text-decoration: none
+
+a:hover
+	text-decoration: underline
+
 //	---------------------------
-	Typographic elements
+//	Typographic elements
+
+.subtitle
+	font-size: 18px
+	margin: 0.2em 0 0
 
 .small_title
 	@media screen and (max-width: $mobile)
 		display: none
 
+.by
+	margin: 0.8em 0 ($x * 3.5)
+
+.links
+	column-count: 2
+	margin: ($x * 2) 0 ($x * 4)
+
+	@media screen and (max-width: $mobile)
+		column-count: 1
+
+	a
+		display: block
+		font-size: $f_l
+
 //	---------------------------
-	Main layout 
+//	Main layout 
 
 body
 	margin: 0
 	padding: 0
 	font-family: 'Titillium Web', sans-serif
 	background-color: $background
+	color: $text
 	
 .container
 	@include grid-container
-	@include grid-column(10)
-	@include grid-shift(1)
+	@include grid-column(8)
+	@include grid-shift(2)
 	
-	@media screen and (max-width: $tablet)
+	@media screen and (max-width: $mobile)
 		@include grid-column(12)
 		@include grid-shift(0)
-		
+		// @include grid-visual
+
+.full_container
+	float: left
+	width: 100%
+	position: relative
+
 .full
 	width: 100%
 
+#home
+	margin-bottom: 60px
+	
+.description
+	column-count: 2
+
+	@media screen and (max-width: $tablet)
+		column-count: 1
+
 .main_dataviz
 	width: 100%
-	height: 6§5vh
+	height: 65vh
 	background-color: $empty
 	clear: both
 
@@ -97,10 +148,19 @@ body
 section
 	margin-top: 20px
 
+#header
+	position: fixed
+	width: 100%
+	clear: both
+	z-index: 1
+	top: 0
+	// background-color: $background
+
 .header_full
+	padding: 5px 
 	@include grid-container
 	@include grid-column(12)
-	padding: 5px 
+	
 
 	@media screen and (max-width: $mobile)
 		padding: 15px 5px
@@ -109,29 +169,79 @@ section
 		a
 			padding: 5px 30px 5px 0
 
-.footer
-	background-color: $back_footer
-	clear: both
-	height: 100px
+.header_visible
+	border-bottom: 1px solid $bar
+	background-color: $background
 
-	.container
+.footer
+	background-color: $text
+	clear: both
+	padding: $x * 1.5 0 $x * 4
+	z-index: -1
+
+	div div
 		@include grid-container
-		@include grid-column(10)
-		@include grid-shift(1)
-		padding: 10px 0 0
+		@include grid-column(3)
+		@include grid-shift(0)
+
+		margin-top: $x * 2
+		color: white
+		z-index: 1
+		font-size: $f_s
 
 		@media screen and (max-width: $tablet)
+			@include grid-column(8)
+			@include grid-shift(2)
+			
+
+		@media screen and (max-width: $mobile)
 			@include grid-column(12)
-			@include grid-shift(0)	
+			@include grid-shift(0)
+
+		p
+			margin: 0
+
+		ul
+			list-style: none
+			margin: 0
+			padding: 0
+
+		a
+			color: white
+			//text-decoration: underline
+
 
 //	---------------------------
-	Main menu
+//	Main menu
 	
+.invisible
+	display: none
+
+.visible
+	display: inline
+
 #open_nav
+	@include grid-column(2)
+	text-align: left
 	cursor: pointer
 	border-style: none
-	font-size: 1em
-	margin-right: 20px
+	font-size: $f_m
+	padding: 10px 10px 10px 0
+
+	@media screen and (max-width: $tablet)
+		@include grid-column(2)
+
+		.vis_invis
+			display:  none
+
+#running_headline
+	@include grid-column(4)
+	margin-left: 0
+	padding: 13px 10px 10px 0
+	font-size: $f_m
+
+	@media screen and (max-width: $tablet)
+		@include grid-column(8)
 
 .sidenav 
 	height: 100%
@@ -140,27 +250,78 @@ section
 	left: -250px
 	z-index: 1
 	top: 0
-	background-color: #111
+	background-color: $text
 	overflow-x: hidden
 	transition: 0.2s
 
 	a 
-		padding: 8px 8px 8px 20px
+		padding: $x $x $x $x
 		text-decoration: none
 		font-size: 1em
-		color: #818181
+		color: $background
 		display: block
 		transition: 0.3s
 
 	a:hover, a:focus
-		color: #f1f1f1
+		color: white
 
 	.closebtn 
 		right: 25px
-		font-size: 36px
+		font-size: 30px
 		padding-left: 200px
 		border-bottom: 1px solid $gray
 		cursor: pointer
 	
 	.section_end
 		border-bottom: 1px solid $gray
+
+//	---------------------------
+//	Dataviz
+
+#timeline_uploads_docu
+
+	.protocol, .data
+		margin: 0
+		@include grid-container
+		@include grid-column(8)
+		@include grid-shift(2)
+		
+		p
+			column-count: 2
+
+.docu_container
+	overflow: hidden
+	//height: 0
+	background-color: $background_docu
+	box-shadow: inset 10px 10px 10px #000
+	-webkit-box-shadow: inset 0px 2px 10px #929292
+	-moz-box-shadow: inset 0px 2px 10px #929292
+	-o-box-shadow: inset 0px 2px 10px #929292
+	-webkit-transition: all 0.4s ease-in-out	
+
+.open_close_panel
+	height: 0
+	overflow: hidden
+
+.open_panel
+	height: 250px
+	overflow: visible
+	-webkit-transition: all 0.4s ease-in-out
+
+.documentation
+	// margin: $x 0 0
+
+	button
+		cursor: pointer
+		border: 3px solid $background
+		font-size: $f_m
+		padding: $x * 2 $x * 2 $x * 2 0 
+
+	button:hover
+		text-decoration: underline
+		//border-bottom: 5px solid lighten($background_docu, 5%)
+
+	.selected
+		font-weight: bold
+		//font-color: darken($text, 30%)
+		//border-bottom: 5x solid $background_docu

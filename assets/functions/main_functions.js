@@ -13,6 +13,10 @@ function menu() {
 		$("#close_nav").on("click", function(){
 			nav.style.left = "-250px";
 			//console.log("close nav")
+
+			$("a").on("click", function(){
+				nav.style.left = "0px";
+			})
 		})
 	}
 

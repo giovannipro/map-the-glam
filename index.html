@@ -4,41 +4,77 @@
 		<meta charset="utf-8"/>	
 		<title>Map the GLAM</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700" rel="stylesheet">
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="googlebot" content="noindex">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 		<link rel="stylesheet" href="assets/style/main.css" />
+		<link rel="stylesheet" href="assets/style/dataviz.css" />
 	</head>
 	<body>
-		<div class="main_dataviz"></div>
-		<section class="container">
+		<header id="header"></header>
+
+		<section class="container" id="home">
 			<h1>Map the GLAM</h1>
-			<h2>Visualizing the contributions of cultural institutions in Wikimedia Projects</h2>
+			<h2 class="subtitle">Visualizing the contributions of cultural institutions to Wikipedia</h2>
+			<p class="by">by Giovanni Profeta</p>
 			<p class="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
 		</section>
+
+		<div class="secondary_dataviz full_container" id="timeline_uploads"></div>
+
+		<section id="timeline_uploads_docu">
+			<article class="documentation container">
+				<button id="timeline_uploads_open_protocol">
+					Protocol
+				</button>
+				<button id="timeline_uploads_open_data">
+					Data
+				</button>
+			</article>
+			<article class="full_container">
+				<div id="timeline_uploads_docu_container" class="docu_container open_close_panel">
+					<article class="protocol invisible" id="timeline_uploads_protocol">
+						<p>
+							Protocol
+						</p>
+					</article>
+					<article class="data invisible" id="timeline_uploads_data">
+						<p>
+							Data
+						</p>
+					</article>
+				</div>
+			</article>
+		</section>
+
+		<!--<a name="dv_1"></a>-->
+		<div class="secondary_dataviz full_container" id="category_network"></div>
+		
 		<section class="container">
-			<h3>
-				<a href="views" title="GLAMs' map">
+			<h2>DV1</h2>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
+			</p>
+		</section>
+
+		<section class="container">
+			<section class="links">
+				<a href="views" title="GLAMs in the world" id="">
 					GLAMs in the world
 				</a>
-			</h3>
-			<h3>
 				<a href="views/wikimedia-projects" title="Wikimedia projects">
 					Wikimedia projects
 				</a>
-			</h3>
-		</section>
-		<section class="container">
-			<h3>
-				<a href="views/file-uploads" title="GLAMs' map">
-					File uploads
-				</a>
-			</h3>
+			</section>
 		</section>
 		
-		<footer class="footer" id="footer"></footer>
+		<footer class="footer full_container" id="footer"></footer>
 
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+
 		<script type="text/javascript" src="assets/functions/main_functions.js"></script>
 		<script type="text/javascript" src="assets/functions/functions.js"></script>
 	</body>

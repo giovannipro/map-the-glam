@@ -2,7 +2,7 @@ var baseurl = window.location.href;
 //console.log(baseurl)
 
 function header(){
-	var header_path = "../_tpl/header.html"
+	var header_path = "../_tpl/header_internal_pages.html"
 	var h_path = baseurl + header_path
 	$("#header").load(h_path); 
 	//console.log(baseurl + header_path)
