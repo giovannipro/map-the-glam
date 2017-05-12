@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*- 
 # Scrape data and open web pages
 
-import os					# get file path
-import webbrowser			# open webpages
-import time					# get unix code
-import datetime				# convert in unix timestamp
-import urllib, json, io		# read json
-from urllib import urlopen	# open file
-import sys					# reset file encoding
+import os						# get file path
+import webbrowser				# open webpages
+import time						# get unix code
+import datetime					# convert in unix timestamp
+import urllib, json, io			# read json
+from urllib import urlopen		# open file
+import sys						# reset file encoding
+import datetime					# print time
+import csv						# read csv
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -41,15 +43,21 @@ base_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json"
 commons_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=allimages&aisort=timestamp"
 proprierties = "iiprop=mediatype|extmetadata|timestamp&prop=imageinfo"  # |commonmetadata|metadata|
 proprierties_2 = "iiprop=mediatype|extmetadata|timestamp|user|size|mime|metadata&prop=imageinfo&iimetadataversion=latest"
-glam_user = "aiuser=ETH-Bibliothek"
 
+glam_user = "aiuser=ETH-Bibliothek"
 api_fileInfo = "prop=imageinfo"
+
 
 # -----------------------------------
 # Main variables
 
 # -----------------------------------
 # SCRIPTS
+
+def time():
+	my_format = "%d %m %Y %I:%M%p" 
+	ts = datetime.datetime.utcnow().strftime(my_format)
+	print(ts)
 
 def get_data(api,my_limit):
 
@@ -195,10 +203,7 @@ def img_info(f_name):
 				data = json.loads(response)
 			
 				index += 1
-				print(index)
 				#print(data)
-
-				# head = "title" + t + "timestamp" + t + "categories" + t + "license" + n
 				
 				for x in data["query"]["pages"]:
 					id_ = str(x)
@@ -231,7 +236,7 @@ def more_img_info(f_name):
 	index = 0
 
 	f_in = folder + "/" + f_name + ".tsv"  # test / data
-	f_out = folder + "/" + f_name + "-output_1.tsv" 
+	f_out = folder + "/" + f_name + "_digital.tsv" 
 	
 	with open(f_in, "r") as f1:
 		with open(f_out, "w") as f2:
@@ -249,7 +254,7 @@ def more_img_info(f_name):
 				data = json.loads(response)
 			
 				index += 1
-				print(index)
+				#print(index)
 				# print(request)
 				# print(data)
 				
@@ -294,24 +299,26 @@ def more_img_info(f_name):
 										#print("  " + request)
 										pass
 
-								output =  title + t + timestamp + t + user + t + license + t + categories + t + size + t + width + t + height + t + sou
+								#output =  title + t + timestamp + t + user + t + license + t + categories + t + size + t + width + t + height + t + sou
+								output =  str(index) + t + title + t + size + t + width + t + height
 								output_ = output + n
+								print(index)
 
-							except IOError:
-								print('An error occured trying to read the file.' + n + request)
-								pass
+							# except IOError:
+							# 	print('An error occured trying to read the file.' + n + request)
+							# 	pass
 
-							except ImportError:
-								print ("NO module found" + n + request)
-								pass
+							# except ImportError:
+							# 	print ("NO module found" + n + request)
+							# 	pass
 								
-							except EOFError:
-								print('Why did you do an EOF on me?' + n + request)
-								pass
+							# except EOFError:
+							# 	print('Why did you do an EOF on me?' + n + request)
+							# 	pass
 
-							except KeyboardInterrupt:
-								print('You cancelled the operation.' + n + request)
-								pass
+							# except KeyboardInterrupt:
+							# 	print('You cancelled the operation.' + n + request)
+							# 	pass
 
 							except:
 								#print(request)
@@ -320,24 +327,27 @@ def more_img_info(f_name):
 						#print(output)
 						f2.write(output_)
 
-					except IOError:
-						print('An error occured trying to read the file.')
-						pass
+					# except IOError:
+					# 	print('An error occured trying to read the file.')
+					# 	pass
 
-					except ImportError:
-						print "NO module found"
-						pass
+					# except ImportError:
+					# 	print "NO module found"
+					# 	pass
 						
-					except EOFError:
-						print('Why did you do an EOF on me?')
-						pass
+					# except EOFError:
+					# 	print('Why did you do an EOF on me?')
+					# 	pass
 
-					except KeyboardInterrupt:
-						print('You cancelled the operation.')
-						pass
+					# except KeyboardInterrupt:
+					# 	print('You cancelled the operation.')
+					# 	pass
 
 					except:
-						print(request)
+						output_a = str(index) + t + request
+						output_b_ = str(index) + t + title + t + "error" + n
+						print(output_a)
+						f2.write(output_b_)
 						pass
 
 def files_containing_word(word):
@@ -355,19 +365,13 @@ def files_containing_word(word):
 	print(index)
 
 
-
 # -----------------------------------
 # Launch scripts
+
+more_img_info("test/test") # eth_files_list test_2
 
 # get_data(api,my_limit);
 # img_info("Media_contributed_by_the_ETH-Bibliothek_2") 
 # files_containing_word("in der Serengeti")
-more_img_info("data/raw/B_20170419_Media_contributed_by_the_Swiss_Federal_Archives") 
 
-'''
-test/test 
-data/raw/20170407_a_Media_contributed_by_the_ETH-Bibliothek
-20170419_Media_contributed_by_the_Swiss_Federal_Archives
-
-'''
 

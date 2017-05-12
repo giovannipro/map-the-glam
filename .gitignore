@@ -2,11 +2,18 @@
 **/.DS_Store
 **/.sass-cache
 style.css.map
+dataviz.css.map
 
 bower_components
 .sassbuilder-config.json
 
-note.txt
 test.tsv
+test_2.tsv
+
+note.txt
+error.txt
+error_2.txt
+
+utility.py
 
 images
