@@ -121,12 +121,10 @@ body
 	float: left
 	width: 100%
 	position: relative
+	margin-bottom: $x * 2
 
 .full
 	width: 100%
-
-#home
-	margin-bottom: 60px
 	
 .description
 	column-count: 2
@@ -181,8 +179,8 @@ section
 
 	div div
 		@include grid-container
-		@include grid-column(3)
-		@include grid-shift(0)
+		@include grid-column(2) // 3
+		@include grid-shift(2) // 0
 
 		margin-top: $x * 2
 		color: white
@@ -193,7 +191,6 @@ section
 			@include grid-column(8)
 			@include grid-shift(2)
 			
-
 		@media screen and (max-width: $mobile)
 			@include grid-column(12)
 			@include grid-shift(0)
@@ -278,25 +275,23 @@ section
 //	---------------------------
 //	Dataviz
 
-#timeline_uploads_docu
-
-	.protocol, .data
-		margin: 0
-		@include grid-container
-		@include grid-column(8)
-		@include grid-shift(2)
-		
-		p
-			column-count: 2
+.protocol, .data
+	margin: 0
+	@include grid-container
+	@include grid-column(8)
+	@include grid-shift(2)
+	
+	p
+		column-count: 2
 
 .docu_container
+	font-size: $f_m
 	overflow: hidden
-	//height: 0
-	background-color: $background_docu
-	box-shadow: inset 10px 10px 10px #000
-	-webkit-box-shadow: inset 0px 2px 10px #929292
-	-moz-box-shadow: inset 0px 2px 10px #929292
-	-o-box-shadow: inset 0px 2px 10px #929292
+	background-color: desaturate(lighten($text, 80%), 95%)
+	box-shadow: (inset 0px 5px 10px lighten(black, 80%))
+	-webkit-box-shadow: (inset 0px 5px 10px lighten(black, 80%))
+	-moz-box-shadow: (inset 0px 5px 10px lighten(black, 80%))
+	-o-box-shadow: (inset 0px 5px 10px lighten(black, 80%))
 	-webkit-transition: all 0.4s ease-in-out	
 
 .open_close_panel

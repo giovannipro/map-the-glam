@@ -90,13 +90,11 @@ body {
 .full_container {
   float: left;
   width: 100%;
-  position: relative; }
+  position: relative;
+  margin-bottom: 24px; }
 
 .full {
   width: 100%; }
-
-#home {
-  margin-bottom: 60px; }
 
 .description {
   column-count: 2; }
@@ -150,10 +148,10 @@ section {
   padding: 18px 0 48px;
   z-index: -1; }
   .footer div div {
-    width: calc(25% - 25px);
+    width: calc(16.66667% - 23.33333px);
     float: left;
     margin-left: 20px;
-    left: calc(0% - 20px + 20px);
+    left: calc(16.66667% - 23.33333px + 20px);
     position: relative;
     margin-top: 24px;
     color: white;
@@ -250,27 +248,28 @@ section {
   .sidenav .section_end {
     border-bottom: 1px solid #4e4e4e; }
 
-#timeline_uploads_docu .protocol, #timeline_uploads_docu .data {
+.protocol, .data {
   margin: 0;
   width: calc(66.66667% - 33.33333px);
   float: left;
   margin-left: 20px;
   left: calc(16.66667% - 23.33333px + 20px);
   position: relative; }
-  #timeline_uploads_docu .protocol::after, #timeline_uploads_docu .data::after {
+  .protocol::after, .data::after {
     clear: both;
     content: "";
     display: block; }
-  #timeline_uploads_docu .protocol p, #timeline_uploads_docu .data p {
+  .protocol p, .data p {
     column-count: 2; }
 
 .docu_container {
+  font-size: 14px;
   overflow: hidden;
-  background-color: #c9c9c9;
-  box-shadow: inset 10px 10px 10px #000;
-  -webkit-box-shadow: inset 0px 2px 10px #929292;
-  -moz-box-shadow: inset 0px 2px 10px #929292;
-  -o-box-shadow: inset 0px 2px 10px #929292;
+  background-color: #dde0e1;
+  box-shadow: inset 0px 5px 10px #cccccc;
+  -webkit-box-shadow: inset 0px 5px 10px #cccccc;
+  -moz-box-shadow: inset 0px 5px 10px #cccccc;
+  -o-box-shadow: inset 0px 5px 10px #cccccc;
   -webkit-transition: all 0.4s ease-in-out; }
 
 .open_close_panel {

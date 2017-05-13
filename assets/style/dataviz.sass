@@ -1,18 +1,65 @@
 $background_dv: #e8e8e8
 $files: #004E99
-$x: 12px
+$text: #001c26
 
-#timeline_uploads
+$x: 12px
+$f_m: 14px
+
+$f_s: $f_m / (1.5 * 1)
+
+//	---------------------------
+//	General
+
+.tick 
+	text
+		fill: $text
+		font-size: $f_s
+
+g	.domain
+	stroke: transparent
+
+//	---------------------------
+//	Specific dataviz
+
+#dv_timeline_uploads
 	background-color: $background_dv
 	width: 100%
 	height: $x * 13
 	overflow-x: auto
 	overflow-y: hidden
+	margin-top: $x * 5
 
 	.uploads
 		fill: $files
-		stroke: darken($files, 10%)
+		// stroke: darken($files, 10%)
 
-#category_network
+	.xAxis
+		line
+			stroke: transparent
+	
+	.yAxis .tick 
+		line
+			stroke: lighten(black, 30%)
+
+		text
+			fill: lighten(black, 60%)
+
+#dv_category_network
+	height: 60vh
+	background-color: $background_dv
+
+#dv_size
+	height: 60vh
+	background-color: $background_dv
+
+#dv_spread
+	height: 60vh
+	background-color: $background_dv
+
+#dv_lang
+	height: 60vh
+	background-color: $background_dv
+
+#dv_page_views
 	height: 60vh
 	background-color: $background_dv

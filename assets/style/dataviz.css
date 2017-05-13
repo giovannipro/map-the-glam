@@ -1,14 +1,43 @@
-#timeline_uploads {
+.tick text {
+  fill: #001c26;
+  font-size: 9.33333px; }
+
+g .domain {
+  stroke: transparent; }
+
+#dv_timeline_uploads {
   background-color: #e8e8e8;
   width: 100%;
   height: 156px;
   overflow-x: auto;
-  overflow-y: hidden; }
-  #timeline_uploads .uploads {
-    fill: #004E99;
-    stroke: #003466; }
+  overflow-y: hidden;
+  margin-top: 60px; }
+  #dv_timeline_uploads .uploads {
+    fill: #004E99; }
+  #dv_timeline_uploads .xAxis line {
+    stroke: transparent; }
+  #dv_timeline_uploads .yAxis .tick line {
+    stroke: #4d4d4d; }
+  #dv_timeline_uploads .yAxis .tick text {
+    fill: #999999; }
 
-#category_network {
+#dv_category_network {
+  height: 60vh;
+  background-color: #e8e8e8; }
+
+#dv_size {
+  height: 60vh;
+  background-color: #e8e8e8; }
+
+#dv_spread {
+  height: 60vh;
+  background-color: #e8e8e8; }
+
+#dv_lang {
+  height: 60vh;
+  background-color: #e8e8e8; }
+
+#dv_page_views {
   height: 60vh;
   background-color: #e8e8e8; }
 
