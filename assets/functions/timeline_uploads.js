@@ -4,7 +4,7 @@ function timeline_uploads(){
 		window_h = $(container).height();
 		//console.log(window_h)
 
-	var margin = {top: 20, right: 30, bottom: 30, left: 50},
+	var margin = {top: 20, right: 30, bottom: 40, left: 50},
 		width = window_w - (margin.left + margin.right),
 		height = window_h - (margin.top + margin.bottom);
 
@@ -92,7 +92,7 @@ function timeline_uploads(){
 
 			// axis
 			var xAxis = plot.append("g")
-				.attr("transform", "translate(0," + height + ")")
+				.attr("transform", "translate(0," + (height + 5) + ")")
 				.attr("class","xAxis")
 				.transition()
 				.delay(transition * 1.5)

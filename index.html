@@ -62,7 +62,7 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
 		</section>
-		<section id="category_network_docu">
+		<section id="category_network_docu" class="docu">
 			<article class="documentation container">
 				<button id="category_network_open_protocol">
 					Protocol
@@ -90,7 +90,21 @@
 
 		<!-- dv_2 ___________________________  -->
 
-		<div class="secondary_dataviz full_container" id="dv_size"></div>
+		<div class="secondary_dataviz full_container" id="dv_size">
+			<div class="controller">
+				<button id="original_size_button">
+					Original dimensions
+				</button>
+				<button id="digital_size_button">
+					Digital dimensions
+				</button>
+			</div>
+			<!--<img src="assets/img/original_size.svg" onerror="this.onerror=null; this.src='original_size.png'" width="1000px" height="1000px">-->
+			<div class="dv">
+				<img id="original_size" src="assets/img/original_size.png" width="1000px" height="1000px">
+				<img id="digital_size" src="assets/img/digital_size.png" width="1000px" height="1000px" class="invisible">
+			</div>
+		</div>
 
 		<section class="container">
 			<h2>DV2</h2>
@@ -98,7 +112,7 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
 		</section>
-		<section id="dv_size_docu">
+		<section id="dv_size_docu" class="docu">
 			<article class="documentation container">
 				<button id="size_open_protocol">
 					Protocol
@@ -133,7 +147,7 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
 		</section>
-		<section id="dv_spread_docu">
+		<section id="dv_spread_docu" class="docu">
 			<article class="documentation container">
 				<button id="spread_open_protocol">
 					Protocol
@@ -168,7 +182,7 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
 		</section>
-		<section id="dv_lang_docu">
+		<section id="dv_lang_docu" class="docu">
 			<article class="documentation container">
 				<button id="lang_open_protocol">
 					Protocol
@@ -203,7 +217,7 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
 		</section>
-		<section id="dv_page_views_docu">
+		<section id="dv_page_views_docu" class="docu">
 			<article class="documentation container">
 				<button id="page_views_open_protocol">
 					Protocol
@@ -247,5 +261,6 @@
 		<script type="text/javascript" src="assets/functions/functions.js"></script>
 
 		<script type="text/javascript" src="assets/functions/timeline_uploads.js"></script>
+		<script type="text/javascript" src="assets/functions/size.js"></script>
 	</body>
 </html>

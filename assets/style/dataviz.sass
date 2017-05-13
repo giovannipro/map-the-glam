@@ -1,3 +1,5 @@
+@import "../../bower_components/neat/core/_neat.scss"
+
 $background_dv: #e8e8e8
 $files: #004E99
 $text: #001c26
@@ -7,8 +9,15 @@ $f_m: 14px
 
 $f_s: $f_m / (1.5 * 1)
 
+$mobile: 500px
+$tablet: 768px
+$desktop: 100px
+
 //	---------------------------
 //	General
+
+img
+	display: block
 
 .tick 
 	text
@@ -35,8 +44,8 @@ g	.domain
 
 	.xAxis
 		line
-			stroke: transparent
-	
+			stroke: lighten(black, 50%)
+
 	.yAxis .tick 
 		line
 			stroke: lighten(black, 30%)
@@ -49,8 +58,26 @@ g	.domain
 	background-color: $background_dv
 
 #dv_size
-	height: 60vh
+	width: 100%
 	background-color: $background_dv
+	padding: $x 0
+
+	.dv
+		height: 70vh
+		@include grid-container
+		@include grid-column(8)
+		@include grid-shift(2)
+
+		img
+			height: 100%
+			width: auto
+			margin: 0 auto
+			
+	.controller
+		@include grid-container
+		@include grid-column(8)
+		@include grid-shift(2)
+		text-align: center
 
 #dv_spread
 	height: 60vh

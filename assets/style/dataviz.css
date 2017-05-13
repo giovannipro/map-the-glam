@@ -1,3 +1,6 @@
+img {
+  display: block; }
+
 .tick text {
   fill: #001c26;
   font-size: 9.33333px; }
@@ -15,7 +18,7 @@ g .domain {
   #dv_timeline_uploads .uploads {
     fill: #004E99; }
   #dv_timeline_uploads .xAxis line {
-    stroke: transparent; }
+    stroke: gray; }
   #dv_timeline_uploads .yAxis .tick line {
     stroke: #4d4d4d; }
   #dv_timeline_uploads .yAxis .tick text {
@@ -26,8 +29,35 @@ g .domain {
   background-color: #e8e8e8; }
 
 #dv_size {
-  height: 60vh;
-  background-color: #e8e8e8; }
+  width: 100%;
+  background-color: #e8e8e8;
+  padding: 12px 0; }
+  #dv_size .dv {
+    height: 70vh;
+    width: calc(66.66667% - 33.33333px);
+    float: left;
+    margin-left: 20px;
+    left: calc(16.66667% - 23.33333px + 20px);
+    position: relative; }
+    #dv_size .dv::after {
+      clear: both;
+      content: "";
+      display: block; }
+    #dv_size .dv img {
+      height: 100%;
+      width: auto;
+      margin: 0 auto; }
+  #dv_size .controller {
+    width: calc(66.66667% - 33.33333px);
+    float: left;
+    margin-left: 20px;
+    left: calc(16.66667% - 23.33333px + 20px);
+    position: relative;
+    text-align: center; }
+    #dv_size .controller::after {
+      clear: both;
+      content: "";
+      display: block; }
 
 #dv_spread {
   height: 60vh;
