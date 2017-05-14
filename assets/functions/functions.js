@@ -3,36 +3,6 @@ var container = "#dv_timeline_uploads"
 //var baseurl = document.location.origin;
 //console.log(baseurl)
 
-function on_scroll(){
-	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-	var width = $( document ).width()
-	var menu = $(".vis_invis")
-	var header = $("header")
-	var home = $("#home")
-
-	if (width > 800){
-		if (scrollTop > 120) {
-			menu.addClass("visible");
-			header.addClass("header_visible");
-			//console.log(scrollTop);
-		}
-		else {
-			menu.removeClass("visible");
-			header.removeClass("header_visible");
-		}
-	}
-	else {
-		if (scrollTop > 20) {
-			menu.addClass("visible");
-			header.addClass("header_visible");	
-		}
-		else {
-			menu.removeClass("visible");
-			header.removeClass("header_visible");
-		}
-	}
-}
-
 function header(){
 	var header_path = "views/_tpl/header_main.html"
 	var h_path = baseurl + header_path
@@ -122,9 +92,7 @@ function open_docu(dataviz){
 $( document ).ready(function() {
 	header();
 	footer();
-	//dataviz_docu();
-	window.addEventListener("scroll", on_scroll);
-
+	
 	open_docu("timeline_uploads");
 	open_docu("category_network");
 	open_docu("size");

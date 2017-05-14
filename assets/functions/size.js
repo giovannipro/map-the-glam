@@ -8,13 +8,13 @@ function buttons(){
 	var digital = $("#digital_size")
 
 	original_button.click(function(){
-		console.log("original")
+		//console.log("original")
 		//this.css("font-weight","bold")
 		original.show()
 		digital.hide()
 	})
 	digital_button.click(function(){
-		console.log("digital")
+		//console.log("digital")
 		digital.show()
 		original.hide()
 	})

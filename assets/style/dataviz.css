@@ -5,16 +5,19 @@ img {
   fill: #001c26;
   font-size: 9.33333px; }
 
-g .domain {
+.xAxis .domain {
+  stroke: #001c26; }
+
+.yAxis .domain {
   stroke: transparent; }
 
 #dv_timeline_uploads {
-  background-color: #e8e8e8;
+  background-color: #efefef;
   width: 100%;
   height: 156px;
   overflow-x: auto;
   overflow-y: hidden;
-  margin-top: 60px; }
+  margin-top: 72px; }
   #dv_timeline_uploads .uploads {
     fill: #004E99; }
   #dv_timeline_uploads .xAxis line {
@@ -26,34 +29,51 @@ g .domain {
 
 #dv_category_network {
   height: 60vh;
-  background-color: #e8e8e8; }
+  background-color: #efefef; }
 
 #dv_size {
   width: 100%;
-  background-color: #e8e8e8;
+  background-color: #efefef;
   padding: 12px 0; }
   #dv_size .dv {
-    height: 70vh;
-    width: calc(66.66667% - 33.33333px);
+    height: auto;
+    width: calc(50% - 30px);
     float: left;
     margin-left: 20px;
-    left: calc(16.66667% - 23.33333px + 20px);
+    left: calc(25% - 25px + 20px);
     position: relative; }
     #dv_size .dv::after {
       clear: both;
       content: "";
       display: block; }
+    @media screen and (max-width: 768px) {
+      #dv_size .dv {
+        width: calc(83.33333% - 36.66667px);
+        float: left;
+        margin-left: 20px;
+        left: calc(8.33333% - 21.66667px + 20px);
+        position: relative;
+        height: auto; }
+        #dv_size .dv::after {
+          clear: both;
+          content: "";
+          display: block; } }
     #dv_size .dv img {
-      height: 100%;
-      width: auto;
+      height: auto;
+      width: 100%;
       margin: 0 auto; }
+      @media screen and (max-width: 768px) {
+        #dv_size .dv img {
+          width: 100%;
+          height: auto; } }
   #dv_size .controller {
-    width: calc(66.66667% - 33.33333px);
+    width: calc(100% - 40px);
     float: left;
     margin-left: 20px;
-    left: calc(16.66667% - 23.33333px + 20px);
+    left: calc(0% - 20px + 20px);
     position: relative;
-    text-align: center; }
+    text-align: center;
+    clear: both; }
     #dv_size .controller::after {
       clear: both;
       content: "";
@@ -61,14 +81,14 @@ g .domain {
 
 #dv_spread {
   height: 60vh;
-  background-color: #e8e8e8; }
+  background-color: #efefef; }
 
 #dv_lang {
   height: 60vh;
-  background-color: #e8e8e8; }
+  background-color: #efefef; }
 
 #dv_page_views {
   height: 60vh;
-  background-color: #e8e8e8; }
+  background-color: #efefef; }
 
 /*# sourceMappingURL=dataviz.css.map */

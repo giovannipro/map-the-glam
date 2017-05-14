@@ -33,14 +33,14 @@ $f_mobile: 0.5
 //	Typography
 
 h1
-	font-size: $f_xl
+	font-size: $f_xxl
 	margin: ($f_m * 3) 0 0
 	@media screen and (max-width: $mobile)
 		font-size: $f_xl * $f_mobile
 
 h2
 	font-size: $f_l
-	font-weight: normal
+	font-weight: bold
 	margin: 0.5em 0 0
 	@media screen and (max-width: $mobile)
 		font-size: $f_xl * $f_mobile
@@ -164,7 +164,7 @@ section
 	// background-color: $background
 
 .header_full
-	padding: 5px 
+	//padding: 5px 
 	@include grid-container
 	@include grid-column(12)
 	
@@ -197,6 +197,7 @@ section
 		font-size: $f_s
 
 		@media screen and (max-width: $tablet)
+			font-size: $f_s * 1.2
 			@include grid-column(8)
 			@include grid-shift(2)
 			

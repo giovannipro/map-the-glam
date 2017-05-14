@@ -1,6 +1,7 @@
 @import "../../bower_components/neat/core/_neat.scss"
 
-$background_dv: #e8e8e8
+$background: #fcfcfc
+$background_dv: darken( $background, 5% )
 $files: #004E99
 $text: #001c26
 
@@ -24,7 +25,10 @@ img
 		fill: $text
 		font-size: $f_s
 
-g	.domain
+.xAxis	.domain
+	stroke: $text
+
+.yAxis .domain
 	stroke: transparent
 
 //	---------------------------
@@ -36,7 +40,7 @@ g	.domain
 	height: $x * 13
 	overflow-x: auto
 	overflow-y: hidden
-	margin-top: $x * 5
+	margin-top: $x * 6
 
 	.uploads
 		fill: $files
@@ -63,21 +67,32 @@ g	.domain
 	padding: $x 0
 
 	.dv
-		height: 70vh
+		height: auto
 		@include grid-container
-		@include grid-column(8)
-		@include grid-shift(2)
+		@include grid-column(6)
+		@include grid-shift(3)
+
+		@media screen and (max-width: $tablet)
+			@include grid-container
+			@include grid-column(10)
+			@include grid-shift(1)
+			height: auto
 
 		img
-			height: 100%
-			width: auto
+			height: auto
+			width: 100%
 			margin: 0 auto
 			
+			@media screen and (max-width: $tablet)
+				width: 100%
+				height: auto
+
 	.controller
 		@include grid-container
-		@include grid-column(8)
-		@include grid-shift(2)
+		@include grid-column(12)
+		@include grid-shift(0)
 		text-align: center
+		clear: both
 
 #dv_spread
 	height: 60vh

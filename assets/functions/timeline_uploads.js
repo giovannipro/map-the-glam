@@ -90,6 +90,15 @@ function timeline_uploads(){
 				.duration(transition)
 				.attr("d", area);
 
+			o_ticks = 0
+
+			if (window_w < 700) {
+				o_ticks = 3
+			}
+			else{
+				o_ticks = 20
+			}
+
 			// axis
 			var xAxis = plot.append("g")
 				.attr("transform", "translate(0," + (height + 5) + ")")
@@ -97,7 +106,7 @@ function timeline_uploads(){
 				.transition()
 				.delay(transition * 1.5)
 				.call(d3.axisBottom(x)
-					.ticks(20)
+					.ticks(o_ticks)
 				);
 
 			var yAxis = plot.append("g")
