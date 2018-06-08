@@ -2,6 +2,7 @@
 
 $background: #fcfcfc
 $background_docu: darken( $background, 20% )
+$background_dv: darken( $background, 5% )
 $text: #001c26
 $bar: #cccdcf
 
@@ -137,6 +138,7 @@ img
 	
 .description
 	column-count: 2
+	margin-bottom: $x*2
 
 	@media screen and (max-width: $tablet)
 		column-count: 1
@@ -148,7 +150,7 @@ img
 	clear: both
 
 .secondary_dataviz
-	background-color: $empty
+	background-color: $background_dv
 	height: auto
 	clear: both
 
@@ -194,7 +196,7 @@ section
 		margin-top: $x * 2
 		color: white
 		z-index: 1
-		font-size: $f_s
+		font-size: $f_m
 
 		@media screen and (max-width: $tablet)
 			font-size: $f_s * 1.2
@@ -246,6 +248,7 @@ section
 	margin-left: 0
 	padding: 13px 10px 10px 0
 	font-size: $f_m
+	cursor: pointer
 
 	@media screen and (max-width: $tablet)
 		@include grid-column(8)
@@ -312,7 +315,7 @@ section
 	overflow: hidden
 
 .open_panel
-	height: 250px
+	height: 550px
 	overflow: visible
 	-webkit-transition: all 0.4s ease-in-out
 

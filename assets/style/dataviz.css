@@ -11,13 +11,18 @@ img {
 .yAxis .domain {
   stroke: transparent; }
 
+#container_dv_timeline_uploads {
+  margin-top: 60px; }
+  #container_dv_timeline_uploads p {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 9.33333px; }
+
 #dv_timeline_uploads {
-  background-color: #efefef;
   width: 100%;
   height: 156px;
   overflow-x: auto;
-  overflow-y: hidden;
-  margin-top: 72px; }
+  overflow-y: hidden; }
   #dv_timeline_uploads .uploads {
     fill: #004E99; }
   #dv_timeline_uploads .xAxis line {
@@ -28,8 +33,13 @@ img {
     fill: #999999; }
 
 #dv_category_network {
-  height: 60vh;
-  background-color: #efefef; }
+  height: 80vh;
+  background-color: #efefef;
+  overflow: hidden; }
+  #dv_category_network img {
+    position: relative;
+    display: block;
+    top: -50px; }
 
 #dv_size {
   width: 100%;
@@ -40,7 +50,7 @@ img {
     width: calc(50% - 30px);
     float: left;
     margin-left: 20px;
-    left: calc(25% - 25px + 20px);
+    left: calc(8.33333% - 21.66667px + 20px);
     position: relative; }
     #dv_size .dv::after {
       clear: both;
@@ -67,17 +77,23 @@ img {
           width: 100%;
           height: auto; } }
   #dv_size .controller {
-    width: calc(100% - 40px);
+    width: calc(33.33333% - 26.66667px);
     float: left;
     margin-left: 20px;
-    left: calc(0% - 20px + 20px);
+    left: calc(8.33333% - 21.66667px + 20px);
     position: relative;
-    text-align: center;
-    clear: both; }
+    text-align: center; }
     #dv_size .controller::after {
       clear: both;
       content: "";
       display: block; }
+    @media screen and (max-width: 768px) {
+      #dv_size .controller {
+        width: calc(100% - 40px);
+        float: left;
+        margin-left: 20px;
+        left: calc(0% - 20px + 20px);
+        position: relative; } }
 
 #dv_spread {
   height: 60vh;

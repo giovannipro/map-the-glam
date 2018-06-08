@@ -29,6 +29,7 @@ wikipedia_api = "https://en.wikipedia.org/w/api.php?action=query&format=json&pro
 
 w_prop = "&rvprop=timestamp|user|ids|comment|size|comment|content"
 commons_revisions = commons_api + "&prop=revisions&rvprop=timestamp|user|comment|content&titles="
+
 limit = 50
 
 # -----------------------------------
@@ -189,11 +190,82 @@ def get_commons_revisions(f_name):
 						output = request + t + file + t + "error_2"
 						print(output)
 
+# Wikipedia revisions
+def get_wikipedia_revisions(f_name):
+	time()
+
+	f_in = folder + "/" + f_name + ".tsv"  # test / data
+	f_out = folder + "/" + f_name + "-revisions.tsv" 
+	
+	with open(f_in, "r") as f1:
+		with open(f_out, "w") as f2:
+
+			tsvin = csv.reader(f1, delimiter = t)
+			index = 0
+
+			for row in tsvin:
+				file = row[0]
+				page = row[1]
+				language = row[2]
+				# print (file + t + page)
+
+				index += 1
+				f = file.replace("_",s)
+
+				l = language.split("-")[3]
+				lang = l.split("_")[0]
+
+				request = "https://" + lang + ".wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=" + page + "&prop=revisions&rvprop=timestamp|user|comment|content"
+				#print(request)
+				
+				response = urlopen(request).read()
+				data = json.loads(response)
+				#print(data)
+				
+				for x in data["query"]["pages"]:
+					_id = x
+				
+				for x in data["query"]["pages"].values():
+					try:
+						page = x["title"]
+						revisions = x["revisions"]
+						#print(revisions)
+					except:
+						output = request + t + file + t + "error_1"
+						#print(output)
+						pass
+
+				for y in revisions:
+					user = y["user"]
+					timestamp = y["timestamp"]
+					content = y["*"]
+					# print(content)
+
+					#"a\x81b".decode("utf-8", "replace")
+					content.replace('__TOC__',"")
+
+					#a = "0xc3"
+					#a.decode("utf-8","replace")
+					#print(content)
+
+					if (f in content or file in content):
+						i = str(index)
+						output = i + t + file + t + page + t + user + t + timestamp
+						output_ = output + n
+						
+						f2.write(output_)
+						print (i)
+					else:
+						output = request + t + file + t + "error_2"
+						print(output)
+
 # -----------------------------------
 # Launch script
 
-get_wiki_revisions("test/test")
-#get_commons_revisions("data/raw/20170417_use_on_commons") # test/test
+get_wikipedia_revisions("test/test_revisions") 
+
+#get_wiki_revisions("test/test")
+#get_commons_revisions("test/revisions") # test/test data/raw/20170417_use_on_commons
 
 #get_revisions("Day_of_Reconciliation")
 #get_revisions("Talk:Day_of_Reconciliation")

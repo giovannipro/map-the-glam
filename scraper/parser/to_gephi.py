@@ -36,7 +36,7 @@ def tsv_to_csv(my_file):
 
 def edges(my_file):
 
-	file = folder + "/test/" + my_file + ".tsv"
+	file = folder + "/" + my_file + ".tsv"
 	output = folder + "/" + my_file + "_edges.tsv"
 
 	with open(file, "rb") as in_file, open(output, "wb") as out_file:  # , encoding="utf-8"
@@ -71,7 +71,7 @@ def edges(my_file):
 
 		for row in filecontents:
 			title = row[0]
-			cat_ = row[2]
+			cat_ = row[4]
 		
 			if title.strip():
 				categories = cat_.split("|")
@@ -79,6 +79,7 @@ def edges(my_file):
 				for cat in categories:
 					final_output = title + t + cat + t + cat + n
 					out_file.write(final_output)
+					#print(final_output)
 
 def nodes(my_file):
 
@@ -839,9 +840,11 @@ def count_co_occ_6(categories,edges):
 # -----------------------------------
 # Launch scripts
 
-# edges("to_gephi_test") # to_gephi_test eth-biblioteck-uploads2016
-#nodes("20170419_Media_contributed_by_the_ETH-Bibliothek-info")
+edges("test/test_cat")
 
-count_co_occ_6("categories","test")
+# edges("to_gephi_test") # to_gephi_test eth-biblioteck-uploads2016
+# nodes("20170419_Media_contributed_by_the_ETH-Bibliothek-info")
+
+# count_co_occ_6("categories","test")
 
 

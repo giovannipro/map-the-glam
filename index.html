@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8"/>	
 		<title>Map the GLAM</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4.0, user-scalable=yes" />
 		<meta name="robots" content="noindex,nofollow" />
 		<meta name="googlebot" content="noindex">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
@@ -18,46 +18,91 @@
 			<h2 class="subtitle">Visualizing the contributions of cultural institutions to Wikipedia</h2>
 			<p class="by">by Giovanni Profeta</p>
 			<p class="description">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
+				Recently, several cultural institutions (also called GLAMs-Galleries, Libraries, Archives, Museums) have released in Wikipedia and other Wikimedia projects a large amount of their collections with the aim to make more largely accessible. Within these online platforms, the content is released under the Creative Commons License Attribution-ShareAlike and is shared by both the Wikipedia community and casual users. Through the use of visual representation of data, Map the GLAM attempts to make cultural institutions aware of their impact on the Wikimedia projects. In specific, the project focuses on the ETH Bibliothek, one of the leading libraries in the world in terms of images uploaded in Wikimedia Commons.
 			</p>
 		</section>
 
-		<!-- dv_timeline_uploads ___________________________ -->
+		<!-- dv_1 ___________________________ -->
 
-		<div class="secondary_dataviz full_container" id="dv_timeline_uploads"></div>
-		<section id="timeline_uploads_docu">
-			<article class="documentation container">
-				<button id="timeline_uploads_open_protocol">
-					Protocol
-				</button>
-				<button id="timeline_uploads_open_data">
-					Data
-				</button>
-			</article>
-			<article class="full_container">
-				<div id="timeline_uploads_docu_container" class="docu_container open_close_panel">
-					<article class="protocol invisible" id="timeline_uploads_protocol">
-						<p>
-							Protocol
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
-						</p>
-					</article>
-					<article class="data invisible" id="timeline_uploads_data">
-						<p>
-							Data
-						</p>
-					</article>
-				</div>
-			</article>
-		</section>
+		<div class="dv">
+			<div class="secondary_dataviz full_container" id="dv_category_network">
+				<img src="../../assets/img/map-of-glams.png" alt="Map of the GLAMs in the world" width="1690" height="1120" style="margin:0 auto; height: 100%; display:block; width: auto; ">
+			</div>
+			<section class="container">
+				<h2>GLAMs in the world</h2>
+				<p class="description">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
+				</p>
+			</section>
+			<section id="glam_map_docu">
+				<article class="documentation container">
+					<button id="glam_map_open_protocol">
+						Protocol
+					</button>
+					<button id="glam_map_open_data">
+						Data
+					</button>
+				</article>
+				<article class="full_container">
+					<div id="glam_map_docu_container" class="docu_container open_close_panel">
+						<article class="protocol invisible" id="glam_map_protocol">
+							<p>
+								Protocol
+							</p>
+						</article>
+						<article class="data invisible" id="glam_map_data">
+							<p>
+								Timestamp: ...<br/>
+								Data source: ...<br/>
+								Download dataset (...MB)
+							</p>
+						</article>
+					</div>
+				</article>
+			</section>
+		</div>
 
-		<!-- dv_1 ___________________________  -->
+		<!-- dv_2 ___________________________ -->
 
-		<!--<a name="dv_1"></a>-->
-		<div class="secondary_dataviz full_container" id="dv_category_network"></div>
+		<div class="dv">
+			<div class="secondary_dataviz full_container" id="container_dv_timeline_uploads">
+				<p>Timeline of the ETH bibliothek uploads in Wikimedia Commons</p>
+				<div id="dv_timeline_uploads"></div>
+			</div>
+			<section id="timeline_uploads_docu">
+				<article class="documentation container">
+					<button id="timeline_uploads_open_protocol">
+						Protocol
+					</button>
+					<button id="timeline_uploads_open_data">
+						Data
+					</button>
+				</article>
+				<article class="full_container">
+					<div id="timeline_uploads_docu_container" class="docu_container open_close_panel">
+						<article class="protocol invisible" id="timeline_uploads_protocol">
+							<p>
+								Protocol
+							</p>
+						</article>
+						<article class="data invisible" id="timeline_uploads_data">
+							<p>
+								Data
+							</p>
+						</article>
+					</div>
+				</article>
+			</section>
+		</div>
+
+		<!-- dv_3 ___________________________  -->
+
+		<div class="secondary_dataviz full_container" id="dv_category_network">
+			<img src="assets/img/category-network.png" alt="Category network">
+		</div>
 		
 		<section class="container">
-			<h2>DV1</h2>
+			<h2>Subjects of the images</h2>
 			<p class="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
@@ -86,11 +131,14 @@
 				</div>
 			</article>
 		</section>
-
-
-		<!-- dv_2 ___________________________  -->
+		
+		<!-- dv_4 ___________________________  -->
 
 		<div class="secondary_dataviz full_container" id="dv_size">
+			<div class="dv">
+				<img id="original_size" src="assets/img/original_size.png" width="1000px" height="1000px">
+				<img id="digital_size" src="assets/img/digital_size.png" width="1000px" height="1000px" class="invisible">
+			</div>
 			<div class="controller">
 				<button id="original_size_button"><!-- style="color:red" -->
 					Original dimensions
@@ -99,15 +147,10 @@
 					Digital dimensions
 				</button>
 			</div>
-			<!--<img src="assets/img/original_size.svg" onerror="this.onerror=null; this.src='original_size.png'" width="1000px" height="1000px">-->
-			<div class="dv">
-				<img id="original_size" src="assets/img/original_size.png" width="1000px" height="1000px">
-				<img id="digital_size" src="assets/img/digital_size.png" width="1000px" height="1000px" class="invisible">
-			</div>
 		</div>
 
 		<section class="container">
-			<h2>DV2</h2>
+			<h2>DV4</h2>
 			<p class="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
@@ -137,12 +180,12 @@
 			</article>
 		</section>
 
-		<!-- dv_3 ___________________________  -->
+		<!-- dv_5 ___________________________  -->
 
 		<div class="secondary_dataviz full_container" id="dv_spread"></div>
 
 		<section class="container">
-			<h2>DV3</h2>
+			<h2>DV5</h2>
 			<p class="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
@@ -172,12 +215,12 @@
 			</article>
 		</section>
 
-		<!-- dv_4 ___________________________  -->
+		<!-- dv_6 ___________________________  -->
 
 		<div class="secondary_dataviz full_container" id="dv_lang"></div>
 
 		<section class="container">
-			<h2>DV4</h2>
+			<h2>DV6</h2>
 			<p class="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
@@ -207,12 +250,12 @@
 			</article>
 		</section>
 
-		<!-- dv_5 ___________________________  -->
+		<!-- dv_7 ___________________________  -->
 		
 		<div class="secondary_dataviz full_container" id="dv_page_views"></div>
 
 		<section class="container">
-			<h2>DV5</h2>
+			<h2>DV7</h2>
 			<p class="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p>
@@ -242,7 +285,7 @@
 			</article>
 		</section>
 
-		<section class="container">
+		<!-- <section class="container">
 			<section class="links">
 				<a href="views" title="GLAMs in the world" id="">
 					GLAMs in the world
@@ -251,7 +294,7 @@
 					Wikimedia projects
 				</a>
 			</section>
-		</section>
+		</section> -->
 		<footer class="footer full_container" id="footer"></footer>
 
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>

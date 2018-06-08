@@ -34,14 +34,20 @@ img
 //	---------------------------
 //	Specific dataviz
 
+#container_dv_timeline_uploads
+	margin-top: $x * 5
+
+	p
+		text-align: center
+		margin-top: $x
+		font-size: $f_s
+
 #dv_timeline_uploads
-	background-color: $background_dv
 	width: 100%
 	height: $x * 13
 	overflow-x: auto
 	overflow-y: hidden
-	margin-top: $x * 6
-
+	
 	.uploads
 		fill: $files
 		// stroke: darken($files, 10%)
@@ -58,8 +64,14 @@ img
 			fill: lighten(black, 60%)
 
 #dv_category_network
-	height: 60vh
+	height: 80vh
 	background-color: $background_dv
+	overflow: hidden
+
+	img
+		position: relative
+		display: block
+		top: -50px
 
 #dv_size
 	width: 100%
@@ -70,7 +82,7 @@ img
 		height: auto
 		@include grid-container
 		@include grid-column(6)
-		@include grid-shift(3)
+		@include grid-shift(1)
 
 		@media screen and (max-width: $tablet)
 			@include grid-container
@@ -89,10 +101,13 @@ img
 
 	.controller
 		@include grid-container
-		@include grid-column(12)
-		@include grid-shift(0)
+		@include grid-column(4)
+		@include grid-shift(1)
 		text-align: center
-		clear: both
+
+		@media screen and (max-width: $tablet)
+			@include grid-column(12)
+			@include grid-shift(0)
 
 #dv_spread
 	height: 60vh

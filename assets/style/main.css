@@ -77,10 +77,10 @@ body {
   color: #001c26; }
 
 .container {
-  width: calc(66.66667% - 33.33333px);
+  width: calc(66.6666666667% - 33.3333333333px);
   float: left;
   margin-left: 20px;
-  left: calc(16.66667% - 23.33333px + 20px);
+  left: calc(16.6666666667% - 23.3333333333px + 20px);
   position: relative; }
   .container::after {
     clear: both;
@@ -107,7 +107,8 @@ img {
   width: 100%; }
 
 .description {
-  column-count: 2; }
+  column-count: 2;
+  margin-bottom: 24px; }
   @media screen and (max-width: 768px) {
     .description {
       column-count: 1; } }
@@ -119,7 +120,7 @@ img {
   clear: both; }
 
 .secondary_dataviz {
-  background-color: #d4edff;
+  background-color: #efefef;
   height: auto;
   clear: both; }
 
@@ -157,15 +158,15 @@ section {
   padding: 18px 0 48px;
   z-index: -1; }
   .footer div div {
-    width: calc(16.66667% - 23.33333px);
+    width: calc(16.6666666667% - 23.3333333333px);
     float: left;
     margin-left: 20px;
-    left: calc(16.66667% - 23.33333px + 20px);
+    left: calc(16.6666666667% - 23.3333333333px + 20px);
     position: relative;
     margin-top: 24px;
     color: white;
     z-index: 1;
-    font-size: 9.33333px; }
+    font-size: 14px; }
     .footer div div::after {
       clear: both;
       content: "";
@@ -173,10 +174,10 @@ section {
     @media screen and (max-width: 768px) {
       .footer div div {
         font-size: 11.2px;
-        width: calc(66.66667% - 33.33333px);
+        width: calc(66.6666666667% - 33.3333333333px);
         float: left;
         margin-left: 20px;
-        left: calc(16.66667% - 23.33333px + 20px);
+        left: calc(16.6666666667% - 23.3333333333px + 20px);
         position: relative; } }
     @media screen and (max-width: 500px) {
       .footer div div {
@@ -201,7 +202,7 @@ section {
   display: inline; }
 
 #open_nav {
-  width: calc(16.66667% - 23.33333px);
+  width: calc(16.6666666667% - 23.3333333333px);
   float: left;
   margin-left: 20px;
   text-align: left;
@@ -211,22 +212,23 @@ section {
   padding: 10px 10px 10px 0; }
   @media screen and (max-width: 768px) {
     #open_nav {
-      width: calc(16.66667% - 23.33333px);
+      width: calc(16.6666666667% - 23.3333333333px);
       float: left;
       margin-left: 20px; }
       #open_nav .vis_invis {
         display: none; } }
 
 #running_headline {
-  width: calc(33.33333% - 26.66667px);
+  width: calc(33.3333333333% - 26.6666666667px);
   float: left;
   margin-left: 20px;
   margin-left: 0;
   padding: 13px 10px 10px 0;
-  font-size: 14px; }
+  font-size: 14px;
+  cursor: pointer; }
   @media screen and (max-width: 768px) {
     #running_headline {
-      width: calc(66.66667% - 33.33333px);
+      width: calc(66.6666666667% - 33.3333333333px);
       float: left;
       margin-left: 20px; } }
 
@@ -260,10 +262,10 @@ section {
 
 .protocol, .data {
   margin: 0;
-  width: calc(66.66667% - 33.33333px);
+  width: calc(66.6666666667% - 33.3333333333px);
   float: left;
   margin-left: 20px;
-  left: calc(16.66667% - 23.33333px + 20px);
+  left: calc(16.6666666667% - 23.3333333333px + 20px);
   position: relative; }
   .protocol::after, .data::after {
     clear: both;
@@ -288,7 +290,7 @@ section {
   overflow: hidden; }
 
 .open_panel {
-  height: 250px;
+  height: 550px;
   overflow: visible;
   -webkit-transition: all 0.4s ease-in-out; }
 

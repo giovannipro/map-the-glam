@@ -1,5 +1,6 @@
 var baseurl = window.location.href;
-var container = "#dv_timeline_uploads"
+var container = "#dv_timeline_uploads";
+var transition = 300;
 //var baseurl = document.location.origin;
 //console.log(baseurl)
 
@@ -25,7 +26,7 @@ function dataviz_docu(){
 }
 
 function open_docu(dataviz){
-	var transition = 300;
+
 	var my_class = "open_panel";
 	var invisible = "invisible"
 	
@@ -47,6 +48,8 @@ function open_docu(dataviz){
 	}
 
 	protocol_button.click(function(){
+		//console.log(dataviz)
+
 		data_button.removeClass("selected")
 		protocol_button.addClass("selected")
 
@@ -93,6 +96,7 @@ $( document ).ready(function() {
 	header();
 	footer();
 	
+	open_docu("glam_map");
 	open_docu("timeline_uploads");
 	open_docu("category_network");
 	open_docu("size");
