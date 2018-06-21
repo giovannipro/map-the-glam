@@ -11,6 +11,7 @@ from urllib import urlopen		# open file
 import sys						# reset file encoding
 import datetime					# print time
 import csv						# read csv
+import re						# replace all occurrences
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -41,18 +42,121 @@ def add_zero(x):
 base_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json"
 
 commons_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=allimages&aisort=timestamp"
-proprierties = "iiprop=mediatype|extmetadata|timestamp&prop=imageinfo"  # |commonmetadata|metadata|
+proprierties_1 = "iiprop=size|mediatype|extmetadata|timestamp|url|mediatype" #&prop=imageinfo|commonmetadata|metadata|"
 proprierties_2 = "iiprop=mediatype|extmetadata|timestamp|user|size|mime|metadata&prop=imageinfo&iimetadataversion=latest"
+proprierties_3 = "iiprop=size"
 
 glam_user = "aiuser=ETH-Bibliothek"
 api_fileInfo = "prop=imageinfo"
 
 
 # -----------------------------------
-# Main variables
+# main variables
 
 # -----------------------------------
-# SCRIPTS
+# scripts
+
+def img_info(f_name):
+	index = 0
+
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/" + f_name + "-output_imgInfo.tsv" 
+	
+	with open(f_in, "r") as f1:
+		with open(f_out, "w+") as f2:
+			for file in f1:
+				# f2.write(line) 
+				# print(line)
+
+				request = base_api + "&" + api_fileInfo + "&" + proprierties_1 + "&titles=" + file #proprierties_1
+				#print(request)
+
+				response = urlopen(request).read()
+				data = json.loads(response)
+			
+				index += 1
+				#print(data)
+				
+				for x in data["query"]["pages"]:
+					id_ = str(x)
+				
+				for y in data["query"]["pages"].values():
+
+					try:
+						title = y["title"]
+						values = y["imageinfo"]
+
+						for z in values:
+							try:
+								
+								timestamp = z["timestamp"]
+								license = z["extmetadata"]["LicenseShortName"]["value"]
+								categories = z["extmetadata"]["Categories"]["value"]
+								artist = z["extmetadata"]["Artist"]["value"]
+								description = z["extmetadata"]["ImageDescription"]["value"]
+
+								output =  title + t + timestamp + t + categories + t + license + t + re.sub(r"\n", "", artist) + t + re.sub(r"\n", "", description) + n
+								print index
+
+							except:
+								print(request)
+								pass
+
+						f2.write(output)
+
+					except:
+						print("error 1 "  + str(index))
+						pass
+						
+def img_size(f_name):
+	index = 0
+
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/" + f_name + "-output_imgSize.tsv" # + "/test/"
+	
+	with open(f_in, "r") as f1:
+		with open(f_out, "w+") as f2:
+			for file in f1:
+				# f2.write(line) 
+				# print(line)
+
+				request = base_api + "&" + api_fileInfo + "&" + proprierties_3 + "&titles=" + file
+				#print(request)
+
+				response = urlopen(request).read()
+				data = json.loads(response)
+			
+				index += 1
+				#print(data)
+				
+				for x in data["query"]["pages"]:
+					id_ = str(x)
+				
+				for y in data["query"]["pages"].values():
+
+					try:
+						title = y["title"]
+						values = y["imageinfo"]
+
+						for z in values:
+							try:
+
+								size = z["size"]
+								width = z["width"]
+								height = z["height"]
+										
+								output =  title + t + str(size) + t + str(width) + t + str(height) + n
+								print index
+
+							except:
+								print(request)
+								pass
+
+							f2.write(output)
+
+					except:
+						print("error 1 "  + str(index))
+						pass
 
 def time():
 	my_format = "%d %m %Y %I:%M%p" 
@@ -61,7 +165,7 @@ def time():
 
 def get_data(api,my_limit):
 
-	file = folder + "/" + "data_2" + ".tsv"
+	file = folder + "/" + "data" + ".tsv"
 
 	with open(file, "a") as f:
 
@@ -183,54 +287,6 @@ def every_hour(day,mon,my_limit):
 		#print date
 
 		get_data(api,my_limit)
-
-def img_info(f_name):
-	index = 0
-
-	f_in = folder + "/data/" + f_name + ".tsv"  # test / data
-	f_out = folder + "/test/" + f_name + "-output_.tsv" 
-	
-	with open(f_in, "r") as f1:
-		with open(f_out, "w") as f2:
-			for file in f1:
-				# f2.write(line) 
-				# print(line)
-
-				request = base_api + "&" + api_fileInfo + "&" + proprierties + "&titles=" + file
-				#print(request)
-
-				response = urlopen(request).read()
-				data = json.loads(response)
-			
-				index += 1
-				#print(data)
-				
-				for x in data["query"]["pages"]:
-					id_ = str(x)
-				
-				for y in data["query"]["pages"].values():
-
-					try:
-						title = y["title"]
-						values = y["imageinfo"]
-
-						for z in values:
-							try:
-								timestamp = z["timestamp"]
-								license = z["extmetadata"]["LicenseShortName"]["value"]
-								categories = z["extmetadata"]["Categories"]["value"]
-								user = z["extmetadata"]["Artist"]["value"]
-
-								output =  title + t + timestamp + t + categories + t + license + n
-							except:
-								print("error 2")
-								pass
-
-						f2.write(output)
-
-					except:
-						#print("error 1")
-						pass
 
 def more_img_info(f_name):
 	index = 0
@@ -368,10 +424,11 @@ def files_containing_word(word):
 # -----------------------------------
 # Launch scripts
 
-more_img_info("test/test") # eth_files_list test_2
+# img_info("data") 
+img_size("data") 
 
-# get_data(api,my_limit);
-# img_info("Media_contributed_by_the_ETH-Bibliothek_2") 
+#get_data(api,my_limit);
+# more_img_info("test/test") # eth_files_list test_2
 # files_containing_word("in der Serengeti")
 
 

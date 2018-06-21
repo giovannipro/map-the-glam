@@ -19,15 +19,32 @@ t = "\t"
 n = "\n"
 s = " "
 
+def loop(x):
+		
+	index = 0
+
+	while index < x:
+		index += 1
+		print(index)
+
+def inloop(x):
+	print (x)
+
+	index = x
+
+	if index < x:
+		index -= 1
+		inloop(index)
+
 # -----------------------------------
 # Main variables
 
 commons_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category:"
 limit = 500
-cont = 0
 
 # -----------------------------------
 # Script
+
 
 def get_files(category,cont):
 
@@ -36,12 +53,12 @@ def get_files(category,cont):
 	if cont == 0:
 		request = commons_api + category + "&cmlimit=" + str(limit)
 	else:
-		request = commons_api + category + "&cmlimit=" + str(limit) + "&rvcontinue=" + str(cont)
+		request = commons_api + category + "&cmlimit=" + str(limit) + "&cmcontinue=" + str(cont) # &rvcontinue=
 
 	response = urlopen(request).read()
 	data = json.loads(response)
 
-	with open(f_out, "a") as f:
+	with open(f_out, "a") as f: # a: add, w+: override
 		
 		for x in data["query"]["categorymembers"]:
 
@@ -50,13 +67,11 @@ def get_files(category,cont):
 				output = title + n
 
 				f.write(output)
-				#print(data)
+
 			except:
 				pass
 
 		new_new_cont = data["continue"]["cmcontinue"]
-		#print(cont)
-		#print(new_cont)
 
 		index = 0
 
@@ -67,6 +82,7 @@ def get_files(category,cont):
 		else:
 			print("stop")
 
+"""
 def get_first_files(category):
 
 	request = commons_api + category + "&cmlimit=" + str(limit)
@@ -86,8 +102,6 @@ def get_first_files(category):
 			#print(data)
 
 		new_cont = data["continue"]["cmcontinue"]
-		#print(cont)
-		#print(new_cont)
 
 		index = 0
 
@@ -98,24 +112,11 @@ def get_first_files(category):
 		# else:
 		# 	print("stop")
 
-def loop(x):
-		
-	index = 0
-
-	while index < x:
-		index += 1
-		print(index)
-
-def inloop(x):
-	print (x)
-
-	index = x
-
-	if index < x:
-		index -= 1
-		inloop(index)
+"""
 
 # -----------------------------------
 # Launch scripts
 
-get_files("Media_contributed_by_the_Swiss_National_Library",0) # Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_ETH-Bibliothek
+get_files("Media_contributed_by_the_ETH-Bibliothek",0) # Media_contributed_by_the_Swiss_National_Library Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_ETH-Bibliothek
+
+

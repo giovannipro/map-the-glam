@@ -219,18 +219,11 @@ section {
         display: none; } }
 
 #running_headline {
-  width: calc(33.3333333333% - 26.6666666667px);
-  float: left;
-  margin-left: 20px;
   margin-left: 0;
   padding: 13px 10px 10px 0;
   font-size: 14px;
-  cursor: pointer; }
-  @media screen and (max-width: 768px) {
-    #running_headline {
-      width: calc(66.6666666667% - 33.3333333333px);
-      float: left;
-      margin-left: 20px; } }
+  cursor: pointer;
+  float: left; }
 
 .sidenav {
   height: 100%;

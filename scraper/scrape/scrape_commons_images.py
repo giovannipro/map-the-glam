@@ -87,6 +87,9 @@ def scale_images(basewidth):
 			print(f)
 			pass
 
+# -----------------------------------
+# Launch scripts
+
 get_images("test/eth_files_list",120)
 #scale_images(500)
 

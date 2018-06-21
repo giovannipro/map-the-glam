@@ -21,11 +21,10 @@ Visualizing the contributions of cultural institutions in Wikimedia Projects.
 
 ## This project uses:
 -	[Bower](https://bower.io/)
--	[JQuery](https://jquery.com/)
+-	[jQuery](https://jquery.com/)
 -	[Neat](http://neat.bourbon.io/)
-
-[comment]: <> "[D3](https://d3js.org/)"
-[comment]: <> "[Handlebars](http://handlebarsjs.com/)"
+-	[D3](https://d3js.org/)
+-	[Handlebars](http://handlebarsjs.com/)
 
 ### Bower (install and update packages)
 -	cd < path_to_the_folder >
@@ -34,4 +33,4 @@ Visualizing the contributions of cultural institutions in Wikimedia Projects.
 
 ### Neat 
 - 	update sass file
--	build the css (cmd + alt + B in Sublime Text)
+-	build the css (cmd + B, on Sublime Text)
