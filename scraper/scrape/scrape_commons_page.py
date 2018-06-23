@@ -21,13 +21,13 @@ t = "\t"
 n = "\n"
 s = " "
 
-# -----------------------------------
-# Script
-
 def time():
 	my_format = "%d %m %Y %I:%M%p" 
 	ts = datetime.datetime.utcnow().strftime(my_format)
 	print(ts)
+	
+# -----------------------------------
+# Script
 
 def get_usage(f_name):
 

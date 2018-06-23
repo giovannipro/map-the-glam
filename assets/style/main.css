@@ -144,7 +144,7 @@ section {
     display: block; }
   @media screen and (max-width: 500px) {
     .header_full {
-      padding: 15px 5px; } }
+      padding: 5px; } }
   .header_full .open_menu a {
     padding: 5px 30px 5px 0; }
 
@@ -255,6 +255,7 @@ section {
 
 .protocol, .data {
   margin: 0;
+  padding: 12px 0 18px;
   width: calc(66.6666666667% - 33.3333333333px);
   float: left;
   margin-left: 20px;
@@ -264,6 +265,13 @@ section {
     clear: both;
     content: "";
     display: block; }
+  @media screen and (max-width: 500px) {
+    .protocol, .data {
+      width: calc(100% - 40px);
+      float: left;
+      margin-left: 20px;
+      left: calc(0% - 20px + 20px);
+      position: relative; } }
   .protocol p, .data p {
     column-count: 2; }
 
@@ -283,7 +291,8 @@ section {
   overflow: hidden; }
 
 .open_panel {
-  height: 550px;
+  min-height: 100px;
+  height: auto;
   overflow: visible;
   -webkit-transition: all 0.4s ease-in-out; }
 

@@ -12,6 +12,10 @@ import sys						# reset file encoding
 import datetime					# print time
 import csv						# read csv
 import re						# replace all occurrences
+import pprint					# pretty print
+
+# from multiprocessing import Process
+from multiprocessing import Pool
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -25,16 +29,11 @@ n = "\n"
 lic = ""
 s = " "
 
-def unix_time(mytime):
-	u_time = time.mktime(datetime.datetime.strptime(mytime, "%d_%m_%Y_%H:%M").timetuple())
-	return str(int(u_time))
 
-def add_zero(x):
-	if (int(x) < 10):
-		x = "0" + str(x)
-		return x
-	else:
-		return str(x)
+def time():
+	my_format = "%d %m %Y %I:%M%p" 
+	ts = datetime.datetime.utcnow().strftime(my_format)
+	print(ts)
 
 # -----------------------------------
 # API
@@ -57,62 +56,72 @@ api_fileInfo = "prop=imageinfo"
 # scripts
 
 def img_info(f_name):
+	start = time.time()
+
+	func = "img-timestamp"
 	index = 0
 
 	f_in = folder + "/data/" + f_name + ".tsv"
-	f_out = folder + "/" + f_name + "-output_imgInfo.tsv" 
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
 	
 	with open(f_in, "r") as f1:
-		with open(f_out, "w+") as f2:
-			for file in f1:
-				# f2.write(line) 
-				# print(line)
+		with open(f_out, "w") as f2:
+			with open(f_err, "w") as f3:
 
-				request = base_api + "&" + api_fileInfo + "&" + proprierties_1 + "&titles=" + file #proprierties_1
-				#print(request)
+				for file in f1:
 
-				response = urlopen(request).read()
-				data = json.loads(response)
-			
-				index += 1
-				#print(data)
+					request = base_api + "&" + api_fileInfo + "&" + proprierties_1 + "&titles=" + file #proprierties_1
+					#print(request)
+
+					response = urlopen(request).read()
+					data = json.loads(response)
 				
-				for x in data["query"]["pages"]:
-					id_ = str(x)
-				
-				for y in data["query"]["pages"].values():
+					for x in data["query"]["pages"]:
+						id_ = str(x)
+					
+					for y in data["query"]["pages"].values():
 
-					try:
-						title = y["title"]
-						values = y["imageinfo"]
+						try:
+							title = y["title"]
+							values = y["imageinfo"]
 
-						for z in values:
-							try:
-								
-								timestamp = z["timestamp"]
-								license = z["extmetadata"]["LicenseShortName"]["value"]
-								categories = z["extmetadata"]["Categories"]["value"]
-								artist = z["extmetadata"]["Artist"]["value"]
-								description = z["extmetadata"]["ImageDescription"]["value"]
+							for z in values:
+								try:
+									
+									# timestamp = z["timestamp"]
+									license = z["extmetadata"]["LicenseShortName"]["value"]
+									categories = z["extmetadata"]["Categories"]["value"]
+									artist = z["extmetadata"]["Artist"]["value"]
+									description = z["extmetadata"]["ImageDescription"]["value"]
 
-								output =  title + t + timestamp + t + categories + t + license + t + re.sub(r"\n", "", artist) + t + re.sub(r"\n", "", description) + n
-								print index
+									output =  title + t + timestamp + t + categories + t + license + t + re.sub(r"\n", "", artist) + t + re.sub(r"\n", "", description) + n
+									print index
 
-							except:
-								print(request)
-								pass
+								except:
+									print("error 2")
+									print(request)
+									f3.write(title)
+									pass
 
-						f2.write(output)
+							f2.write(output)
 
-					except:
-						print("error 1 "  + str(index))
-						pass
+						except:
+							print("error 1")
+							print(request)
+							f3.write(title)
+							pass
+						
+	end = time.time()
+	running_time = end - start
+	print (running_time)
 						
 def img_size(f_name):
+	time()
 	index = 0
 
 	f_in = folder + "/data/" + f_name + ".tsv"
-	f_out = folder + "/" + f_name + "-output_imgSize.tsv" # + "/test/"
+	f_out = folder + "/" + f_name + "-output_imgSize.tsv"
 	
 	with open(f_in, "r") as f1:
 		with open(f_out, "w+") as f2:
@@ -158,136 +167,68 @@ def img_size(f_name):
 						print("error 1 "  + str(index))
 						pass
 
-def time():
-	my_format = "%d %m %Y %I:%M%p" 
-	ts = datetime.datetime.utcnow().strftime(my_format)
-	print(ts)
+def img_timestamp(f_name,start_id):
+	start = time.time()
 
-def get_data(api,my_limit):
+	func = "img-timestamp"
+	index = 0
 
-	file = folder + "/" + "data" + ".tsv"
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
+	
+	with open(f_in, "r") as f1:
+		with open(f_out, "a+") as f2:
+			for file in f1:
 
-	with open(file, "a") as f:
+				request = base_api + "&" + api_fileInfo + "&" + proprierties_1 + "&titles=" + file
+				#print(request)
 
-		response = urlopen(api).read()
-		data = json.loads(response)
-		index = 0
-		#json.dump(data, f)
-
-		for x in data["query"]["allimages"]:
-
-			try:
-				tit = x["name"]
-				tim = x["timestamp"]
-				cat = x["extmetadata"]["Categories"]["value"]
-				lic = x["extmetadata"]["LicenseShortName"]["value"]
-				des = x["extmetadata"]["ImageDescription"]["value"]
-
-				if (tit != ""):
-					f.write(tit + t)
-				else:
-					f.write("-" + t)
-
-				if (tit != ""):
-					f.write(tim + t)
-				else:
-					f.write("-" + t)
-
-				if (cat != ""):
-					f.write(cat + t)
-				else:
-					f.write("-" + t)
-					#print cat 
-
-				if (lic != ""):
-					f.write(lic)
-				else:
-					f.write("-")
-
-				f.write(n)
-
-				index += 1
-
-				if (index == (my_limit-0) ):
-					print "LIMIT REACHED: " + tit
-					# print index + "+" + my_limit
-				# else:
-				# 	# print index + "-" + my_limit
-				# 	print "-" + str(index)
-
-			except IOError:
-				print('An error occured trying to read the file.')
-				continue
-
-			except ImportError:
-				print "NO module found"
-				continue
-				
-			except EOFError:
-				print('Why did you do an EOF on me?')
-				continue
-
-			except KeyboardInterrupt:
-				print('You cancelled the operation.')
-				continue
-
-			except:
-				#print('An error occured.')
-				index += 1
-				
-				if (index == (my_limit-0) ):
-					print "LIMIT REACHED: " + tit
+				if (index >= start_id):
+					try:
+						response = urlopen(request).read()
+						data = json.loads(response)
+						output = ""
+					
+						for x in data["query"]["pages"]:
+							id_ = str(x)
 						
-				print (tit + t + tim + t + cat + t + lic)
+						for y in data["query"]["pages"].values():
 
-				continue
+							title = y["title"]
+							extension = ''.join(y["title"].split(".")[-1:])
+							values = y["imageinfo"]
 
-def every_day(year,period,my_limit):
-	limit = "ailimit=" + str(my_limit)
+							for z in values:
+								try:
+								
+									timestamp = z["timestamp"]
+									license = z["extmetadata"]["LicenseShortName"]["value"]
+									mediatype = z["mediatype"]									
+									
+									output =  str(index) + t + title + t +  extension + t + timestamp + t + license + t + mediatype + n # 
+									print (index)
 
-	if (period == 1):
-		start = 1
-		end = (6 + 1)
-	elif (period == 2):
-		start = 7
-		end = (12 + 1)	
-	else:
-		start = 1
-		end = (12 + 1)		
+								except:
+									print("error 2")
+									print(request)
+									pass
 
-	for m in range(start,end):
-		try:
-			month = add_zero(m)
+								f2.write(output)
 
-			for d in range(1,(31 + 1)):
-				day = add_zero(d)
+					except:
+						print("error 1")
+						print(request)
+						pass
 
-				timespan = "aistart=" + unix_time(day + "_" + month + "_2016_00:00") + "&" + "aiend=" + unix_time(day + "_" + month + "_2016_23:59")
-				# print timespan
+				index += 1
 
-				api = commons_api + "&" + proprierties + "&" + limit + "&" + glam_user + "&" + timespan 
+	end = time.time()
+	running_time = end - start
+	print (running_time)
+	
 
-				get_data(api,my_limit)
-		except:
-			continue
-
-def every_hour(day,mon,my_limit):
-	limit = "ailimit=" + str(my_limit)
-	day = add_zero(day)
-	month = add_zero(mon) 
-
-	for h in range(0,(23 + 1)):
-		hour = add_zero(h)
-		#print month
-
-		date = day + "_" + month + "_2016_" + hour
-		timespan = "aistart=" + unix_time(date + ":00") + "&" + "aiend=" + unix_time(date + ":59")
-
-		api = commons_api + "&" + proprierties + "&" + limit + "&" + glam_user + "&" + timespan 
-		#print date
-
-		get_data(api,my_limit)
-
+"""						
 def more_img_info(f_name):
 	index = 0
 
@@ -421,13 +362,48 @@ def files_containing_word(word):
 	print(index)
 
 
+
+def test(x):
+ 
+    for x in titles:
+    	request = base_api + "&" + api_fileInfo + "&" + proprierties_1 + "&titles=" + x
+        print(request)
+ 
+if __name__ == '__main__':
+    titles = ["File:BassersdorffSchatz-19801028iv.jpg", "File:BassersdorffSchatz-19810519i.jpg", "File:BassersdorffSchatz-19810519i.tif"]
+ 
+    p = Process(target=test, args=('x',))
+    p.start()
+    p.join
+    print "Done"
+
+
+
+def http_get(url):
+  result = {"url": url, "data": urllib.urlopen(url).read()[:100]}
+  print url + " took "
+  return result
+  
+urls = ['http://www.google.com/', 'https://foursquare.com/', 'http://www.yahoo.com/', 'http://www.bing.com/', "https://www.yelp.com/"]
+
+pool = Pool(processes=5)
+
+results = pool.map(http_get, urls)
+
+for result in results:
+  print result
+
+"""  
+
+
 # -----------------------------------
 # Launch scripts
 
-# img_info("data") 
-img_size("data") 
+img_timestamp("my_data",0)  # data 1_raw/20180620_Media_contributed_by_the_ETH-Bibliothek
 
-#get_data(api,my_limit);
+#img_info("data") 
+#img_size("data") 
+
 # more_img_info("test/test") # eth_files_list test_2
 # files_containing_word("in der Serengeti")
 

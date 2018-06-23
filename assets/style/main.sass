@@ -172,7 +172,7 @@ section
 	
 
 	@media screen and (max-width: $mobile)
-		padding: 15px 5px
+		padding: 5px
 
 	.open_menu
 		a
@@ -286,15 +286,21 @@ section
 	.section_end
 		border-bottom: 1px solid $gray
 
+
 //	---------------------------
 //	Dataviz
 
 .protocol, .data
 	margin: 0
+	padding: $x 0 $x*1.5
 	@include grid-container
 	@include grid-column(8)
 	@include grid-shift(2)
-	
+
+	@media screen and (max-width: $mobile)
+		@include grid-column(12)
+		@include grid-shift(0)
+
 	p
 		column-count: 2
 
@@ -316,7 +322,8 @@ section
 	overflow: hidden
 
 .open_panel
-	height: 550px
+	min-height: 100px
+	height: auto
 	overflow: visible
 	-webkit-transition: all 0.4s ease-in-out
 

@@ -23,6 +23,11 @@ n = "\n"
 lic = ""
 s = " "
 
+def time():
+	my_format = "%d %m %Y %I:%M%p" 
+	ts = datetime.datetime.utcnow().strftime(my_format)
+	print(ts)
+
 # -----------------------------------
 # Main variables
 
@@ -38,11 +43,6 @@ root_api = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/"
 # -----------------------------------
 # Script
 
-def time():
-	my_format = "%d %m %Y %I:%M%p" 
-	ts = datetime.datetime.utcnow().strftime(my_format)
-	print(ts)
-
 def add_zero(x):
 	if x < 10:
 		return "0" + str(x)
@@ -54,7 +54,7 @@ def scrape_pv_after_2016(f_name,start,end):
 
 	time()
 
-	f_in = folder + "/" + f_name + ".tsv"  # test / data
+	f_in = folder + "/" + f_name + ".tsv"
 	f_out = folder + "/" + f_name + "-pv.tsv" 
 	
 	with open(f_in, "r") as f1:

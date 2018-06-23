@@ -32,13 +32,13 @@ commons_revisions = commons_api + "&prop=revisions&rvprop=timestamp|user|comment
 
 limit = 50
 
-# -----------------------------------
-# Script
-
 def time():
 	my_format = "%d %m %Y %I:%M%p" 
 	ts = datetime.datetime.utcnow().strftime(my_format)
 	print(ts)
+
+# -----------------------------------
+# Script
 
 def get_second_revisions(article,cont):
 
