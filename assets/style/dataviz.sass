@@ -54,11 +54,15 @@ img
 
 	.xAxis
 		line
-			stroke: lighten(black, 50%)
+			stroke: lighten(black, 50%) // transparent
+
+		text
+			fill: black
+			text-anchor: start
 
 	.yAxis .tick 
 		line
-			stroke: lighten(black, 30%)
+			stroke: transparent //lighten(black, 90%)
 
 		text
 			fill: lighten(black, 60%)

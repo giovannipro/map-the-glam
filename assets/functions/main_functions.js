@@ -54,6 +54,20 @@ function menu() {
 	closeNav();
 }
 
+function page_size(loading_time){
+	
+	console.group("website performance");
+
+	var dom_elements = $('*').length;
+	console.log("DOM elements: " + dom_elements); 
+
+	var bytes = $('html').html().length,
+		kbytes = bytes / 1024;
+	console.log("kbytes: " + kbytes.toFixed(1) + " (max 2000)" );
+	console.log("loading: " + loading_time + "ms (max 2000ms)");
+
+}
+
 $( document ).ready(function() {
 	setTimeout(menu,300) // I give the javascript the time to load the nav
 	window.addEventListener("scroll", on_scroll);

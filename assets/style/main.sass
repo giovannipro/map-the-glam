@@ -1,10 +1,19 @@
 @import "../../bower_components/neat/core/_neat.scss"
 
+// colors
 $background: #fcfcfc
 $background_docu: darken( $background, 20% )
 $background_dv: darken( $background, 5% )
 $text: #001c26
 $bar: #cccdcf
+
+$c_a: #29b29d
+$c_b: #f4939e
+$c_c: #f4d4a9
+$c_d: #0f9b50
+$c_e: #0686da
+$c_f: #ef9227
+$c_g: #84c233
 
 $empty: #d4edff
 $gray: #4e4e4e
@@ -52,10 +61,15 @@ h3
 	@media screen and (max-width: $mobile)
 		font-size: $f_xl * $f_mobile
 
+h4
+	font-size: $f_m
+	font-weight: bold
+	margin: 0
+
 p
-	// font-size: $f_m
+	font-size: $f_m
 	line-height: 1.5em
-	margin: ($x * 2) 0 0
+	margin: 0 0  ($x * 2)
 
 ul
 	line-height: 1.5em
@@ -292,10 +306,11 @@ section
 
 .protocol, .data
 	margin: 0
-	padding: $x 0 $x*1.5
+	padding: $x*1.5 0 $x*1.5
 	@include grid-container
 	@include grid-column(8)
 	@include grid-shift(2)
+	float: none
 
 	@media screen and (max-width: $mobile)
 		@include grid-column(12)

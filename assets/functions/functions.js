@@ -92,6 +92,8 @@ function open_docu(dataviz){
 	})
 }
 
+var start = new Date();
+
 $( document ).ready(function() {
 	header();
 	footer();
@@ -103,6 +105,10 @@ $( document ).ready(function() {
 	open_docu("spread");
 	open_docu("lang");
 	open_docu("page_views");
+
+
+	loading_time = new Date() - start;
+	page_size(loading_time);
 });
 
-
+console.timeEnd()

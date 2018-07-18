@@ -26,8 +26,11 @@ img {
     fill: #004E99; }
   #dv_timeline_uploads .xAxis line {
     stroke: gray; }
+  #dv_timeline_uploads .xAxis text {
+    fill: black;
+    text-anchor: start; }
   #dv_timeline_uploads .yAxis .tick line {
-    stroke: #4d4d4d; }
+    stroke: transparent; }
   #dv_timeline_uploads .yAxis .tick text {
     fill: #999999; }
 

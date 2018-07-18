@@ -21,9 +21,15 @@ h3 {
     h3 {
       font-size: 21px; } }
 
+h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0; }
+
 p {
+  font-size: 14px;
   line-height: 1.5em;
-  margin: 24px 0 0; }
+  margin: 0 0 24px; }
 
 ul {
   line-height: 1.5em; }
@@ -255,12 +261,13 @@ section {
 
 .protocol, .data {
   margin: 0;
-  padding: 12px 0 18px;
+  padding: 18px 0 18px;
   width: calc(66.6666666667% - 33.3333333333px);
   float: left;
   margin-left: 20px;
   left: calc(16.6666666667% - 23.3333333333px + 20px);
-  position: relative; }
+  position: relative;
+  float: none; }
   .protocol::after, .data::after {
     clear: both;
     content: "";
