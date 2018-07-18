@@ -60,7 +60,7 @@ function open_docu(dataviz){
 			}
 			else {
 				protocol_button.removeClass("selected")
-				protocol.show()
+				protocol.hide()
 				docu_container.removeClass("open_panel")
 			}
 		}
@@ -81,7 +81,7 @@ function open_docu(dataviz){
 			}
 			else {
 				data_button.removeClass("selected")
-				data.show()
+				data.hide()
 				docu_container.removeClass("open_panel")
 			}
 		}

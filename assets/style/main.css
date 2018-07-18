@@ -278,7 +278,8 @@ section {
       float: left;
       margin-left: 20px;
       left: calc(0% - 20px + 20px);
-      position: relative; } }
+      position: relative;
+      float: none; } }
   .protocol p, .data p {
     column-count: 2; }
 
@@ -293,13 +294,13 @@ section {
   -o-box-shadow: inset 0px 5px 10px #cccccc;
   -webkit-transition: all 0.4s ease-in-out; }
 
+.docu_container::after, .protocol::after, .data::after {
+  content: ""; }
+
 .open_close_panel {
-  height: 0;
   overflow: hidden; }
 
 .open_panel {
-  min-height: 100px;
-  height: auto;
   overflow: visible;
   -webkit-transition: all 0.4s ease-in-out; }
 

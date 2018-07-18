@@ -27,8 +27,8 @@ img {
   #dv_timeline_uploads .xAxis line {
     stroke: gray; }
   #dv_timeline_uploads .xAxis text {
-    fill: black;
-    text-anchor: start; }
+    fill: #4e4e4e;
+    text-anchor: middle; }
   #dv_timeline_uploads .yAxis .tick line {
     stroke: transparent; }
   #dv_timeline_uploads .yAxis .tick text {

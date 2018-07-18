@@ -30,7 +30,7 @@ $f_xs: $f_m / (1.5 * 2)
 
 $mobile: 500px
 $tablet: 768px
-$desktop: 100px
+$desktop: 1200px
 
 $f_mobile: 0.5
 
@@ -315,14 +315,13 @@ section
 	@media screen and (max-width: $mobile)
 		@include grid-column(12)
 		@include grid-shift(0)
+		float: none
 
 	p
 		column-count: 2
 
 .docu_container
 	margin-bottom: $x * 2
-	// border-top: 1px solid lighten(black, 40%)
-	// border-bottom: 1px solid lighten(black, 40%)
 	font-size: $f_m
 	overflow: hidden
 	background-color: desaturate(lighten($text, 80%), 95%)
@@ -330,15 +329,19 @@ section
 	-webkit-box-shadow: (inset 0px 5px 10px lighten(black, 80%))
 	-moz-box-shadow: (inset 0px 5px 10px lighten(black, 80%))
 	-o-box-shadow: (inset 0px 5px 10px lighten(black, 80%))
-	-webkit-transition: all 0.4s ease-in-out	
+	-webkit-transition: all 0.4s ease-in-out
+	//min-height: 100px
+
+.docu_container::after, .protocol::after, .data::after
+	content: ""
 
 .open_close_panel
-	height: 0
+	//height: 0
 	overflow: hidden
 
 .open_panel
-	min-height: 100px
-	height: auto
+	//min-height: 100px
+	//height: 0
 	overflow: visible
 	-webkit-transition: all 0.4s ease-in-out
 

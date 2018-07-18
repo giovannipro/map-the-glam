@@ -66,6 +66,8 @@ function page_size(loading_time){
 	console.log("kbytes: " + kbytes.toFixed(1) + " (max 2000)" );
 	console.log("loading: " + loading_time + "ms (max 2000ms)");
 
+	console.groupEnd();
+
 }
 
 $( document ).ready(function() {
