@@ -1,5 +1,5 @@
 # Map the GLAM
-Visualizing the contributions of cultural institutions in Wikimedia Projects.
+Visualizing the contributions of ETH Library to Wikipedia
 
 ## Installation
 - Go to the project folder in your computer

@@ -276,7 +276,7 @@ function uploads_timeline(){
 					.text(toltip_sa)
 					// .attr("transform","translate(20,30)")
 
-				console.log(mouse_x)
+				// console.log(mouse_x)
 			}
 
 			d3.select("#dv_uploads_timeline")

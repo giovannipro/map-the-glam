@@ -33,11 +33,20 @@ img
 .yAxis .domain
 	stroke: transparent
 
+.dv
+	//margin-top: $x*5
+	clear: both
+	position: relative
+	//top: $x*5
+
+.dv:after
+	content: ""
+
 //	---------------------------
 //	uploads timeline
 
 #container_dv_uploads_timeline
-	margin-top: $x * 5
+	//margin-top: $x * 5
 
 	p
 		text-align: center
@@ -127,6 +136,9 @@ img
 #dv_pictures_timeline
 	background-color: $background_dv
 	height: $x*20 //60vh
+
+	.yAxis text
+		fill: $gray
 
 
 

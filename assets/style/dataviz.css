@@ -11,12 +11,17 @@ img {
 .yAxis .domain {
   stroke: transparent; }
 
-#container_dv_uploads_timeline {
-  margin-top: 60px; }
-  #container_dv_uploads_timeline p {
-    text-align: center;
-    margin-top: 12px;
-    font-size: 9.3333333333px; }
+.dv {
+  clear: both;
+  position: relative; }
+
+.dv:after {
+  content: ""; }
+
+#container_dv_uploads_timeline p {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 9.3333333333px; }
 
 #dv_uploads_timeline {
   height: 240px;
@@ -100,6 +105,8 @@ img {
 #dv_pictures_timeline {
   background-color: #efefef;
   height: 240px; }
+  #dv_pictures_timeline .yAxis text {
+    fill: #4e4e4e; }
 
 #dv_spread {
   height: 60vh;
