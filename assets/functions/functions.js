@@ -1,8 +1,46 @@
 var baseurl = window.location.href;
-var container = "#dv_timeline_uploads";
 var transition = 300;
-//var baseurl = document.location.origin;
-//console.log(baseurl)
+var start = new Date();
+
+var curve = [
+	"d3.curveStep",
+	"d3.curveStepBefore",
+	"d3.curveStepAfter",
+	"d3.curveBasis",
+	"d3.curveCardinal",
+	"d3.curveMonotoneX",
+	"d3.curveCatmullRom"
+]
+
+var easing = [
+	"easeElastic",
+	"easeBounce",
+	"easeLinear",
+	"easeSin",
+	"easeQuad",
+	"easeCubic",
+	"easePoly",
+	"easeCircle",
+	"easeExp",
+	"easeBack",
+	"easeExpOut",
+	"easeExpInOut",
+	"easeCircleOut"
+];
+
+var colors = {
+	item_a:"hsl(196, 96%, 40%)",
+	item_b:"hsl(196, 96%, 30%)",
+	item_c:"hsl(196, 96%, 20%)",
+	a:"red",
+	b:"blue",
+	c:"green",
+	d:"#29b29d",
+	e:"#0686da",
+	f:"#ef9227",
+	g:"#84c233",
+	myAxis:"#636060"
+};
 
 function header(){
 	var header_path = "views/_tpl/header_main.html"
@@ -92,23 +130,79 @@ function open_docu(dataviz){
 	})
 }
 
-var start = new Date();
+function on_scroll(){
+	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+	var width = $( document ).width()
+	var menu = $(".vis_invis")
+	var header = $("header")
+	var home = $("#home")
+
+	if (width > 800){
+		if (scrollTop > 120) {
+			menu.addClass("visible");
+			header.addClass("header_visible");
+			//console.log(scrollTop);
+		}
+		else {
+			menu.removeClass("visible");
+			header.removeClass("header_visible");
+		}
+	}
+	else {
+		if (scrollTop > 20) {
+			menu.addClass("visible");
+			header.addClass("header_visible");	
+		}
+		else {
+			menu.removeClass("visible");
+			header.removeClass("header_visible");
+		}
+	}
+}
+
+function menu() {
+	var nav = document.getElementById("mySidenav")
+	//console.log(nav)
+
+	function openNav() {
+		$("#open_nav").on("click", function(){
+			nav.style.left = "0px";
+			//console.log("open nav")
+		});
+	}
+
+	function closeNav() {
+		$("#close_nav").on("click", function(){
+			nav.style.left = "-250px";
+			//console.log("close nav")
+
+			$("a").on("click", function(){
+				nav.style.left = "0px";
+			})
+		})
+	}
+
+	openNav();
+	closeNav();
+}
+
+function page_size(loading_time){
+	
+	console.group("website performance");
+
+	var dom_elements = $('*').length;
+	console.log("DOM elements: " + dom_elements); 
+
+	var bytes = $('html').html().length,
+		kbytes = bytes / 1024;
+	console.log("kbytes: " + kbytes.toFixed(1) + " (max 2000)" );
+	console.log("loading: " + loading_time + "ms (max 2000ms)");
+
+	console.groupEnd();
+
+}
 
 $( document ).ready(function() {
-	header();
-	footer();
-	
-	open_docu("glam_map");
-	open_docu("timeline_uploads");
-	open_docu("category_network");
-	open_docu("size");
-	open_docu("spread");
-	open_docu("lang");
-	open_docu("page_views");
-
-
-	loading_time = new Date() - start;
-	page_size(loading_time);
+	setTimeout(menu,300) // I give the javascript the time to load the nav
+	window.addEventListener("scroll", on_scroll);
 });
-
-console.timeEnd()
