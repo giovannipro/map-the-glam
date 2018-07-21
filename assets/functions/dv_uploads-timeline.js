@@ -1,5 +1,5 @@
 function uploads_timeline(){
-	var container = "#dv_timeline_uploads";
+	var container = "#dv_uploads_timeline";
 	
 	var window_w = $("body").outerWidth(),
 		window_h = $(container).height();
@@ -16,7 +16,7 @@ function uploads_timeline(){
 	function render(width){
 		var svg = d3.select(container)
 			.append("svg")
-			.attr("id", "svg_timeline_uploads")
+			.attr("id", "svg_uploads_timeline")
 			.attr("width", width + (margin.left + margin.right))
 			.attr("height",height + (margin.top + margin.bottom))
 
@@ -24,7 +24,7 @@ function uploads_timeline(){
 			.attr("class", "d3_plot")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-		d3.tsv("assets/data/timeline_uploads.tsv", function (error, data) { // test timeline_uploads
+		d3.tsv("assets/data/uploads_timeline.tsv", function (error, data) { // test timeline_uploads
 			if (error) throw error;
 
 			var parseTime = d3.timeParse("%Y-%m");
@@ -85,16 +85,11 @@ function uploads_timeline(){
     			])
     			.domain(data.columns.slice(1))
 
-			// var area_0 = d3.area()
-			// 	.x(function(d, i) { return  x_scale(0) }) 
-			// 	.y0(function(d) { return y_scale(0) })
-			// 	.y1(function(d) { return y_scale(0) })
-
-			var area = d3.area()
-				.x(function(d, i) { return  x_scale(d.data.date) }) 
-				.y0(function(d) { return y_scale(d[0]) })
-				.y1(function(d) { return y_scale(d[1]) })//y_scale(d[1]) })
-				.curve (d3.curveBasis)
+			// var area = d3.area()
+			// 	.x(function(d, i) { return  x_scale(d.data.date) }) 
+			// 	.y0(function(d) { return y_scale(d[0]) })
+			// 	.y1(function(d) { return y_scale(d[1]) })//y_scale(d[1]) })
+			// 	.curve (d3.curveBasis)
 
 			var license_box = plot.append("g")
 				.attr("class","legend")
@@ -107,6 +102,11 @@ function uploads_timeline(){
 					return d.key
 				})
 				.attr("opacity",1)
+
+			// var area_0 = d3.area()
+			// 	.x(function(d, i) { return  x_scale(0) }) 
+			// 	.y0(function(d) { return y_scale(0) })
+			// 	.y1(function(d) { return y_scale(0) })
 
 			// area
 			/*license_box.append("path")
@@ -127,6 +127,7 @@ function uploads_timeline(){
 			// https://bl.ocks.org/mbostock/1134768
 			// https://bl.ocks.org/mbostock/1134768
 			// https://bl.ocks.org/mjfoster83/7c9bdfd714ab2f2e39dd5c09057a55a0
+
 			var y_b = d3.scaleLinear()
 				.domain([0,yMax])
 				.rangeRound([height, 0]);
@@ -138,26 +139,9 @@ function uploads_timeline(){
 			 //  	})
 
 			var bar = bars_group.selectAll("bars")
-				.data(stack_data) //d3.stack().keys(keys)(stack_data))
+				.data(stack_data)
 				.enter()
 				.append("g")
-				// .attr("class", function(d) {
-				// 	return d.key
-				// })
-				// .style("fill", function(d){
-				// 	if (d.key == "public_domain"){
-				// 		return colors.items
-				// 	}
-				// 	else if (d.key == "cc_by_sa_4") {
-				// 		return colors.b
-				// 	}
-				// 	else if (d.key == "cc_by_4") {
-				// 		return colors.c
-				// 	}
-				// 	else {
-				// 		return "red"
-				// 	}
-				// })
 				.attr("fill", function(d) { return z(d.key); })
 				.selectAll("rect")
 				.data(function(d) { return d; })
@@ -195,7 +179,7 @@ function uploads_timeline(){
 				.attr("fill", colors.myAxis)
 				// .transition()
 				// .delay(transition)
-				.call(d3.axisBottom(x_b) // x_b x_scale
+				.call(d3.axisBottom(x_b)
 					.tickFormat(d3.timeFormat("%m.%y")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
 					.tickSize(0)
 					.ticks(o_ticks)
@@ -225,18 +209,18 @@ function uploads_timeline(){
 
 			var legend_box = highlight_box.append("g")
 				.attr("transform","translate(10,30)")
-				.attr("id","toltip_timeline_uploads")
+				.attr("id","toltip_uploads_timeline")
 				
 			// legend_box.append("svg:tspan")
 			legend_box.append("text")
-				.attr("id","timeline_uploads_pd")
+				.attr("id","uploads_timeline_pd")
 
 			legend_box.append("text")
-				.attr("id","timeline_uploads_by")
+				.attr("id","uploads_timeline_by")
 				.attr("transform","translate(0,25)")
 
 			legend_box.append("text")
-				.attr("id","timeline_uploads_sa")
+				.attr("id","uploads_timeline_sa")
 				.attr("transform","translate(0,50)")
 
 			var highlight_rect = highlight_box.append("rect")
@@ -246,7 +230,7 @@ function uploads_timeline(){
                 .attr("height", window_h)
            		.style("fill-opacity", 0.4)
            		.style("fill", "white")
-           		.attr("id","highlightRect_timeline_uploads");
+           		.attr("id","highlightRect_uploads_timeline");
 
 			var bisectDate = d3.bisector(function(d) { return d.date; }).left;
 			
@@ -268,44 +252,44 @@ function uploads_timeline(){
       			cc_by = d["cc_by_4"]
       			pd = d["public_domain"]
 
-      			d3.select("#line_timeline_uploads")
+      			d3.select("#line_uploads_timeline")
       				.attr("x1", mouse_x)
 					.attr("y1", 0)
 					.attr("x2", mouse_x)
 					.attr("y2", height)
 					.attr("stroke","red");
 
-				// var bar_width = width/(data_length-1)
-				d3.select("#highlightRect_timeline_uploads")
+				d3.select("#highlightRect_uploads_timeline")
 					.attr("x", roundTo(mouse_x,bar_width)-bar_width)
-					// console.log(mouse_x,bar_width)
-
+				
 				toltip_pd = "pd: " + pd
 				toltip_by = "cc-by: " + cc_by
 				toltip_sa = "cc-by-sa: " + cc_sa
 					
-				d3.select("#timeline_uploads_pd")
+				d3.select("#uploads_timeline_pd")
 					.text(toltip_pd)
 
-				d3.select("#timeline_uploads_by")
+				d3.select("#uploads_timeline_by")
 					.text(toltip_by)
 
-				d3.select("#timeline_uploads_sa")
+				d3.select("#uploads_timeline_sa")
 					.text(toltip_sa)
 					// .attr("transform","translate(20,30)")
+
+				console.log(mouse_x)
 			}
 
-			d3.select('svg')
-				.on('mousemove', mousemove);
+			d3.select("#dv_uploads_timeline")
+				.on("mousemove", mousemove);
 		})
 	}
 	render(width);
 
 	function resize(){
-		var container = "#dv_timeline_uploads",
+		var container = "#dv_uploads_timeline",
 			width = $(container).outerWidth() - (margin.left + margin.right);
-		
-		$("#svg_timeline_uploads").remove()	
+			// console.log(width)
+		$("#svg_uploads_timeline").remove()	
 
 		render(width);
 	}

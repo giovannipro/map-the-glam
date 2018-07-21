@@ -6,8 +6,8 @@ $( document ).ready(function() {
 	pictures_timeline();
 	size();
 
-	open_docu("glam_map");
-	open_docu("timeline_uploads");
+	// open_docu("pictures_timeline");
+	open_docu("uploads_timeline");
 	open_docu("category_network");
 	open_docu("size");
 	open_docu("spread");

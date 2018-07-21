@@ -11,27 +11,27 @@ img {
 .yAxis .domain {
   stroke: transparent; }
 
-#container_dv_timeline_uploads {
+#container_dv_uploads_timeline {
   margin-top: 60px; }
-  #container_dv_timeline_uploads p {
+  #container_dv_uploads_timeline p {
     text-align: center;
     margin-top: 12px;
     font-size: 9.3333333333px; }
 
-#dv_timeline_uploads {
+#dv_uploads_timeline {
   height: 240px;
   overflow-x: auto;
   overflow-y: hidden; }
-  #dv_timeline_uploads .uploads {
+  #dv_uploads_timeline .uploads {
     fill: #004E99; }
-  #dv_timeline_uploads .xAxis line {
+  #dv_uploads_timeline .xAxis line {
     stroke: gray; }
-  #dv_timeline_uploads .xAxis text {
+  #dv_uploads_timeline .xAxis text {
     fill: #4e4e4e;
     text-anchor: middle; }
-  #dv_timeline_uploads .yAxis .tick line {
+  #dv_uploads_timeline .yAxis .tick line {
     stroke: transparent; }
-  #dv_timeline_uploads .yAxis .tick text {
+  #dv_uploads_timeline .yAxis .tick text {
     fill: #999999; }
 
 #dv_category_network {
@@ -96,6 +96,10 @@ img {
         margin-left: 20px;
         left: calc(0% - 20px + 20px);
         position: relative; } }
+
+#dv_pictures_timeline {
+  background-color: #efefef;
+  height: 240px; }
 
 #dv_spread {
   height: 60vh;

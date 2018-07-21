@@ -34,9 +34,9 @@ img
 	stroke: transparent
 
 //	---------------------------
-//	Specific dataviz
+//	uploads timeline
 
-#container_dv_timeline_uploads
+#container_dv_uploads_timeline
 	margin-top: $x * 5
 
 	p
@@ -44,7 +44,7 @@ img
 		margin-top: $x
 		font-size: $f_s
 
-#dv_timeline_uploads
+#dv_uploads_timeline
 	// width: 100%
 	height: $x * 20
 	overflow-x: auto
@@ -69,6 +69,9 @@ img
 		text
 			fill: lighten(black, 60%)
 
+//	---------------------------
+//	category_network
+
 #dv_category_network
 	height: 80vh
 	background-color: $background_dv
@@ -78,6 +81,9 @@ img
 		position: relative
 		display: block
 		top: -50px
+
+//	---------------------------
+//	size
 
 #dv_size
 	width: 100%
@@ -114,6 +120,19 @@ img
 		@media screen and (max-width: $tablet)
 			@include grid-column(12)
 			@include grid-shift(0)
+
+//	---------------------------
+//	pictures timeline
+
+#dv_pictures_timeline
+	background-color: $background_dv
+	height: $x*20 //60vh
+
+
+
+//	---------------------------
+//	
+
 
 #dv_spread
 	height: 60vh
