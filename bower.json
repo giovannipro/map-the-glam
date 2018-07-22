@@ -1,7 +1,7 @@
 {
   "name": "Map the GLAM",
-  "homepage": "http://www.gprofeta.it/visual-tools-for-glams/index.php?title=Main_Page",
-  "description": "Visualizing the contributions of cultural institutions in Wikimedia Projects",
+  "homepage": "http://www.gprofeta.it/map-the-glam/",
+  "description": "Visualising the contributions of ETH Library to Wikipedia",
   "version": "0.0.0",
   "authors": [
     "Giovanni Profeta"
@@ -11,7 +11,9 @@
   "dependencies": {
     "jquery": "#3.1.1",
     "d3": "4.4.0",
-    "neat": "2.0.0"
+    "neat": "2.0.0",
+    "handlebars": "4.0.11",
+    "isotope": "3.0.6"
   },
   "keywords": [
     "Cultural institutions",

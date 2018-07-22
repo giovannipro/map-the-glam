@@ -28,11 +28,11 @@ $f_l: $f_m * (1.5 * 1)
 $f_s: $f_m / (1.5 * 1)
 $f_xs: $f_m / (1.5 * 2)
 
-$mobile: 500px
+$smartphone: 500px
 $tablet: 768px
 $desktop: 1200px
 
-$f_mobile: 0.5
+$f_smartphone: 0.5
 
 // ---------------------------
 //	Utility
@@ -45,21 +45,21 @@ $f_mobile: 0.5
 h1
 	font-size: $f_xxl
 	margin: ($f_m * 3) 0 0
-	@media screen and (max-width: $mobile)
-		font-size: $f_xl * $f_mobile
+	@media screen and (max-width: $smartphone)
+		font-size: $f_xl * $f_smartphone
 
 h2
 	font-size: $f_l
 	font-weight: bold
 	margin: 0.5em 0 0
-	@media screen and (max-width: $mobile)
-		font-size: $f_xl * $f_mobile
+	@media screen and (max-width: $smartphone)
+		font-size: $f_xl * $f_smartphone
 h3
 	font-size: $f_l
 	font-weight: bold
 	margin: 0.5em 0
-	@media screen and (max-width: $mobile)
-		font-size: $f_xl * $f_mobile
+	@media screen and (max-width: $smartphone)
+		font-size: $f_xl * $f_smartphone
 
 h4
 	font-size: $f_m
@@ -102,7 +102,7 @@ fieldset
 	margin: 0.2em 0 0
 
 .small_title
-	@media screen and (max-width: $mobile)
+	@media screen and (max-width: $smartphone)
 		display: none
 
 .by
@@ -112,7 +112,7 @@ fieldset
 	column-count: 2
 	margin: ($x * 2) 0 ($x * 4)
 
-	@media screen and (max-width: $mobile)
+	@media screen and (max-width: $smartphone)
 		column-count: 1
 
 	a
@@ -134,7 +134,7 @@ body
 	@include grid-column(8)
 	@include grid-shift(2)
 	
-	@media screen and (max-width: $mobile)
+	@media screen and (max-width: $smartphone)
 		@include grid-column(12)
 		@include grid-shift(0)
 
@@ -184,7 +184,7 @@ section
 	@include grid-column(12)
 	
 
-	@media screen and (max-width: $mobile)
+	@media screen and (max-width: $smartphone)
 		padding: 5px
 
 	.open_menu
@@ -216,7 +216,7 @@ section
 			@include grid-column(8)
 			@include grid-shift(2)
 			
-		@media screen and (max-width: $mobile)
+		@media screen and (max-width: $smartphone)
 			@include grid-column(12)
 			@include grid-shift(0)
 
@@ -311,7 +311,7 @@ section
 	@include grid-shift(2)
 	float: none
 
-	@media screen and (max-width: $mobile)
+	@media screen and (max-width: $smartphone)
 		@include grid-column(12)
 		@include grid-shift(0)
 		float: none
@@ -351,7 +351,7 @@ section
 		cursor: pointer
 		border: 3px solid transparent // $background
 		font-size: $f_m
-		padding: $x * 2 $x * 2 $x * 2 0 
+		padding: $x*2 $x $x*2 0 
 
 	button:hover
 		text-decoration: underline
@@ -361,6 +361,7 @@ section
 		font-weight: bold
 		//font-color: darken($text, 30%)
 		//border-bottom: 5x solid $background_docu
+		background-color: desaturate(lighten($text, 85%), 95%)
 
 .docu
 	.full_container

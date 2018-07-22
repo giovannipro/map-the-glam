@@ -1,4 +1,6 @@
 var container = "#dv_pictures_timeline";
+	mobile_w = 425,
+	tablet_w = 768;
 
 function pictures_timeline(){
 	// console.log("pictures_timeline")
@@ -32,6 +34,9 @@ function pictures_timeline(){
 			
 			data.forEach(function (d) {
 				d.files = +d.files;
+				// if (d.files==0){
+				// 	return 0.6
+				// }
 			})
 			// console.log(data)
 
@@ -65,7 +70,10 @@ function pictures_timeline(){
 				.enter()
 				.append("rect")
 				.attr("class",function(d){
-					return "bar " + d.decade + " " + d.files
+					return "bar" // + d.files
+				})
+				.attr("id",function(d){
+					return d.decade
 				})
 				.attr("x",function(d,i){
 					return i*bar_width
@@ -97,12 +105,10 @@ function pictures_timeline(){
 				);
 
 			// xAxis
-			var mobile_w = 425,
-				table_w = 768;
-			if (width > table_w){
+			if (width > tablet_w){
 				o_ticks = 2
 			}
-			else if (width > mobile_w && width <= table_w) {
+			else if (width > mobile_w && width <= tablet_w) {
 				o_ticks = 3
 			}
 			else {
@@ -143,11 +149,126 @@ function pictures_timeline(){
 				.on("mouseover",mouseover)
 			d3.selectAll(".bar")
 				.on("mouseout",mouseout)
-					
 		})
 	}
-	render(width)
+	render(width);
 
+	function authors_chart(){
+		var target = $("#authors_box"),
+			tpl = "assets/tpl/authors.tpl";
+			data_source_start = "assets/data/authors_all.json";
+			target_height =  ($("#authors").height()) - 80;
+
+			if (width > tablet_w){
+				target_height = target_height
+			}
+			else if (width > mobile_w && width <= tablet_w) {
+				target_height = target_height/1.5
+			}
+			else {
+				target_height = target_height/3
+			}
+			// console.log(target_height)
+
+		function isotope(){
+			$(".authors_grid").isotope({
+				itemSelector: ".author_box",
+				layoutMode: 'masonry',
+				sortBy : 'caratteristica'// random
+			});
+		//console.log('isotope')
+		};
+
+		$.get(tpl, function(tpl) {
+
+			// $(".bar").click(function() {
+			 	var id = $(this).attr("id");
+
+			 	if (id_box != undefined) {
+			 		var id_box = "<div class='decade_box'>" + id + "</div>"
+			 	}
+			 	else {
+			 		var id_box = "<div class='decade_box'>" + "1550-2009" + "</div>"
+			 	}
+			 	
+			 	target.empty();
+
+			 	$.getJSON(data_source_start, function(data) {
+					var template = Handlebars.compile(tpl);
+						sorted_data = data.sort(function (a, b) {
+							return b.pictures - a.pictures;
+						})
+						// console.log(sorted_data)
+
+						var max = 0;                
+						$.map(data, function (obj) {
+							// console.log(obj)
+							if (obj.pictures > max){
+						  		max = obj.pictures;
+						  		// console.log(max)
+							}
+						});
+
+						$.each(data, function(i,v){
+							v["max_val"] = max;
+							v["max_height"] = target_height;
+						})
+						
+					$("#decade_box").html(id_box)
+					$(target).html(template(sorted_data));
+
+					isotope();
+				})
+			 // })
+		})
+
+		$.get(tpl, function(tpl) {
+
+			$(".bar").click(function() {
+			 	var id = $(this).attr("id");
+			 	data_source = "assets/data/authors_" + id + ".json";
+
+			 	if (id_box != "undefined") {
+			 		var id_box = "<div class='decade_box'>" + id + "</div>"
+			 	}
+			 	else {
+			 		var id_box = "<div class='decade_box'>" + "1550-2009" + "</div>"
+			 	}
+			 	// console.log(id_box)
+			 	
+			 	target.empty();
+
+			 	$.getJSON(data_source, function(data) {
+					var template = Handlebars.compile(tpl);
+						sorted_data = data.sort(function (a, b) {
+							return b.pictures - a.pictures;
+						})
+						// console.log(sorted_data)
+
+						var max = 0;                
+						$.map(data, function (obj) {
+							// console.log(obj)
+							if (obj.pictures > max){
+						  		max = obj.pictures;
+						  		// console.log(max)
+							}
+						});
+
+						$.each(data, function(i,v){
+							v["max_val"] = max;
+							v["max_height"] = target_height;
+						})
+
+					$("#decade_box").html(id_box)
+					$(target).html(template(sorted_data));
+
+					isotope();
+				})
+			 })
+		})
+	}
+	authors_chart();
+	
 	function resize(){
 		// var container = "#dv_pictures_timeline",
 			width = $(container).outerWidth() - (margin.left + margin.right);
@@ -156,6 +277,6 @@ function pictures_timeline(){
 
 		render(width);
 	}
-
 	window.addEventListener("resize", resize);
+
 }

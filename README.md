@@ -1,5 +1,5 @@
 # Map the GLAM
-Visualizing the contributions of ETH Library to Wikipedia
+Visualising the contributions of ETH Library to Wikipedia
 
 ## Installation
 - Go to the project folder in your computer
@@ -25,6 +25,7 @@ Visualizing the contributions of ETH Library to Wikipedia
 -	[Neat](http://neat.bourbon.io/)
 -	[D3](https://d3js.org/)
 -	[Handlebars](http://handlebarsjs.com/)
+-	[Isotope](https://isotope.metafizzy.co/)
 
 ### Bower (install and update packages)
 -	cd < path_to_the_folder >

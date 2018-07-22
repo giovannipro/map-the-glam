@@ -10,9 +10,19 @@ $f_m: 14px
 
 $gray: #4e4e4e
 
-$f_s: $f_m / (1.5 * 1)
+//$f_s: $f_m / (1.5 * 1)
 
-$mobile: 500px
+
+
+$f_xxl: $f_m * (1.5 * 3)
+$f_xl: $f_m * (1.5 * 2)
+$f_l: $f_m * (1.5 * 1)
+$f_m: 14px
+$f_s: $f_m / (1.5 * 1)
+$f_xs: $f_m / (1.5 * 2)
+
+
+$smartphone: 500px
 $tablet: 768px
 $desktop: 100px
 
@@ -135,12 +145,56 @@ img
 
 #dv_pictures_timeline
 	background-color: $background_dv
-	height: $x*20 //60vh
+	height: 30vh // $x*20 60vh
 
 	.yAxis text
 		fill: $gray
 
+#authors
+	height: auto //60vh
+	min-height: 60vh
+	margin-top: $x*3	
 
+	h4
+		@include grid-column(12)	
+		@include grid-column(12)	
+
+	#authors_box
+		//@include grid-column(12)
+		clear: both
+
+		ul
+			list-style: none
+			//margin: 0
+			//padding: 0
+			//display: flex
+			//flex-direction: row
+			//flex-wrap: wrap
+			//justify-content: space-between
+			//align-content: flex-start
+			font-size: $f_s
+
+		.author_box
+			display: block
+			//@include grid-column(3)
+			width: 21%
+			background-color: #acacb1
+			margin: 0.5%
+			padding: 0.5% // 2%
+			cursor: pointer
+
+			@media screen and (max-width: $tablet)
+				width: 43%
+
+			@media screen and (max-width: $smartphone)
+				width: 77%
+
+	#decade_box
+		@include grid-column(12)
+		clear: both
+
+		.decade_box
+			@include grid-column(12)
 
 //	---------------------------
 //	

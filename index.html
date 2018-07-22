@@ -15,7 +15,7 @@
 
 		<section class="container" id="home">
 			<h1>Map the GLAM</h1>
-			<h2 class="subtitle">Visualizing the contributions of ETH Library to Wikipedia</h2>
+			<h2 class="subtitle">Visualising the contributions of ETH Library to Wikipedia</h2>
 			<!-- <p class="by">by Giovanni Profeta</p> -->
 			<p class="description">
 				Recently, several cultural institutions (also called GLAMs-Galleries, Libraries, Archives, Museums) have released in Wikipedia and other Wikimedia projects a large amount of their collections with the aim to make more largely accessible. Within these online platforms, the content is released under the Creative Commons License Attribution-ShareAlike and is shared by both the Wikipedia community and casual users. Through the use of visual representation of data, Map the GLAM attempts to make cultural institutions aware of their impact on the Wikimedia projects. In specific, the project focuses on the ETH Bibliothek, one of the leading libraries in the world in terms of images uploaded in Wikimedia Commons.
@@ -25,7 +25,14 @@
 		<div class="dv dv1">
 			<div class="main_dataviz full_container" id="">
 				<div id="dv_pictures_timeline"></div>
-				<!-- <div id="authors">authors</div> -->
+				<div id="authors">
+					<h4>
+						Authors
+						<span>(see all)</span>
+					</h4>
+					<div id="decade_box"></div>
+					<div id="authors_box"></div>
+				</div>
 			</div>
 			<section class="container">
 				<h3>DV1</h3>
@@ -116,7 +123,7 @@
 					<img id="digital_size" src="assets/img/digital_size.png" width="1000px" height="1000px" class="invisible">
 				</div>
 				<div class="controller">
-					<button id="original_size_button"><!-- style="color:red" -->
+					<button id="original_size_button">
 						Original dimensions
 					</button>
 					<button id="digital_size_button">
@@ -322,9 +329,12 @@
 
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+		<script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
+		<script type="text/javascript" src="bower_components/isotope/dist/isotope.pkgd.min.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_uploads-timeline.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_pictures-timeline.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_size.js"></script>
+		<script type="text/javascript" src="assets/functions/helpers.js"></script>
 		<script type="text/javascript" src="assets/functions/functions.js"></script>
 		<script type="text/javascript" src="assets/functions/main.js"></script>
 	</body>

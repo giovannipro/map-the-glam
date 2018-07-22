@@ -302,11 +302,12 @@ section {
   cursor: pointer;
   border: 3px solid transparent;
   font-size: 14px;
-  padding: 24px 24px 24px 0; }
+  padding: 24px 12px 24px 0; }
 .documentation button:hover {
   text-decoration: underline; }
 .documentation .selected {
-  font-weight: bold; }
+  font-weight: bold;
+  background-color: #ebeced; }
 
 .docu .full_container {
   border-bottom: 1px solid red gray; }

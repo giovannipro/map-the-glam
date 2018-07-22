@@ -2,11 +2,11 @@ $( document ).ready(function() {
 	header();
 	footer();
 	
-	uploads_timeline();
 	pictures_timeline();
+	uploads_timeline();
 	size();
 
-	// open_docu("pictures_timeline");
+	open_docu("pictures_timeline");
 	open_docu("uploads_timeline");
 	open_docu("category_network");
 	open_docu("size");
