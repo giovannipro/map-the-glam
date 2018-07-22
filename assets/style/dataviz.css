@@ -124,7 +124,8 @@ img {
     margin-left: 20px;
     width: calc(100% - 40px);
     float: left;
-    margin-left: 20px; }
+    margin-left: 20px;
+    margin-left: 40px; }
   #authors #authors_box {
     clear: both; }
     #authors #authors_box ul {
@@ -132,8 +133,8 @@ img {
       font-size: 9.3333333333px; }
     #authors #authors_box .author_box {
       display: block;
-      width: 21%;
-      background-color: #acacb1;
+      width: 28.5%;
+      background-color: #9fcdde;
       margin: 0.5%;
       padding: 0.5%;
       cursor: pointer; }
@@ -143,6 +144,12 @@ img {
       @media screen and (max-width: 500px) {
         #authors #authors_box .author_box {
           width: 77%; } }
+      #authors #authors_box .author_box .n_pictures {
+        display: block;
+        float: right;
+        margin-right: 12px; }
+      #authors #authors_box .author_box .author_name {
+        font-weight: bold; }
   #authors #decade_box {
     width: calc(100% - 40px);
     float: left;

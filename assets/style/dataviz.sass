@@ -12,8 +12,6 @@ $gray: #4e4e4e
 
 //$f_s: $f_m / (1.5 * 1)
 
-
-
 $f_xxl: $f_m * (1.5 * 3)
 $f_xl: $f_m * (1.5 * 2)
 $f_l: $f_m * (1.5 * 1)
@@ -164,6 +162,7 @@ img
 	h4
 		@include grid-column(12)	
 		@include grid-column(12)	
+		margin-left: 40px
 
 	#authors_box
 		//@include grid-column(12)
@@ -183,8 +182,8 @@ img
 		.author_box
 			display: block
 			//@include grid-column(3)
-			width: 21%
-			background-color: #acacb1
+			width: 28.5%
+			background-color: #9fcdde // #acacb1
 			margin: 0.5%
 			padding: 0.5% // 2%
 			cursor: pointer
@@ -194,6 +193,14 @@ img
 
 			@media screen and (max-width: $smartphone)
 				width: 77%
+
+			.n_pictures
+				display: block
+				float: right
+				margin-right: $x
+
+			.author_name
+				font-weight: bold
 
 	#decade_box
 		@include grid-column(12)

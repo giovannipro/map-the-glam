@@ -156,7 +156,7 @@ function pictures_timeline(){
 	function authors_chart(){
 		var target = $("#authors_box"),
 			tpl = "assets/tpl/authors.tpl";
-			data_source_start = "assets/data/authors_all.json";
+			data_source_start = "assets/data/authors/authors_all.json";
 			target_height =  ($("#authors").height()) - 80;
 
 			if (width > tablet_w){
@@ -173,12 +173,19 @@ function pictures_timeline(){
 		function isotope(){
 			$(".authors_grid").isotope({
 				itemSelector: ".author_box",
-				layoutMode: 'masonry',
-				sortBy : 'caratteristica'// random
+				layoutMode: "masonry",
+				percentPosition: true,
+				// sortBy: pictures
+				masonry: {
+					gutter: 5, // space between blocks
+					horizontalOrder: true,
+					// fitWidth: true
+				}
 			});
 		//console.log('isotope')
 		};
 
+		// first load
 		$.get(tpl, function(tpl) {
 
 			// $(".bar").click(function() {
@@ -222,11 +229,12 @@ function pictures_timeline(){
 			 // })
 		})
 
+		// load by user
 		$.get(tpl, function(tpl) {
 
 			$(".bar").click(function() {
 			 	var id = $(this).attr("id");
-			 	data_source = "assets/data/authors_" + id + ".json";
+			 	data_source = "assets/data/authors/authors_" + id + ".json";
 
 			 	if (id_box != "undefined") {
 			 		var id_box = "<div class='decade_box'>" + id + "</div>"
@@ -276,6 +284,7 @@ function pictures_timeline(){
 		$("#svg_pictures_timeline").remove()	
 
 		render(width);
+		authors_chart();
 	}
 	window.addEventListener("resize", resize);
 
