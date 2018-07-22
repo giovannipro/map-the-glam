@@ -137,7 +137,8 @@ section {
 .header_full {
   width: calc(100% - 40px);
   float: left;
-  margin-left: 20px; }
+  margin-left: 20px;
+  margin-left: 0; }
   .header_full::after {
     clear: both;
     content: "";
@@ -226,7 +227,7 @@ section {
   float: left; }
 
 .sidenav {
-  height: 100%;
+  height: 120%;
   width: 250px;
   position: fixed;
   left: -250px;
@@ -252,6 +253,57 @@ section {
     cursor: pointer; }
   .sidenav .section_end {
     border-bottom: 1px solid #4e4e4e; }
+
+#close_nav {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+#intro {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #001c26;
+  overflow: hidden;
+  z-index: 2;
+  color: #fcfcfc; }
+  #intro .intro_block {
+    width: calc(66.6666666667% - 33.3333333333px);
+    float: left;
+    margin-left: 20px;
+    left: calc(16.6666666667% - 23.3333333333px + 20px);
+    position: relative;
+    top: 20%;
+    height: 50%; }
+    @media screen and (max-width: 500px) {
+      #intro .intro_block {
+        width: calc(100% - 40px);
+        float: left;
+        margin-left: 20px;
+        left: calc(0% - 20px + 20px);
+        position: relative; } }
+    #intro .intro_block h2 {
+      font-size: 42px; }
+      @media screen and (max-width: 768px) {
+        #intro .intro_block h2 {
+          font-size: 33.6px; } }
+      @media screen and (max-width: 500px) {
+        #intro .intro_block h2 {
+          font-size: 21px; } }
+  #intro .next button {
+    background-color: #fcfcfc;
+    font-size: 14px;
+    margin-top: 24px;
+    padding: 12px 24px;
+    font-weight: bold;
+    position: absolute;
+    bottom: -30px; }
+    @media screen and (max-width: 768px) {
+      #intro .next button {
+        font-size: 11.2px; } }
+    @media screen and (max-width: 500px) {
+      #intro .next button {
+        font-size: 9.3333333333px; } }
 
 .protocol, .data {
   margin: 0;

@@ -11,19 +11,60 @@
 		<link rel="stylesheet" href="assets/style/dataviz.css" />
 	</head>
 	<body>
-		<div id="Intro">
-			<!-- Intro -->
+		<div id="intro">
+			<div class="intro_block" id="intro_1">
+				<h2>In the world, several cultural institutions yearly upload thousands of pictures of their collection to Wikipedia under free licenses.</h2>
+				<div class="next next_1">
+					<button>Next</button>
+				</div>
+			</div>
+			<div class="intro_block invisible" id="intro_2">
+				<h2>Every single image incorporates plenty of data about its technical features and its use on Wikipedia related sister projects.</h2>
+				<div class="next next_2">
+					<button>Next</button>
+				</div>
+			</div>
+			<div class="intro_block invisible" id="intro_3">
+				<h2>Map the GLAM visualizes the collection of the ETH library, a world leading cultural institution in terms of contributions.</h2>
+				<div class="next next_3">
+					<button>Got it</button>
+				</div>
+			</div>
 		</div>
 		<main>
-			<header id="header"></header>
+			<header id="header">
+				<div class="header_full">
+					<div class="open_menu">
+						<button id="open_nav">
+							<span class="vis_invis_icon invisible">&#9776;</span>
+							<span class="invisible vis_invis">Menu</span>
+						</button>
+						<span id="running_headline" class="small_title invisible vis_invis">
+							<strong>Map the GLAM</strong>
+						</span>
+					</div>
+					<div id="mySidenav" class="sidenav">
+						<a class="closebtn" id="close_nav">x</a>
+						<!-- <a href="#" class="section_end">Home</a> -->
+						<a href="#dv_1" class="section_end">The collection</a>
+						<a href="#dv_2" class="section_end">Uploads timeline</a>
+				  		<a href="#dv_3" class="section_end">Image size</a>
+				  		<a href="#dv_4" class="section_end">DV 4</a>
+				  		<a href="#dv_5" class="section_end"">DV 5</a>
+				  		<a href="#dv_6" class="section_end">DV 6</a>
+				  		<a href="#dv_7" class="section_end">DV 7</a>
+				  		<a onclick="intro()" class="section_end">About</a>
+					</div>
+				</div>
+			</header>
 
 			<section class="container" id="home">
 				<h1>Map the GLAM</h1>
 				<h2 class="subtitle">Visualising the contributions of ETH Library to Wikipedia</h2>
 				<!-- <p class="by">by Giovanni Profeta</p> -->
-				<p class="description">
+				<!-- <p class="description">
 					Recently, several cultural institutions (also called GLAMs-Galleries, Libraries, Archives, Museums) have released in Wikipedia and other Wikimedia projects a large amount of their collections with the aim to make more largely accessible. Within these online platforms, the content is released under the Creative Commons License Attribution-ShareAlike and is shared by both the Wikipedia community and casual users. Through the use of visual representation of data, Map the GLAM attempts to make cultural institutions aware of their impact on the Wikimedia projects. In specific, the project focuses on the ETH Bibliothek, one of the leading libraries in the world in terms of images uploaded in Wikimedia Commons.
-				</p>
+				</p> -->
 			</section>
 
 			<div class="dv dv1">
@@ -346,14 +387,80 @@
 				</section>
 			</div>
 
-			<footer class="footer full_container" id="footer"></footer>
+			<footer class="footer full_container" id="footer">
+				<div>
+					<div>
+						<p>
+							<strong>Map the GLAM</strong>
+							<br/>
+							<!-- Visualizing the contributions of cultural institutions in Wikimedia Projects<br/> -->
+							by <a href="https://twitter.com/profeta_g" title="Twitter profile" target="_blank">Giovanni Profeta</a>
+						</p>
+						<br/>
+						<ul>
+							<li>
+								<a href="http://www.supsi.ch/lcv" title="Laboratory of visual culture-Interaction design lab SUPSI" target="_blank">
+									Laboratory of visual culture SUPSI
+								</a>
+							</li>
+							<li>
+								<a href="http://www.densitydesign.org/" title="DensityDesign research lab" target="_blank">
+								DensityDesign
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<strong>Acknowledgement</strong>
+						<ul>
+							<li>
+								<a href="https://uclab.fh-potsdam.de/" title="Urban Complexity Lab" target="_blank">
+									Urban Complexity Lab
+								</li>
+							<li>
+								<a href="https://www.wikimedia.ch/" title="Wikimedia CH" target="_blank">
+									Wikimedia CH
+								</a>
+							</li>
+							<li>
+								<a href="https://www.wikimedia.de/" title="WIkimedia DE" target="_blank">
+									Wikimedia DE
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<p>
+							<strong>License</strong>
+							<br/>
+							Website content: <a href="https://creativecommons.org/licenses/by-sa/4.0/" title="cc-by-sa license" target="_blank">CC-BY-SA</a>.
+							<!-- Attribution-ShareAlike 4.0 International license -->
+							<br/>
+							Source code and scraper: <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GNU license" target="_blank">GNU license</a>.
+							<br/><br/>
+							
+							<a href="https://github.com/giovannipro/map-the-glam" target="_blank" title="GitHub repository">
+								Map the GLAM on GitHub
+							</a>
+						</p>
+					</div>
+					<div>
+						<p>
+							<strong>Contact</strong>
+							<br/>
+							<a href="https://twitter.com/profeta_g" target="_blank" title="Twitter profile">Twitter</a>
+							<!-- mail -->
+						</p>
+					</div>
+				</div>
+			</footer>
 		</main>
 
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
 		<script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
 		<script type="text/javascript" src="bower_components/isotope/dist/isotope.pkgd.min.js"></script>
-		<script type="text/javascript" src="bower_components/moment/moment.js"></script>
+		<!-- <script type="text/javascript" src="bower_components/moment/moment.js"></script> -->
 		<script type="text/javascript" src="assets/functions/dv_uploads-timeline.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_pictures-timeline.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_size.js"></script>

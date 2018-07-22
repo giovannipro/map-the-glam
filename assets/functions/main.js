@@ -1,8 +1,13 @@
 $( document ).ready(function() {
-	// cookie_intro();
+	cookie_intro();
 
-	header();
-	footer();
+	// header();
+	// footer();
+
+	setTimeout(menu,400) // I give the javascript the time to load the nav
+	window.addEventListener("scroll", on_scroll);
+
+	goto_top();
 	
 	pictures_timeline();
 	uploads_timeline();

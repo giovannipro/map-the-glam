@@ -52,6 +52,7 @@ h2
 	font-size: $f_l
 	font-weight: bold
 	margin: 0.5em 0 0
+
 	@media screen and (max-width: $smartphone)
 		font-size: $f_xl * $f_smartphone
 h3
@@ -128,6 +129,7 @@ body
 	font-family: "Open Sans", sans-serif
 	background-color: $background
 	color: $text
+	//overflow: hidden
 	
 .container
 	@include grid-container
@@ -162,11 +164,6 @@ img
 	background-color: $background_dv
 	clear: both
 
-//.secondary_dataviz
-//	background-color: $background_dv
-//	height: auto
-//	clear: both
-
 section
 	margin-top: 20px
 
@@ -182,8 +179,8 @@ section
 	//padding: 5px 
 	@include grid-container
 	@include grid-column(12)
+	margin-left: 0
 	
-
 	@media screen and (max-width: $smartphone)
 		padding: 5px
 
@@ -268,7 +265,7 @@ section
 		// @include grid-column(8)
 
 .sidenav 
-	height: 100%
+	height: 120%
 	width: 250px
 	position: fixed
 	left: -250px
@@ -298,6 +295,62 @@ section
 	
 	.section_end
 		border-bottom: 1px solid $gray
+
+#close_nav
+	padding-top: 0
+	padding-bottom: 0
+
+//	---------------------------
+//	Intro
+
+#intro
+	display: none
+	width: 100%
+	height: 100%
+	position: fixed
+	background-color: $text
+	overflow: hidden
+	z-index: 2
+	color: $background
+
+	.intro_block
+		@include grid-column(8)
+		@include grid-shift(2)
+		//margin-top: 30vh
+		top: 20%
+		height: 50%
+
+		@media screen and (max-width: $smartphone)
+			@include grid-column(12)
+			@include grid-shift(0)
+
+		h2
+			font-size:  $f_xl
+
+			@media screen and (max-width: $tablet)
+				font-size: $f_xl * 0.8
+
+			@media screen and (max-width: $smartphone)
+				font-size: $f_l
+
+	.next
+		//@include grid-column(8)
+		//@include grid-shift(2)
+
+		button
+			background-color: $background
+			font-size:  $f_m
+			margin-top: $x*2
+			padding: $x $x*2
+			font-weight: bold
+			position: absolute
+			bottom: -30px
+
+			@media screen and (max-width: $tablet)
+				font-size: $f_m * 0.8
+
+			@media screen and (max-width: $smartphone)
+				font-size: $f_s
 
 
 //	---------------------------
