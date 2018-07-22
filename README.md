@@ -21,8 +21,8 @@ Visualising the contributions of ETH Library to Wikipedia
 
 ## This project uses:
 -	[Bower](https://bower.io/)
--	[jQuery](https://jquery.com/)
 -	[Neat](http://neat.bourbon.io/)
+-	[jQuery](https://jquery.com/)
 -	[D3](https://d3js.org/)
 -	[Handlebars](http://handlebarsjs.com/)
 -	[Isotope](https://isotope.metafizzy.co/)
@@ -33,5 +33,5 @@ Visualising the contributions of ETH Library to Wikipedia
 -	bower update
 
 ### Neat 
-- 	update sass file
+- 	update the sass file
 -	build the css (cmd + B, on Sublime Text)

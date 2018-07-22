@@ -42,6 +42,22 @@ var colors = {
 	myAxis:"#636060"
 };
 
+function cookie_intro(){
+	
+	function setCookie(c_name,value,exdays){var exdate=new Date();exdate.setDate(exdate.getDate() + exdays);var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());document.cookie=c_name + "=" + c_value;}
+	function getCookie(c_name){var c_value = document.cookie;var c_start = c_value.indexOf(" " + c_name + "=");if (c_start == -1){c_start = c_value.indexOf(c_name + "=");}if (c_start == -1){c_value = null;}else{c_start = c_value.indexOf("=", c_start) + 1;var c_end = c_value.indexOf(";", c_start);if (c_end == -1){c_end = c_value.length;}c_value = unescape(c_value.substring(c_start,c_end));}return c_value;}
+	function delCookie(name){document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';}
+
+	if (!getCookie('first_time')){ // if false
+		setCookie('first_time',true); // if true
+		intro();
+	}
+}
+
+function intro(){
+	console.log("intro")
+}
+
 function header(){
 	var header_path = "views/_tpl/header_main.html"
 	var h_path = baseurl + header_path
@@ -161,27 +177,23 @@ function on_scroll(){
 }
 
 function menu() {
-	var nav = document.getElementById("mySidenav")
-	//console.log(nav)
+	var nav = document.getElementById("mySidenav");
 
 	function openNav() {
 		$("#open_nav").on("click", function(){
 			nav.style.left = "0px";
-			//console.log("open nav")
 		});
 	}
 
 	function closeNav() {
 		$("#close_nav").on("click", function(){
 			nav.style.left = "-250px";
-			//console.log("close nav")
-
-			$("a").on("click", function(){
-				nav.style.left = "0px";
-			})
+		})
+		$(".section_end").on("click", function(){
+			// nav.style.left = "0px";
+			nav.style.left = "-250px";
 		})
 	}
-
 	openNav();
 	closeNav();
 }
@@ -203,6 +215,6 @@ function page_size(loading_time){
 }
 
 $( document ).ready(function() {
-	setTimeout(menu,300) // I give the javascript the time to load the nav
+	setTimeout(menu,400) // I give the javascript the time to load the nav
 	window.addEventListener("scroll", on_scroll);
 });

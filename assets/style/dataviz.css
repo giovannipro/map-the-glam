@@ -18,6 +18,12 @@ img {
 .dv:after {
   content: ""; }
 
+.anchor {
+  height: 40px; }
+
+.anchor:after {
+  content: ""; }
+
 #container_dv_uploads_timeline p {
   text-align: center;
   margin-top: 12px;

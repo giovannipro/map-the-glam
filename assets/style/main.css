@@ -209,7 +209,7 @@ section {
   cursor: pointer;
   border-style: none;
   font-size: 14px;
-  padding: 10px 10px 10px 0; }
+  padding: 13px 10px 10px 0; }
   @media screen and (max-width: 768px) {
     #open_nav {
       width: calc(16.6666666667% - 23.3333333333px);
@@ -230,7 +230,7 @@ section {
   width: 250px;
   position: fixed;
   left: -250px;
-  z-index: 1;
+  z-index: 9;
   top: 0;
   background-color: #001c26;
   overflow-x: hidden;

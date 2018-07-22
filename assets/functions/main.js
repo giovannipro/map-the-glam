@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+	// cookie_intro();
+
 	header();
 	footer();
 	

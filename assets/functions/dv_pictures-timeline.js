@@ -272,7 +272,7 @@ function pictures_timeline(){
 	function resize(){
 		// var container = "#dv_pictures_timeline",
 			width = $(container).outerWidth() - (margin.left + margin.right);
-			console.log(width)
+			// console.log(width)
 		$("#svg_pictures_timeline").remove()	
 
 		render(width);
