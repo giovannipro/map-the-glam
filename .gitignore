@@ -7,13 +7,10 @@ dataviz.css.map
 bower_components
 .sassbuilder-config.json
 
-test.tsv
-test_2.tsv
-
 note.txt
-error.txt
-error_2.txt
+test.tsv
 
 utility.py
 
-images
+**/img
+

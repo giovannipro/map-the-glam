@@ -173,14 +173,17 @@ function pictures_timeline(){
 		function isotope(){
 			$(".authors_grid").isotope({
 				itemSelector: ".author_box",
-				layoutMode: "masonry",
+				layoutMode: "packery", //"packery",
 				percentPosition: true,
+				packery: {
+					gutter: 10
+				},
 				// sortBy: pictures
-				masonry: {
-					gutter: 5, // space between blocks
-					horizontalOrder: true,
-					// fitWidth: true
-				}
+				// masonry: {
+				// 	gutter: 15, // space between blocks
+				// 	horizontalOrder: true,
+				// 	// fitWidth: true
+				// }
 			});
 		//console.log('isotope')
 		};
@@ -197,8 +200,11 @@ function pictures_timeline(){
 			 	else {
 			 		var id_box = "<div class='decade_box'>" + "1550-2009" + "</div>"
 			 	}
+
+			 	var title = "<h4>Authors <span id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</span></h4>"
 			 	
 			 	target.empty();
+			 	$("#decade_box").empty();
 
 			 	$.getJSON(data_source_start, function(data) {
 					var template = Handlebars.compile(tpl);
@@ -221,7 +227,8 @@ function pictures_timeline(){
 							v["max_height"] = target_height;
 						})
 						
-					$("#decade_box").html(id_box)
+					$("#decade_box").append(title);
+					$("#decade_box").append(id_box);
 					$(target).html(template(sorted_data));
 
 					isotope();
@@ -229,7 +236,7 @@ function pictures_timeline(){
 			 // })
 		})
 
-		// load by user
+		// load by user (bars)
 		$.get(tpl, function(tpl) {
 
 			$(".bar").click(function() {
@@ -243,8 +250,11 @@ function pictures_timeline(){
 			 		var id_box = "<div class='decade_box'>" + "1550-2009" + "</div>"
 			 	}
 			 	// console.log(id_box)
+
+			 	var title = "<h4>Authors <span id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</span></h4>"
 			 	
 			 	target.empty();
+			 	$("#decade_box").empty();
 
 			 	$.getJSON(data_source, function(data) {
 					var template = Handlebars.compile(tpl);
@@ -267,7 +277,50 @@ function pictures_timeline(){
 							v["max_height"] = target_height;
 						})
 
-					$("#decade_box").html(id_box)
+					$("#decade_box").append(title);
+					$("#decade_box").append(id_box);
+					$(target).html(template(sorted_data));
+
+					isotope();
+				})
+			 })
+		})
+
+		// $("#all_authors").click(function() {
+		// 	console.log(1)
+		// })
+
+		// load by user (see all)
+		$.get(tpl, function(tpl) {
+
+			$("#all_authors").click(function() {
+			 	data_source = "assets/data/authors/authors_" + authors_all + ".json";
+
+			 	var title = "<h4>Authors <span id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</span></h4>"
+			 	
+			 	target.empty();
+			 	$("#decade_box").empty();
+
+			 	$.getJSON(data_source, function(data) {
+					var template = Handlebars.compile(tpl);
+						sorted_data = data.sort(function (a, b) {
+							return b.pictures - a.pictures;
+						})
+
+						var max = 0;                
+						$.map(data, function (obj) {
+							if (obj.pictures > max){
+						  		max = obj.pictures;
+							}
+						});
+
+						$.each(data, function(i,v){
+							v["max_val"] = max;
+							v["max_height"] = target_height;
+						})
+
+					$("#decade_box").append(title);
+					$("#decade_box").append(id_box);
 					$(target).html(template(sorted_data));
 
 					isotope();

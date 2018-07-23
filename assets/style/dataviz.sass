@@ -149,20 +149,20 @@ img
 
 #dv_pictures_timeline
 	background-color: $background_dv
-	height: 30vh // $x*20 60vh
+	height: 25vh // $x*20 60vh
 
 	.yAxis text
 		fill: $gray
 
 #authors
 	height: auto //60vh
-	min-height: 50vh
+	min-height: 40vh
 	margin-top: $x*3	
 
 	h4
 		@include grid-column(12)	
 		@include grid-column(12)	
-		margin-left: 40px
+		//margin-left: 40px
 
 	#authors_box
 		//@include grid-column(12)
@@ -184,7 +184,7 @@ img
 			//@include grid-column(3)
 			width: 28.5%
 			background-color: #9fcdde // #acacb1
-			margin: 0.5%
+			//margin-bottom: 10px
 			padding: 0.5% // 2%
 			cursor: pointer
 
@@ -205,6 +205,7 @@ img
 	#decade_box
 		@include grid-column(12)
 		clear: both
+		margin-bottom: $x
 
 		.decade_box
 			@include grid-column(12)

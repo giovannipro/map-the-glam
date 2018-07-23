@@ -82,7 +82,7 @@ button
 	background-color: transparent
 
 a, a:visited
-	color: $text
+	color: rgb(3, 111, 150)
 	text-decoration: none
 
 a:hover
@@ -192,42 +192,75 @@ section
 	border-bottom: 1px solid $bar
 	background-color: $background
 
-.footer
+#footer
 	background-color: $text
+	color: white
 	clear: both
-	padding: $x * 1.5 0 $x * 4
+	padding: $x*1.5 0 0
 	z-index: -1
 
-	div div
+	.colophon
 		@include grid-container
-		@include grid-column(2) // 3
-		@include grid-shift(2) // 0
+		margin: 0 0 $x*9
 
-		margin-top: $x * 2
-		color: white
-		z-index: 1
-		font-size: $f_m
+		div
+			@include grid-column(3) // 3
+			@include grid-shift(0) // 0
 
-		@media screen and (max-width: $tablet)
-			font-size: $f_s * 1.2
-			@include grid-column(8)
-			@include grid-shift(2)
-			
-		@media screen and (max-width: $smartphone)
-			@include grid-column(12)
-			@include grid-shift(0)
-
-		p
-			margin: 0
-
-		ul
-			list-style: none
-			margin: 0
-			padding: 0
-
-		a
+			margin-top: $x
 			color: white
-			//text-decoration: underline
+			z-index: 1
+			font-size: $f_m
+
+			@media screen and (max-width: $tablet)
+				font-size: $f_s * 1.2
+				@include grid-column(8)
+				@include grid-shift(2)
+				margin-bottom: $x*4
+				
+			@media screen and (max-width: $smartphone)
+				@include grid-column(12)
+				@include grid-shift(0)
+
+		img:nth-child(1)
+			@media screen and (max-width: $tablet)
+				max-width: 50%
+
+		img:nth-child(2)
+			@media screen and (max-width: $tablet)
+				max-width: 25%
+
+	.contact
+		border-top: 1px solid $background
+		@include grid-container
+		padding: $x 0 $x
+		margin-bottom: $x*2
+		font-size: $f_s * 1.2
+
+		div
+			@media screen and (max-width: $tablet)
+				margin-bottom: $x*3
+
+		div:nth-child(1)
+			@include grid-column(5)
+
+		div:nth-child(2)
+			@include grid-column(3)
+			@include grid-shift(4)
+			//text-align: right
+
+
+	p
+		margin: 0
+
+	ul
+		list-style: none
+		margin: 0
+		padding: 0
+
+	a
+		color: white
+		//text-decoration: underline
 
 
 //	---------------------------

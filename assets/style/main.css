@@ -41,7 +41,7 @@ button {
   background-color: transparent; }
 
 a, a:visited {
-  color: #001c26;
+  color: #036f96;
   text-decoration: none; }
 
 a:hover {
@@ -153,48 +153,80 @@ section {
   border-bottom: 1px solid #cccdcf;
   background-color: #fcfcfc; }
 
-.footer {
+#footer {
   background-color: #001c26;
+  color: white;
   clear: both;
-  padding: 18px 0 48px;
+  padding: 18px 0 0;
   z-index: -1; }
-  .footer div div {
-    width: calc(16.6666666667% - 23.3333333333px);
-    float: left;
-    margin-left: 20px;
-    left: calc(16.6666666667% - 23.3333333333px + 20px);
-    position: relative;
-    margin-top: 24px;
-    color: white;
-    z-index: 1;
-    font-size: 14px; }
-    .footer div div::after {
+  #footer .colophon {
+    margin: 0 0 108px; }
+    #footer .colophon::after {
+      clear: both;
+      content: "";
+      display: block; }
+    #footer .colophon div {
+      width: calc(25% - 25px);
+      float: left;
+      margin-left: 20px;
+      left: calc(0% - 20px + 20px);
+      position: relative;
+      margin-top: 12px;
+      color: white;
+      z-index: 1;
+      font-size: 14px; }
+      @media screen and (max-width: 768px) {
+        #footer .colophon div {
+          font-size: 11.2px;
+          width: calc(66.6666666667% - 33.3333333333px);
+          float: left;
+          margin-left: 20px;
+          left: calc(16.6666666667% - 23.3333333333px + 20px);
+          position: relative;
+          margin-bottom: 48px; } }
+      @media screen and (max-width: 500px) {
+        #footer .colophon div {
+          width: calc(100% - 40px);
+          float: left;
+          margin-left: 20px;
+          left: calc(0% - 20px + 20px);
+          position: relative; } }
+    @media screen and (max-width: 768px) {
+      #footer .colophon img:nth-child(1) {
+        max-width: 50%; } }
+    @media screen and (max-width: 768px) {
+      #footer .colophon img:nth-child(2) {
+        max-width: 25%; } }
+  #footer .contact {
+    border-top: 1px solid #fcfcfc;
+    padding: 12px 0 12px;
+    margin-bottom: 24px;
+    font-size: 11.2px; }
+    #footer .contact::after {
       clear: both;
       content: "";
       display: block; }
     @media screen and (max-width: 768px) {
-      .footer div div {
-        font-size: 11.2px;
-        width: calc(66.6666666667% - 33.3333333333px);
-        float: left;
-        margin-left: 20px;
-        left: calc(16.6666666667% - 23.3333333333px + 20px);
-        position: relative; } }
-    @media screen and (max-width: 500px) {
-      .footer div div {
-        width: calc(100% - 40px);
-        float: left;
-        margin-left: 20px;
-        left: calc(0% - 20px + 20px);
-        position: relative; } }
-    .footer div div p {
-      margin: 0; }
-    .footer div div ul {
-      list-style: none;
-      margin: 0;
-      padding: 0; }
-    .footer div div a {
-      color: white; }
+      #footer .contact div {
+        margin-bottom: 36px; } }
+    #footer .contact div:nth-child(1) {
+      width: calc(41.6666666667% - 28.3333333333px);
+      float: left;
+      margin-left: 20px; }
+    #footer .contact div:nth-child(2) {
+      width: calc(25% - 25px);
+      float: left;
+      margin-left: 20px;
+      left: calc(33.3333333333% - 26.6666666667px + 20px);
+      position: relative; }
+  #footer p {
+    margin: 0; }
+  #footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  #footer a {
+    color: white; }
 
 .invisible {
   display: none; }
