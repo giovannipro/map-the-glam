@@ -29,6 +29,10 @@ n = "\n"
 lic = ""
 s = " "
 
+def time():
+	my_format = "%d %m %Y %I:%M%p" 
+	ts = datetime.datetime.utcnow().strftime(my_format)
+
 def clean_url_a(title):
 	replace_01 = "?"
 	replace_02 = "&"

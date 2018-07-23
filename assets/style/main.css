@@ -26,6 +26,11 @@ h4 {
   font-weight: bold;
   margin: 0; }
 
+h5 {
+  font-size: 9.3333333333px;
+  font-weight: regular;
+  margin: 0; }
+
 p {
   font-size: 14px;
   line-height: 1.5em;
@@ -284,7 +289,8 @@ section {
     border-bottom: 1px solid #4e4e4e;
     cursor: pointer; }
   .sidenav .section_end {
-    border-bottom: 1px solid #4e4e4e; }
+    border-bottom: 1px solid #4e4e4e;
+    cursor: pointer; }
 
 #close_nav {
   padding-top: 0;

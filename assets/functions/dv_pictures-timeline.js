@@ -25,7 +25,7 @@ function pictures_timeline(){
 			.attr("class", "d3_plot")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-		var chart_shift = {top: 10, right: 10, bottom: 20, left: 55};
+		var chart_shift = {top: 30, right: 10, bottom: 20, left: 55};
 			chart_width = width - (chart_shift.left+chart_shift.right)
 			chart_height = height - (chart_shift.top+chart_shift.bottom)
 
@@ -185,8 +185,56 @@ function pictures_timeline(){
 				// 	// fitWidth: true
 				// }
 			});
-		//console.log('isotope')
 		};
+
+		// function load_data(id){
+		// 	// console.log(id)
+		// 	$.get(tpl, function(tpl) {
+
+		// 	 	my_id = ""
+		// 	 	if (id == "all"){
+		// 	 		my_id = "all authors"
+		// 	 	}
+		// 	 	else {
+		// 	 		my_id = id
+		// 	 	}
+
+		// 	 	var id_box = "<div class='decade_box'><h4>" + my_id + "</h4><h5 id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</h5"
+			 
+		// 	 	var data_source = "assets/data/authors/authors_" + id + ".json";
+
+		// 	 	// $("#authors_box").empty();
+		// 	 	$("#decade_box").empty();
+
+		// 	 	$.getJSON(data_source, function(data) {
+		// 			var template = Handlebars.compile(tpl);
+		// 				sorted_data = data.sort(function (a, b) {
+		// 					return b.pictures - a.pictures;
+		// 				})
+		// 				// console.log(sorted_data)
+
+		// 				var max = 0;                
+		// 				$.map(data, function (obj) {
+		// 					if (obj.pictures > max){
+		// 				  		max = obj.pictures;
+		// 					}
+		// 				});
+
+		// 				$.each(data, function(i,v){
+		// 					v["max_val"] = max;
+		// 					v["max_height"] = target_height;
+		// 				})
+						
+		// 			$("#decade_box").html(id_box);
+		// 			$(target).html(template(sorted_data));
+
+		// 			isotope();
+		// 		})
+
+
+		// 	})
+		// }
+		// load_data("all");	
 
 		// first load
 		$.get(tpl, function(tpl) {
@@ -194,14 +242,18 @@ function pictures_timeline(){
 			// $(".bar").click(function() {
 			 	var id = $(this).attr("id");
 
-			 	if (id_box != undefined) {
-			 		var id_box = "<div class='decade_box'>" + id + "</div>"
+			 	my_id = ""
+			 	if (id == "all"){
+			 		my_id = "all authors"
+			 	}
+			 	else if (id == undefined){
+			 		my_id = "all authors 1550-2009"
 			 	}
 			 	else {
-			 		var id_box = "<div class='decade_box'>" + "1550-2009" + "</div>"
+			 		my_id = id
 			 	}
 
-			 	var title = "<h4>Authors <span id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</span></h4>"
+			 	var id_box = "<div class='decade_box'><h4>" + my_id + "</h4><h5 id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</h5"
 			 	
 			 	target.empty();
 			 	$("#decade_box").empty();
@@ -227,7 +279,7 @@ function pictures_timeline(){
 							v["max_height"] = target_height;
 						})
 						
-					$("#decade_box").append(title);
+					// $("#decade_box").append(title);
 					$("#decade_box").append(id_box);
 					$(target).html(template(sorted_data));
 
@@ -236,22 +288,28 @@ function pictures_timeline(){
 			 // })
 		})
 
-		// load by user (bars)
+		//load by user (bars)
 		$.get(tpl, function(tpl) {
 
 			$(".bar").click(function() {
 			 	var id = $(this).attr("id");
 			 	data_source = "assets/data/authors/authors_" + id + ".json";
 
-			 	if (id_box != "undefined") {
-			 		var id_box = "<div class='decade_box'>" + id + "</div>"
+			 	my_id = ""
+			 	if (id == "all"){
+			 		my_id = "all authors"
+			 	}
+			 	else if (id == "uncertain"){
+			 		my_id = "uncertain dates"
+			 	}
+			 	else if (id == "unknown"){
+			 		my_id = "unknown dates"
 			 	}
 			 	else {
-			 		var id_box = "<div class='decade_box'>" + "1550-2009" + "</div>"
+			 		my_id = id
 			 	}
-			 	// console.log(id_box)
 
-			 	var title = "<h4>Authors <span id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</span></h4>"
+			 	var id_box = "<div class='decade_box'><h4>" + my_id + "</h4><h5 id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</h5"
 			 	
 			 	target.empty();
 			 	$("#decade_box").empty();
@@ -277,7 +335,7 @@ function pictures_timeline(){
 							v["max_height"] = target_height;
 						})
 
-					$("#decade_box").append(title);
+					// $("#decade_box").append(title);
 					$("#decade_box").append(id_box);
 					$(target).html(template(sorted_data));
 
@@ -290,13 +348,21 @@ function pictures_timeline(){
 		// 	console.log(1)
 		// })
 
-		// load by user (see all)
+		//load by user (see all)
 		$.get(tpl, function(tpl) {
 
 			$("#all_authors").click(function() {
 			 	data_source = "assets/data/authors/authors_" + authors_all + ".json";
 
-			 	var title = "<h4>Authors <span id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</span></h4>"
+			 	my_id = ""
+			 	if (id == "all"){
+			 		my_id = "all authors"
+			 	}
+			 	else {
+			 		my_id = id
+			 	}
+
+			 	var id_box = "<div class='decade_box'><h4>" + my_id + "</h4><h5 id='all_authors' style='text-decoration: underline; cursor:pointer;'>(see all)</h5"
 			 	
 			 	target.empty();
 			 	$("#decade_box").empty();
@@ -327,6 +393,15 @@ function pictures_timeline(){
 				})
 			 })
 		})
+
+		// function reload_data(){	
+		// 	$(".bar").click(function() {
+		// 		var id = $(this).attr("id");
+		// 		console.log(id);
+		// 		load_data(id);
+		// 	})	
+		// }	
+		// reload_data()
 	}
 	authors_chart();
 	

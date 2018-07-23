@@ -246,20 +246,26 @@ function menu() {
 	closeNav();
 }
 
-function page_size(loading_time){
+function page_performance(){
+	// loading_time_a = new Date() - start;
+
+	$(window).bind("load", function() {
+		console.group("website performance");
+
+		var dom_elements = $('*').length;
+		console.log("DOM elements: " + dom_elements); 
+
+		var bytes = $('html').html().length,
+			kbytes = bytes / 1024;
+		console.log("kb: " + kbytes.toFixed(1) + " (max 2000)" );
+		// console.log("loading: " + loading_time_a + "ms (max 3000ms)");
+
+		var loading_time_b = new Date() - start;
+	   	console.log("loading: " + loading_time_b + "ms (max 3000ms)");
+	  	console.groupEnd();
+   	});
+
 	
-	console.group("website performance");
-
-	var dom_elements = $('*').length;
-	console.log("DOM elements: " + dom_elements); 
-
-	var bytes = $('html').html().length,
-		kbytes = bytes / 1024;
-	console.log("kbytes: " + kbytes.toFixed(1) + " (max 2000)" );
-	console.log("loading: " + loading_time + "ms (max 2000ms)");
-
-	console.groupEnd();
-
 }
 
 function goto_top(){

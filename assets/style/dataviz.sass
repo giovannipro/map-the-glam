@@ -110,7 +110,7 @@ img
 
 #dv_size
 	width: 100%
-	background-color: $background_dv
+	background-color: $background
 	padding: $x 0
 
 	.dv
@@ -144,12 +144,22 @@ img
 			@include grid-column(12)
 			@include grid-shift(0)
 
+
+#dv_size_analog
+	//min-height: 60vh
+	//@include grid-column(4)
+	//@include grid-shift(0)
+	//background-color: $background_dv
+	// width: 60%
+
 //	---------------------------
 //	pictures timeline
 
 #dv_pictures_timeline
 	background-color: $background_dv
 	height: 25vh // $x*20 60vh
+	//border-bottom: 1px solid darken($background, 15%)
+	padding-bottom: $x
 
 	.yAxis text
 		fill: $gray
@@ -159,14 +169,15 @@ img
 	min-height: 40vh
 	margin-top: $x*3	
 
-	h4
-		@include grid-column(12)	
-		@include grid-column(12)	
+	//h4
+		//@include grid-column(12)	
+		//@include grid-column(12)	
 		//margin-left: 40px
 
 	#authors_box
 		//@include grid-column(12)
 		clear: both
+		margin-bottom: $x*3
 
 		ul
 			list-style: none
@@ -212,7 +223,6 @@ img
 
 //	---------------------------
 //	
-
 
 #dv_spread
 	height: 60vh

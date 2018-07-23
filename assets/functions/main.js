@@ -21,8 +21,7 @@ $( document ).ready(function() {
 	open_docu("lang");
 	open_docu("page_views");
 
-	loading_time = new Date() - start;
-	page_size(loading_time);
+	page_performance();
 });
 
 // console.timeEnd()

@@ -25,7 +25,7 @@ file = folder + "/" + my_file + ".json"
 output = folder + "/" + my_file + "_clean.tsv"
 
 # -----------------------------------
-# Scripts 
+# scripts 
 
 def extract():
 

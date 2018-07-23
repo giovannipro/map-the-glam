@@ -56,7 +56,7 @@ img {
 
 #dv_size {
   width: 100%;
-  background-color: #efefef;
+  background-color: #fcfcfc;
   padding: 12px 0; }
   #dv_size .dv {
     height: auto;
@@ -110,7 +110,8 @@ img {
 
 #dv_pictures_timeline {
   background-color: #efefef;
-  height: 25vh; }
+  height: 25vh;
+  padding-bottom: 12px; }
   #dv_pictures_timeline .yAxis text {
     fill: #4e4e4e; }
 
@@ -118,15 +119,9 @@ img {
   height: auto;
   min-height: 40vh;
   margin-top: 36px; }
-  #authors h4 {
-    width: calc(100% - 40px);
-    float: left;
-    margin-left: 20px;
-    width: calc(100% - 40px);
-    float: left;
-    margin-left: 20px; }
   #authors #authors_box {
-    clear: both; }
+    clear: both;
+    margin-bottom: 36px; }
     #authors #authors_box ul {
       list-style: none;
       font-size: 9.3333333333px; }
