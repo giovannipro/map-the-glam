@@ -59,7 +59,7 @@ function size(){
 					d.y = +d.y;
 					d.count = +d.count;
 				})
-				console.log(data)
+				// console.log(data)
 
 	        	var countMin = d3.min(data, function (d) {
 					return d.count
@@ -67,7 +67,7 @@ function size(){
 				var countMax = d3.max(data, function (d) {
 					return d.count
 				})
-	        	var scale_count_blocks = d3.scaleLinear()
+	        	var scale_count_blocks = d3.scaleLinear() // scaleLinear scaleLog
 					.domain([countMin, countMax])
 	        		.range([0.05, 1])
 

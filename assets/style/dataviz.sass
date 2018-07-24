@@ -1,6 +1,6 @@
 @import "../../bower_components/neat/core/_neat.scss"
 
-$background: #fcfcfc
+$background: white //#fcfcfc
 $background_dv: darken( $background, 5% )
 $files: #004E99
 $text: #001c26
@@ -164,6 +164,9 @@ img
 	.yAxis text
 		fill: $gray
 
+.grid-sizer
+	width: 29.5%
+
 #authors
 	height: auto //60vh
 	min-height: 40vh
@@ -193,10 +196,10 @@ img
 		.author_box
 			display: block
 			//@include grid-column(3)
-			width: 28.5%
+			width: 29.5%
 			background-color: #9fcdde // #acacb1
 			//margin-bottom: 10px
-			padding: 0.5% // 2%
+			padding: 5px //0.5% // 2%
 			cursor: pointer
 
 			@media screen and (max-width: $tablet)

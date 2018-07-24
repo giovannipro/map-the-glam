@@ -47,7 +47,7 @@ img {
 
 #dv_category_network {
   height: 80vh;
-  background-color: #efefef;
+  background-color: #f2f2f2;
   overflow: hidden; }
   #dv_category_network img {
     position: relative;
@@ -56,7 +56,7 @@ img {
 
 #dv_size {
   width: 100%;
-  background-color: #fcfcfc;
+  background-color: white;
   padding: 12px 0; }
   #dv_size .dv {
     height: auto;
@@ -109,11 +109,14 @@ img {
         position: relative; } }
 
 #dv_pictures_timeline {
-  background-color: #efefef;
+  background-color: #f2f2f2;
   height: 25vh;
   padding-bottom: 12px; }
   #dv_pictures_timeline .yAxis text {
     fill: #4e4e4e; }
+
+.grid-sizer {
+  width: 29.5%; }
 
 #authors {
   height: auto;
@@ -127,9 +130,9 @@ img {
       font-size: 9.3333333333px; }
     #authors #authors_box .author_box {
       display: block;
-      width: 28.5%;
+      width: 29.5%;
       background-color: #9fcdde;
-      padding: 0.5%;
+      padding: 5px;
       cursor: pointer; }
       @media screen and (max-width: 768px) {
         #authors #authors_box .author_box {
@@ -156,14 +159,14 @@ img {
 
 #dv_spread {
   height: 60vh;
-  background-color: #efefef; }
+  background-color: #f2f2f2; }
 
 #dv_lang {
   height: 60vh;
-  background-color: #efefef; }
+  background-color: #f2f2f2; }
 
 #dv_page_views {
   height: 60vh;
-  background-color: #efefef; }
+  background-color: #f2f2f2; }
 
 /*# sourceMappingURL=dataviz.css.map */
