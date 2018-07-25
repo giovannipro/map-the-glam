@@ -1,3 +1,4 @@
+@charset "UTF-8";
 img {
   display: block; }
 
@@ -58,48 +59,21 @@ img {
   width: 100%;
   background-color: white;
   padding: 12px 0; }
-  #dv_size .dv {
-    height: auto;
-    width: calc(50% - 30px);
-    float: left;
-    margin-left: 20px;
-    left: calc(8.3333333333% - 21.6666666667px + 20px);
-    position: relative; }
-    #dv_size .dv::after {
-      clear: both;
-      content: "";
-      display: block; }
-    @media screen and (max-width: 768px) {
-      #dv_size .dv {
-        width: calc(83.3333333333% - 36.6666666667px);
-        float: left;
-        margin-left: 20px;
-        left: calc(8.3333333333% - 21.6666666667px + 20px);
-        position: relative;
-        height: auto; }
-        #dv_size .dv::after {
-          clear: both;
-          content: "";
-          display: block; } }
-    #dv_size .dv img {
-      height: auto;
-      width: 100%;
-      margin: 0 auto; }
-      @media screen and (max-width: 768px) {
-        #dv_size .dv img {
-          width: 100%;
-          height: auto; } }
+  @media screen and (max-width: 768px) {
+    #dv_size .dv {
+      width: calc(83.3333333333% - 36.6666666667px);
+      float: left;
+      margin-left: 20px;
+      left: calc(8.3333333333% - 21.6666666667px + 20px);
+      position: relative;
+      height: auto; }
+      #dv_size .dv::after {
+        clear: both;
+        content: "";
+        display: block; } }
   #dv_size .controller {
-    width: calc(33.3333333333% - 26.6666666667px);
-    float: left;
-    margin-left: 20px;
-    left: calc(8.3333333333% - 21.6666666667px + 20px);
-    position: relative;
-    text-align: center; }
-    #dv_size .controller::after {
-      clear: both;
-      content: "";
-      display: block; }
+    text-align: center;
+    background-color: #f2f2f2; }
     @media screen and (max-width: 768px) {
       #dv_size .controller {
         width: calc(100% - 40px);
@@ -107,6 +81,32 @@ img {
         margin-left: 20px;
         left: calc(0% - 20px + 20px);
         position: relative; } }
+    #dv_size .controller button {
+      padding: 36px; }
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 12px; }
+
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "▼";
+  position: absolute;
+  text-align: center; }
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0; }
 
 #dv_pictures_timeline {
   background-color: #f2f2f2;

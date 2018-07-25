@@ -172,16 +172,18 @@
 				</div>
 				<div class="main_dataviz full_container" id="dv_size">
 					<div class="dv">
-						<img id="original_size" src="assets/img/original_size.png" width="1000px" height="1000px">
-						<img id="digital_size" src="assets/img/digital_size.png" width="1000px" height="1000px" class="invisible">
+						<!-- <img id="original_size">src="assets/img/original_size.png" width="1000px" height="1000px" -->
+						<!-- <img id="digital_size" src="assets/img/digital_size.png" width="1000px" height="1000px" -->
+						<div id="dv_size_digital"></div>
+						<div id="dv_size_analogic" class="invisible"></div>
 					</div>
-					<div id="dv_size_analog"></div>
+					
 					<div class="controller">
-						<button id="original_size_button">
-							Original size
-						</button>
 						<button id="digital_size_button">
 							Digital size
+						</button>
+						<button id="original_size_button">
+							Original size
 						</button>
 					</div>
 				</div>
@@ -464,6 +466,7 @@
 		<script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
 		<script type="text/javascript" src="bower_components/isotope/dist/isotope.pkgd.min.js"></script>
 		<script type="text/javascript" src="bower_components/isotope-packery/packery-mode.pkgd.min.js"></script>
+		<script type="text/javascript" src="assets/lib/d3.tip.js"></script>
 		<!-- <script type="text/javascript" src="bower_components/moment/moment.js"></script> -->
 		<script type="text/javascript" src="assets/functions/dv_uploads-timeline.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_pictures-timeline.js"></script>

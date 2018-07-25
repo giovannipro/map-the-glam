@@ -138,6 +138,16 @@ function uploads_timeline(){
 				// 	 return "translate(" + x_b(d.date) + "," + (height - y_b(d[0])) + ")"; 
 			 //  	})
 
+				
+			// tooltip
+			var tip = d3.tip()
+				.attr("class", "d3-tip")
+				.offset([-10, 0])
+				.html(function(d) { 
+					return "pd: " + d.pd
+				});
+			svg.call(tip)
+
 			var bar = bars_group.selectAll("bars")
 				.data(stack_data)
 				.enter()
@@ -153,12 +163,8 @@ function uploads_timeline(){
 				})
 				.attr("x", function(d,i) { return i*(width/data_length)  }) // x_b(d.date);
 				.attr("y", function(d) { return y_b(d[1]) })
-     			// .attr("opacity",0.4)
-     			// .attr("y", function(d) { return y_b(y_b.ticks().pop()) }) //  y_b(d[1]); })
-				// .attr("class", function(d){
-				// 	var date = d.data.date // .split(" ").slice(0,4).join(" ");
-				// 	return date
-				// })
+    //  			.on("mouseover", tip.show)
+				// .on("mouseout", tip.hide) 
 				
 			var mobile_w = 425,
 				table_w = 768;
@@ -248,9 +254,9 @@ function uploads_timeline(){
       			d1 = data[i],
       			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
-      			cc_sa = d["cc_by_sa_4"]
-      			cc_by = d["cc_by_4"]
-      			pd = d["public_domain"]
+      			// cc_sa = d["cc_by_sa_4"]
+      			// cc_by = d["cc_by_4"]
+      			// pd = d["public_domain"]
 
       			d3.select("#line_uploads_timeline")
       				.attr("x1", mouse_x)
@@ -261,7 +267,7 @@ function uploads_timeline(){
 
 				d3.select("#highlightRect_uploads_timeline")
 					.attr("x", roundTo(mouse_x,bar_width)-bar_width)
-				
+
 				toltip_pd = "pd: " + pd
 				toltip_by = "cc-by: " + cc_by
 				toltip_sa = "cc-by-sa: " + cc_sa
@@ -274,7 +280,7 @@ function uploads_timeline(){
 
 				d3.select("#uploads_timeline_sa")
 					.text(toltip_sa)
-					// .attr("transform","translate(20,30)")
+					.attr("transform","translate(20,30)")
 
 				// console.log(mouse_x)
 			}

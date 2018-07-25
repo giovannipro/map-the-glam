@@ -114,10 +114,9 @@ img
 	padding: $x 0
 
 	.dv
-		height: auto
-		@include grid-container
-		@include grid-column(6)
-		@include grid-shift(1)
+		//@include grid-container
+		//@include grid-column(6)
+		//@include grid-shift(1)
 
 		@media screen and (max-width: $tablet)
 			@include grid-container
@@ -125,24 +124,35 @@ img
 			@include grid-shift(1)
 			height: auto
 
-		img
-			height: auto
-			width: 100%
-			margin: 0 auto
+		//img
+		//	height: auto
+		//	width: 100%
+		//	margin: 0 auto
 			
-			@media screen and (max-width: $tablet)
-				width: 100%
-				height: auto
+		//	@media screen and (max-width: $tablet)
+		//		width: 100%
+		//		height: auto
+
+	// #dv_size_analogic
+	// 	height: 70vh
+	// 	width: auto
+	// 	margin: 0 auto
 
 	.controller
-		@include grid-container
-		@include grid-column(4)
-		@include grid-shift(1)
+		//@include grid-container
+		//@include grid-column(4)
+		//@include grid-shift(1)
 		text-align: center
+		background-color: $background_dv
+		//padding: $x*3
+		clear:both
 
 		@media screen and (max-width: $tablet)
 			@include grid-column(12)
 			@include grid-shift(0)
+
+		button
+			padding: $x*3
 
 
 #dv_size_analog
@@ -151,6 +161,33 @@ img
 	//@include grid-shift(0)
 	//background-color: $background_dv
 	// width: 60%
+
+.d3-tip 
+	line-height: 1
+	font-weight: bold
+	padding: 12px
+	background: rgba(0, 0, 0, 0.8)
+	color: #fff
+	border-radius: 2px
+	font-size: 12px /*13px*/
+
+// Creates a small triangle extender for the tooltip 
+.d3-tip:after 
+	box-sizing: border-box
+	display: inline
+	width: 100%
+	line-height: 1
+	color: rgba(0, 0, 0, 0.8)
+	content: "\25BC"
+	position: absolute
+	text-align: center
+
+// Style northward tooltips differently
+.d3-tip.n:after 
+	margin: -1px 0 0 0
+	top: 100%
+	left: 0
+
 
 //	---------------------------
 //	pictures timeline

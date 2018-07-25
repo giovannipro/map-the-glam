@@ -36,12 +36,12 @@ def size_heatmap(f_name,block_size):
 			tsv_file = csv.reader(f1, delimiter=t)
 
 			for item in tsv_file:
-				width = item[4]
-				height = item[5]
+				width = item[0] #item[4]
+				height = item[1] #item[5]
 
-				new_w = int(width) / block_size
-				new_h = int(height) / block_size 
-				w_h = str(new_w) + "_" + str(new_h)
+				new_w = float(width) / block_size
+				new_h = float(height) / block_size 
+				w_h = str(round(new_w)) + "_" + str(round(new_h))
 
 				output =  str(new_w) + t + str(new_h) + t + w_h
 				f2.write(output + n)
@@ -51,5 +51,5 @@ def size_heatmap(f_name,block_size):
 # -----------------------------------
 # Launch scripts 
 
-size_heatmap("test",500);
+size_heatmap("2_final/img_size_analogic",1);
 
