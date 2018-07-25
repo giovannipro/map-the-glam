@@ -10,7 +10,7 @@ Handlebars.registerHelper("multiply", function(foo, bar){
 
 Handlebars.registerHelper("author_bar", function(pic, max_pic, max_h){
 	var result = (pic*max_h)/max_pic
-		min_height = 10
+		min_height = 7 // 10
 	if (result < min_height) {
 		return min_height
 	}

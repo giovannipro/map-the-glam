@@ -2,7 +2,7 @@ var container_analogic = "#dv_size_analogic";
 	container_digital = "#dv_size_digital";
 	mobile_w = 425,
 	tablet_w = 768;
-	window_w = $("body").outerWidth(),
+	window_w = $(container_analogic).outerWidth(),
 	window_h = $(container_analogic).height();
 
 function size(){
@@ -16,15 +16,18 @@ function size(){
 		var digital = $("#dv_size_digital")
 
 		original_button.click(function(){
-			//console.log("original")
-			//this.css("font-weight","bold")
 			original.show()
 			digital.hide()
+
+			original_button.addClass("selected")
+			digital_button.removeClass("selected")
 		})
 		digital_button.click(function(){
-			//console.log("digital")
 			digital.show()
 			original.hide()
+
+			digital_button.addClass("selected")
+			original_button.removeClass("selected")
 		})
 	}
 	buttons();
@@ -82,9 +85,11 @@ function size(){
 				var countMax = d3.max(data, function (d) {
 					return d.count
 				})
+				var min_opacity = 0.01
+					max_opacity = 1
 	        	var scale_count_blocks = d3.scaleLog() // scaleLinear scaleLog
 					.domain([countMin, countMax])
-	        		.range([0.01, 1])
+	        		.range([min_opacity,max_opacity])
 
 				var xMax = d3.max(data, function (d) {
 					return d.x
@@ -213,9 +218,11 @@ function size(){
 					return d.count
 				})
 				// console.log(countMin,countMax)
+	        	var min_opacity = 0.01
+					max_opacity = 1
 	        	var scale_count_blocks = d3.scaleLog() // scaleLinear scaleLog
 					.domain([countMin, countMax])
-	        		.range([0.01, 1])
+	        		.range([min_opacity,max_opacity])
 
 				var xMax = d3.max(data, function (d) {
 					return d.x

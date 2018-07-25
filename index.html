@@ -45,14 +45,13 @@
 					</div>
 					<div id="mySidenav" class="sidenav">
 						<a class="closebtn" id="close_nav">x</a>
-						<!-- <a href="#" class="section_end">Home</a> -->
 						<a href="#dv_1" class="section_end">The collection</a>
 						<a href="#dv_2" class="section_end">Uploads timeline</a>
 				  		<a href="#dv_3" class="section_end">Image size</a>
-				  		<a href="#dv_4" class="section_end">DV 4</a>
+				  		<!-- <a href="#dv_4" class="section_end">DV 4</a>
 				  		<a href="#dv_5" class="section_end"">DV 5</a>
 				  		<a href="#dv_6" class="section_end">DV 6</a>
-				  		<a href="#dv_7" class="section_end">DV 7</a>
+				  		<a href="#dv_7" class="section_end">DV 7</a> -->
 				  		<a onclick="intro()" class="section_end">About</a>
 					</div>
 				</div>
@@ -107,7 +106,8 @@
 								<p>20.07.2018</p>
 
 								<h4>Data source</h4> 
-								<p><a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blanck" title="Wikimedia Commons (API)">Wikimedia Commons</a> (API)</p>
+								<p><a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blanck" title="Wikimedia Commons (API)">Wikimedia Commons</a> (API)
+								</p>
 								<p>
 									<a href="" title="">Download dataset</a> (? kb)
 								</p>
@@ -153,9 +153,8 @@
 								<p>23.06.2018</p>
 
 								<h4>Data source</h4>
-								<p><a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blanck" title="Wikimedia Commons (API)">Wikimedia Commons</a> (API)</p>
-								<p>
-
+								<p><a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blanck" title="Wikimedia Commons (API)">Wikimedia Commons</a> (API)
+								</p>
 								<p>
 									<a href="download/uploads_timeline.zip" title="Download the uploads timeline">Download dataset</a> (356 kb)
 								</p>
@@ -172,19 +171,12 @@
 				</div>
 				<div class="main_dataviz full_container" id="dv_size">
 					<div class="dv">
-						<!-- <img id="original_size">src="assets/img/original_size.png" width="1000px" height="1000px" -->
-						<!-- <img id="digital_size" src="assets/img/digital_size.png" width="1000px" height="1000px" -->
 						<div id="dv_size_digital"></div>
 						<div id="dv_size_analogic" class="invisible"></div>
 					</div>
 					
 					<div class="controller">
-						<button id="digital_size_button">
-							Digital size
-						</button>
-						<button id="original_size_button">
-							Original size
-						</button>
+						<button id="digital_size_button" class="selected">Digital size</button><button id="original_size_button" class="">Original size</button>
 					</div>
 				</div>
 				<section class="container">
@@ -215,11 +207,10 @@
 							</article>
 							<article class="data invisible" id="size_data">
 								<h4>Timestamp</h4>
-								<p>...</p>
+								<p>24.07.2018</p>
 
 								<h4>Data source</h4>
-								<p><a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blanck" title="Wikimedia Commons (API)">Wikimedia Commons</a> (API)</p>
-								<p>
+								<p><a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blanck" title="Wikimedia Commons (API)">Wikimedia Commons</a> (API and page scraping)</p>
 
 								<p><a href="/">Download dataset</a> (? MB)</p>
 							</article>
@@ -228,18 +219,16 @@
 				</section>
 			</div>
 
-			<div class="dv dv4">
+			<!--<div class="dv dv4">
 				<div class="anchor">
 					<a name="dv_4"></a>
 				</div>
-				<div class="main_dataviz full_container" id="dv_category_network">
-					<img src="assets/img/category-network.png" alt="Category network">
-				</div>
+				<div class="main_dataviz full_container" id="dv_category_network"></div>
 				<section class="container">
 					<h3>Subjects of the images</h3>
 					<p class="description">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
-						<!-- How to read the visualization. -->
+						(How to read the visualization)
 					</p>
 				</section>
 				<section id="category_network_docu" class="docu">
@@ -281,7 +270,7 @@
 					<h3>DV5</h3>
 					<p class="description">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
-						<!-- How to read the visualization. -->
+						(How to read the visualization)
 					</p>
 				</section>
 				<section id="dv_spread_docu" class="docu">
@@ -323,7 +312,7 @@
 					<h3>DV6</h3>
 					<p class="description">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
-						<!-- How to read the visualization. -->
+						(How to read the visualization)
 					</p>
 				</section>
 				<section id="dv_lang_docu" class="docu">
@@ -365,7 +354,7 @@
 					<h3>DV7</h3>
 					<p class="description">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
-						<!-- How to read the visualization. -->
+						(How to read the visualization)
 					</p>
 				</section>
 				<section id="dv_page_views_docu" class="docu">
@@ -396,9 +385,9 @@
 						</div>
 					</article>
 				</section>
-			</div>
+			</div>-->
 
-			<footer class="footer full_container" id="footer">
+			<footer class="footer" id="footer">
 				<section class="colophon">
 					<div>
 						<a href="http://www.supsi.ch/lcv" title="Laboratory of visual culture SUPSI" target="_blank">
@@ -467,7 +456,6 @@
 		<script type="text/javascript" src="bower_components/isotope/dist/isotope.pkgd.min.js"></script>
 		<script type="text/javascript" src="bower_components/isotope-packery/packery-mode.pkgd.min.js"></script>
 		<script type="text/javascript" src="assets/lib/d3.tip.js"></script>
-		<!-- <script type="text/javascript" src="bower_components/moment/moment.js"></script> -->
 		<script type="text/javascript" src="assets/functions/dv_uploads-timeline.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_pictures-timeline.js"></script>
 		<script type="text/javascript" src="assets/functions/dv_size.js"></script>

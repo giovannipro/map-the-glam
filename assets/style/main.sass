@@ -3,7 +3,6 @@
 // colors
 $background: white //#fcfcfc
 $background_docu: darken( $background, 20% )
-$background_dv: darken( $background, 5% )
 $text: #001c26
 $bar: #cccdcf
 
@@ -153,21 +152,17 @@ img
 	float: left
 	width: 100%
 	position: relative
+	//margin-bottom: $x*5
+
 .full
 	width: 100%
 	
 .description
 	column-count: 2
-	margin-bottom: $x*2
+	margin-bottom: $x*3
 
 	@media screen and (max-width: $tablet)
 		column-count: 1
-
-.main_dataviz
-	width: 100%
-	//height: 65vh
-	background-color: $background_dv
-	clear: both
 
 section
 	margin-top: 20px
@@ -197,12 +192,16 @@ section
 	border-bottom: 1px solid $bar
 	background-color: $background
 
-#footer
+#footer 		
 	background-color: $text
 	color: white
 	clear: both
 	padding: $x*1.5 0 0
 	z-index: -1
+	float: left
+	width: 100%
+	position: relative
+	margin-top: $x*5
 
 	.colophon
 		@include grid-container
@@ -441,9 +440,10 @@ section
 
 	button
 		cursor: pointer
-		border: 3px solid transparent // $background
+		//border: 3px solid transparent // $background
 		font-size: $f_m
-		padding: $x*2 $x $x*2 0 
+		background-color: darken( $background, 5%)
+		padding: $x
 
 	button:hover
 		text-decoration: underline
@@ -451,9 +451,7 @@ section
 
 	.selected
 		font-weight: bold
-		//font-color: darken($text, 30%)
-		//border-bottom: 5x solid $background_docu
-		background-color: desaturate(lighten($text, 85%), 95%)
+		background-color: desaturate(lighten($text, 80%), 95%)
 
 .docu
 	.full_container

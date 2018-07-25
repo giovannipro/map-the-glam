@@ -157,7 +157,7 @@ function pictures_timeline(){
 		var target = $("#authors_box"),
 			tpl = "assets/tpl/authors.tpl";
 			data_source_start = "assets/data/authors/authors_all.json";
-			target_height =  ($("#authors").height()) - 80;
+			target_height = ($("#authors").height() - 300); // 
 
 			if (width > tablet_w){
 				target_height = target_height

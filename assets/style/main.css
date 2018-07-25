@@ -119,15 +119,10 @@ img {
 
 .description {
   column-count: 2;
-  margin-bottom: 24px; }
+  margin-bottom: 36px; }
   @media screen and (max-width: 768px) {
     .description {
       column-count: 1; } }
-
-.main_dataviz {
-  width: 100%;
-  background-color: #f2f2f2;
-  clear: both; }
 
 section {
   margin-top: 20px; }
@@ -163,7 +158,11 @@ section {
   color: white;
   clear: both;
   padding: 18px 0 0;
-  z-index: -1; }
+  z-index: -1;
+  float: left;
+  width: 100%;
+  position: relative;
+  margin-top: 60px; }
   #footer .colophon {
     margin: 0 0 108px; }
     #footer .colophon::after {
@@ -390,14 +389,14 @@ section {
 
 .documentation button {
   cursor: pointer;
-  border: 3px solid transparent;
   font-size: 14px;
-  padding: 24px 12px 24px 0; }
+  background-color: #f2f2f2;
+  padding: 12px; }
 .documentation button:hover {
   text-decoration: underline; }
 .documentation .selected {
   font-weight: bold;
-  background-color: #ebeced; }
+  background-color: #dde0e1; }
 
 .docu .full_container {
   border-bottom: 1px solid red gray; }

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.main_dataviz {
+  width: 100%;
+  border-top: 1px solid #cccdcf;
+  border-bottom: 1px solid #cccdcf;
+  background-color: #f9f9f9;
+  clear: both;
+  margin-top: 60px; }
+
 img {
   display: block; }
 
@@ -20,7 +28,7 @@ img {
   content: ""; }
 
 .anchor {
-  height: 40px; }
+  height: 42px; }
 
 .anchor:after {
   content: ""; }
@@ -48,41 +56,61 @@ img {
 
 #dv_category_network {
   height: 80vh;
-  background-color: #f2f2f2;
+  background-color: #f9f9f9;
   overflow: hidden; }
   #dv_category_network img {
     position: relative;
     display: block;
     top: -50px; }
 
-#dv_size {
-  width: 100%;
+#dv_size .dv {
+  background-color: #f9f9f9; }
+#dv_size .controller {
+  text-align: center;
   background-color: white;
-  padding: 12px 0; }
-  @media screen and (max-width: 768px) {
-    #dv_size .dv {
-      width: calc(83.3333333333% - 36.6666666667px);
+  clear: both;
+  margin-top: 24px;
+  border-top: 1px solid #c6c6c6; }
+  #dv_size .controller button {
+    padding: 12px 36px;
+    font-size: 14px; }
+  #dv_size .controller .selected {
+    background-color: #dde0e1; }
+
+#dv_size_analogic {
+  width: calc(66.6666666667% - 33.3333333333px);
+  float: left;
+  margin-left: 20px;
+  left: calc(16.6666666667% - 23.3333333333px + 20px);
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 24px; }
+  @media screen and (max-width: 500px) {
+    #dv_size_analogic {
+      width: calc(100% - 40px);
       float: left;
       margin-left: 20px;
-      left: calc(8.3333333333% - 21.6666666667px + 20px);
-      position: relative;
-      height: auto; }
-      #dv_size .dv::after {
-        clear: both;
-        content: "";
-        display: block; } }
-  #dv_size .controller {
-    text-align: center;
-    background-color: #f2f2f2; }
-    @media screen and (max-width: 768px) {
-      #dv_size .controller {
-        width: calc(100% - 40px);
-        float: left;
-        margin-left: 20px;
-        left: calc(0% - 20px + 20px);
-        position: relative; } }
-    #dv_size .controller button {
-      padding: 36px; }
+      left: calc(0% - 20px + 20px);
+      position: relative; } }
+
+#dv_size_digital {
+  width: calc(66.6666666667% - 33.3333333333px);
+  float: left;
+  margin-left: 20px;
+  left: calc(16.6666666667% - 23.3333333333px + 20px);
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 24px; }
+  @media screen and (max-width: 500px) {
+    #dv_size_digital {
+      width: calc(100% - 40px);
+      float: left;
+      margin-left: 20px;
+      left: calc(0% - 20px + 20px);
+      position: relative; } }
+
+#dv_size_digital::after {
+  content: ""; }
 
 .d3-tip {
   line-height: 1;
@@ -109,7 +137,7 @@ img {
   left: 0; }
 
 #dv_pictures_timeline {
-  background-color: #f2f2f2;
+  background-color: #f9f9f9;
   height: 25vh;
   padding-bottom: 12px; }
   #dv_pictures_timeline .yAxis text {
@@ -119,9 +147,13 @@ img {
   width: 29.5%; }
 
 #authors {
-  height: auto;
-  min-height: 40vh;
-  margin-top: 36px; }
+  background-color: #f9f9f9;
+  height: 60vh;
+  min-height: 30vh;
+  padding-top: 24px; }
+  @media screen and (max-width: 768px) {
+    #authors {
+      height: auto; } }
   #authors #authors_box {
     clear: both;
     margin-bottom: 36px; }
@@ -132,7 +164,7 @@ img {
       display: block;
       width: 29.5%;
       background-color: #9fcdde;
-      padding: 5px;
+      padding: 7px;
       cursor: pointer; }
       @media screen and (max-width: 768px) {
         #authors #authors_box .author_box {
@@ -146,6 +178,8 @@ img {
         margin-right: 12px; }
       #authors #authors_box .author_box .author_name {
         font-weight: bold; }
+    #authors #authors_box .authors_grid {
+      height: 40vh; }
   #authors #decade_box {
     width: calc(100% - 40px);
     float: left;
@@ -159,14 +193,14 @@ img {
 
 #dv_spread {
   height: 60vh;
-  background-color: #f2f2f2; }
+  background-color: #f9f9f9; }
 
 #dv_lang {
   height: 60vh;
-  background-color: #f2f2f2; }
+  background-color: #f9f9f9; }
 
 #dv_page_views {
   height: 60vh;
-  background-color: #f2f2f2; }
+  background-color: #f9f9f9; }
 
 /*# sourceMappingURL=dataviz.css.map */

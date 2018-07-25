@@ -254,9 +254,9 @@ function uploads_timeline(){
       			d1 = data[i],
       			d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
-      			// cc_sa = d["cc_by_sa_4"]
-      			// cc_by = d["cc_by_4"]
-      			// pd = d["public_domain"]
+      			cc_sa = d["cc_by_sa_4"]
+      			cc_by = d["cc_by_4"]
+      			pd = d["public_domain"]
 
       			d3.select("#line_uploads_timeline")
       				.attr("x1", mouse_x)
@@ -280,7 +280,7 @@ function uploads_timeline(){
 
 				d3.select("#uploads_timeline_sa")
 					.text(toltip_sa)
-					.attr("transform","translate(20,30)")
+					// .attr("transform","translate(20,30)")
 
 				// console.log(mouse_x)
 			}
