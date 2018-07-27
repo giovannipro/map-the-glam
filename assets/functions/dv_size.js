@@ -330,6 +330,9 @@ function size(){
 						// )
 					);
 
+				$(".block").click(function(){
+					sidebar("assets/data/data_sidebar.json","my data")
+				})
 	        })
 		}
 		render_blocks_analogic();

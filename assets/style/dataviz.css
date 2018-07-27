@@ -4,8 +4,7 @@
   border-top: 1px solid #cccdcf;
   border-bottom: 1px solid #cccdcf;
   background-color: #f9f9f9;
-  clear: both;
-  margin-top: 60px; }
+  clear: both; }
 
 img {
   display: block; }
@@ -28,7 +27,7 @@ img {
   content: ""; }
 
 .anchor {
-  height: 42px; }
+  height: 60px; }
 
 .anchor:after {
   content: ""; }

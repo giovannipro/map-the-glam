@@ -6,6 +6,8 @@ import os					# get file path
 import urllib, json, io		# read json
 from urllib import urlopen	# open file
 import sys					# reset file encoding
+import string
+import csv
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -90,7 +92,40 @@ def extract():
 				print (tit + "\t" + tim + "\t" + cat + "\t" + lic)
 				continue
 
+#!/usr/bin/python
+"""
+Read TSV from stdin and output as JSON.
+"""
+
+def tsv_to_json(f_name):
+
+	func = "tsv_to_json"
+	index = 0
+
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+
+	with open(f_in, "r") as f1:
+		with open(f_out, "w") as f2:
+
+			tsv_file = csv.reader(f1, delimiter=t)
+
+			for file in tsv_file:
+				if (index==0):
+					a = file[1]
+					b = file[2]
+					c = file[3]
+					d = file[4]
+
+			for file in tsv_file:
+				if (index==0):
+
+				print file
+
+	
 # -----------------------------------
 # Launch scripts 
 
 extract()
+# tsv_to_json("test")
+

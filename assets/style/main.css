@@ -169,6 +169,9 @@ section {
       clear: both;
       content: "";
       display: block; }
+    @media screen and (max-width: 768px) {
+      #footer .colophon {
+        margin: 0 0 60px; } }
     #footer .colophon div {
       width: calc(25% - 25px);
       float: left;
@@ -217,12 +220,24 @@ section {
       width: calc(41.6666666667% - 28.3333333333px);
       float: left;
       margin-left: 20px; }
+      @media screen and (max-width: 768px) {
+        #footer .contact div:nth-child(1) {
+          width: calc(100% - 40px);
+          float: left;
+          margin-left: 20px; } }
     #footer .contact div:nth-child(2) {
       width: calc(25% - 25px);
       float: left;
       margin-left: 20px;
       left: calc(33.3333333333% - 26.6666666667px + 20px);
       position: relative; }
+      @media screen and (max-width: 768px) {
+        #footer .contact div:nth-child(2) {
+          width: calc(100% - 40px);
+          float: left;
+          margin-left: 20px;
+          left: calc(0% - 20px + 20px);
+          position: relative; } }
   #footer p {
     margin: 0; }
   #footer ul {
@@ -342,6 +357,58 @@ section {
       #intro .next button {
         font-size: 9.3333333333px; } }
 
+#sidebar {
+  height: 120%;
+  width: 456px;
+  position: fixed;
+  right: -456px;
+  z-index: 1;
+  top: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.2s;
+  border-left: 1px solid #cccdcf; }
+  @media screen and (max-width: 500px) {
+    #sidebar {
+      width: 100%; } }
+  #sidebar #sidebar_header {
+    border-bottom: 1px solid #cccdcf;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 42px;
+    background-color: white;
+    line-height: 230%;
+    width: 432px; }
+    @media screen and (max-width: 500px) {
+      #sidebar #sidebar_header {
+        width: 94%; } }
+    #sidebar #sidebar_header .closebtn {
+      float: right;
+      font-size: 30px;
+      cursor: pointer; }
+    #sidebar #sidebar_header .closebtn:hover {
+      text-decoration: none; }
+  #sidebar #files_list ul {
+    list-style: none;
+    padding: 0;
+    margin: 42px 0 0 0; }
+    #sidebar #files_list ul li {
+      font-size: 11.2px;
+      border-bottom: 1px solid #cccdcf;
+      height: 48px;
+      padding-left: 12px;
+      padding-right: 12px;
+      vertical-align: middle; }
+
+#overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+  position: fixed;
+  z-index: 1;
+  display: none; }
+
 .protocol, .data {
   margin: 0;
   padding: 18px 0 18px;
@@ -365,6 +432,9 @@ section {
       float: none; } }
   .protocol p, .data p {
     column-count: 2; }
+    @media screen and (max-width: 768px) {
+      .protocol p, .data p {
+        column-count: 1; } }
 
 .docu_container {
   margin-bottom: 24px;
@@ -393,7 +463,7 @@ section {
   background-color: #f2f2f2;
   padding: 12px; }
 .documentation button:hover {
-  text-decoration: underline; }
+  background-color: #e6e6e6; }
 .documentation .selected {
   font-weight: bold;
   background-color: #dde0e1; }
