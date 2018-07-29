@@ -32,6 +32,15 @@ img {
 .anchor:after {
   content: ""; }
 
+.dv_title {
+  border-top: 1px solid #cccdcf;
+  padding: 12px; }
+  .dv_title h3 {
+    margin: 0 0 6px; }
+  .dv_title h4 {
+    font-weight: normal;
+    margin-bottom: 24px; }
+
 #container_dv_uploads_timeline p {
   text-align: center;
   margin-top: 12px;

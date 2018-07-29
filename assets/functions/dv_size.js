@@ -37,7 +37,7 @@ function size(){
 
 		var margin = {top: 0, right: 0, bottom: 0, left: 0},
 			width = window_w - (margin.left + margin.right),
-			height = width // window_h - (margin.top + margin.bottom);
+			height = width - (margin.left + margin.right); // window_h - (margin.top + margin.bottom);
 
 		var transition = 500;
 
@@ -45,7 +45,7 @@ function size(){
 		var svg_analogic = d3.select(container_analogic)
 			.append("svg")
 			.attr("id", "svg_size_analogic")
-			.attr("width", width) //  + (margin.left + margin.right))
+			.attr("width", width + (margin.left + margin.right))
 			.attr("height",height + (margin.top + margin.bottom))
 
 		var plot_analogic = svg_analogic.append("g")
@@ -56,19 +56,19 @@ function size(){
 		var svg_digital = d3.select(container_digital)
 			.append("svg")
 			.attr("id", "svg_size_digital")
-			.attr("width", width) //  + (margin.left + margin.right))
+			.attr("width", width + (margin.left + margin.right))
 			.attr("height",height + (margin.top + margin.bottom))
 
 		var plot_digital = svg_digital.append("g")
 			.attr("class", "d3_plot")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-		// var chart_shift = {top: 20, right: 20, bottom: 20, left: 20};
-		// 	chart_width = width - (chart_shift.left+chart_shift.right)
-		// 	chart_height = height - (chart_shift.top+chart_shift.bottom)
+		var c_shift = {top: 0, right: 0, bottom: 40, left: 40};
+			c_width = width - (c_shift.left+c_shift.right)
+			c_height = height - (c_shift.top+c_shift.bottom)
 
 		function render_blocks_digital(){
-			d3.tsv("assets/data/digital_size_heatmap.tsv", function (error, data) {
+			d3.tsv("assets/data/digital_size_heatmap.tsv", function (error, data) { 
 				if (error) throw error;
 				// console.log(width)
 				
@@ -99,21 +99,23 @@ function size(){
 				})
 
 				if (xMax > yMax){
-					var max_max = xMax
+					var max_max = xMax + 1
 				}
 				else {
-					var max_max = yMax
+					var max_max = yMax + 1
 				}
+				console.log(max_max)
 
 				var x_scale = d3.scaleLinear()
 					.domain([0, max_max])
-	        		.range([0, width])
+	        		.range([0, c_width])
 	        	var y_scale = d3.scaleLinear()
 					.domain([max_max,0])
-	        		.range([0,height])
+	        		.range([0,c_height])
 
 				var chart = plot_digital.append("g")
 					.attr("class", "chart")
+					.attr("transform","translate(" +  c_shift.left + "," + c_shift.top + ")")
 
         		// tooltip
 				var tip = d3.tip()
@@ -130,14 +132,25 @@ function size(){
 					});
 				chart.call(tip)
 
-				var grid = 23,
-					grid_size = width/grid;
+				var grid = max_max,
+					heatmap_grid = 500,
+					grid_size = c_width/grid;
+
+				var max_max_axis = 10500;
+	        	var x_axis_scale = d3.scaleLinear()
+					.domain([max_max, 0])
+	        		.range([c_width,0])
+	        	var y_axis_scale = d3.scaleLinear()
+					.domain([0,max_max])
+	        		.range([c_height,0])
+
+
 				var blocks = chart.selectAll("blocks")
 	        		.data(data)
 	        		.enter()
 	        		.append("rect")
 	        		.attr("transform",function(d,i){
-	        			return "translate(" + x_scale(d.x) + "," + y_scale(d.y) + ")"
+	        			return "translate(" + x_scale(d.x) + "," + (y_scale(d.y)-grid_size)  + ")"
 	        		})
 	        		.attr("width",function(d,i){
 	        			return grid_size
@@ -160,13 +173,13 @@ function size(){
 					.attr("class","axis")
 
 				var xAxis = axis.append("g")
-					.attr("transform", "translate(" + 0 + "," + (height-grid_size) + ")")
+					.attr("transform", "translate(" + c_shift.left + "," + (c_height+(grid_size/12)) + ")")
 					.attr("class","xAxis")
 					.attr("fill", colors.myAxis)
 					// .transition()
 					// .delay(transition)
-					.call(d3.axisBottom(x_scale)
-						// .tickFormat(d3.timeFormat("%m.%y")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
+					.call(d3.axisBottom(x_scale) // x_axis_scale
+						.tickFormat(d3.format(".2s")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
 						.tickSize(5)
 						.ticks(20)
 						.tickPadding(5)
@@ -179,13 +192,13 @@ function size(){
 					);
 
 				var yAxis = axis.append("g")
-					.attr("transform", "translate(25,0)")
+					.attr("transform", "translate(30,0)")
 					.attr("class","xAxis")
 					.attr("fill", colors.myAxis)
 					// .transition()
 					// .delay(transition)
-					.call(d3.axisLeft(y_scale)
-						// .tickFormat(d3.timeFormat("%m.%y")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
+					.call(d3.axisLeft(y_scale) // y_axis_scale
+						.tickFormat(d3.format(".2s")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
 						.tickSize(5)
 						.ticks(20)
 						.tickPadding(5)
@@ -232,23 +245,35 @@ function size(){
 				})
 
 				if (xMax > yMax){
-					var max_max = xMax
+					var max_max = xMax + 1
 				}
 				else {
-					var max_max = yMax
+					var max_max = yMax + 1
 				}
+				console.log(max_max)
 
-				var grid = 31,
-					grid_size = width/grid;
+				var grid = max_max,
+					heatmap_grid = 500,
+					grid_size = c_width/grid;
+					
 				var x_scale = d3.scaleLinear()
 					.domain([0, max_max])
-	        		.range([0, (width-grid_size)])
+	        		.range([0, c_width])
 	        	var y_scale = d3.scaleLinear()
 					.domain([max_max,0])
-	        		.range([0,(height-grid_size)])
+	        		.range([0,c_height])
+
+	        	var max_max_axis = 24.5;
+	        	var x_axis_scale = d3.scaleLinear()
+					.domain([max_max, 0])
+	        		.range([c_width,0])
+	        	var y_axis_scale = d3.scaleLinear()
+					.domain([0,max_max])
+	        		.range([c_height,0])
 
 				var chart = plot_analogic.append("g")
 					.attr("class", "chart")
+					.attr("transform","translate(" +  c_shift.left + "," + c_shift.top + ")")
 
         		// tooltip
 				var tip = d3.tip()
@@ -293,12 +318,12 @@ function size(){
 					.attr("class","axis")
 
 				var xAxis = axis.append("g")
-					.attr("transform", "translate(" + 0 + "," + (height-grid_size) + ")")
+					.attr("transform", "translate(" + c_shift.left + "," + (c_height+(grid_size/12)) + ")")
 					.attr("class","xAxis")
 					.attr("fill", colors.myAxis)
 					// .transition()
 					// .delay(transition)
-					.call(d3.axisBottom(x_scale)
+					.call(d3.axisBottom(x_axis_scale)
 						// .tickFormat(d3.timeFormat("%m.%y")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
 						.tickSize(5)
 						.ticks(20)
@@ -312,12 +337,12 @@ function size(){
 					);
 
 				var yAxis = axis.append("g")
-					.attr("transform", "translate(25,0)")
+					.attr("transform", "translate(30,0)")
 					.attr("class","xAxis")
 					.attr("fill", colors.myAxis)
 					// .transition()
 					// .delay(transition)
-					.call(d3.axisLeft(y_scale)
+					.call(d3.axisLeft(y_axis_scale)
 						// .tickFormat(d3.timeFormat("%m.%y")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
 						.tickSize(5)
 						.ticks(20)
