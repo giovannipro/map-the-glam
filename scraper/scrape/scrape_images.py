@@ -90,7 +90,7 @@ def test(n):
 # -----------------------------------
 # Launch scripts
 
-scrape_image("test",0)  # test_data test
+scrape_image("test",47637)  # test_data test
 
 # >>> clean url
 
