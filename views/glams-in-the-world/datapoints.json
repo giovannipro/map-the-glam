@@ -1,50 +1,2612 @@
 [
-  [
-    "German Federal Archive",
-    50.3425000,
-    7.5722,
-    83424
-  ],
-  [
-    "ETH Library",
-    47.3764,
-    8.5480,
-    52077
-  ],
-  [
-    "Tropenmuseum",
-    52.3627,
-    4.9223,
-    49993
-  ],
-  [
-    "State Library of Queensland",
-    -27.4712,
-    153.0181,
-    23700
-  ],
-  [
-    "Livrustkammaren",
-    59.3267,
-    18.0730,
-    18462
-  ],
-  [
-    "Koninklijke Bibliotheek",
-    52.0819,
-    4.3275,
-    13105
-  ],
-  [
-    "Swiss National Library",
-    46.9411,
-    7.4497,
-    11954
-  ],
-  [
-    "Gerald R. Ford Presidential Library and Museum",
-    42.9685,
-    -85.6773,
-    11370
-  ]
+  {
+    "id": 0,
+    "name": "Rijksdienst voor het Cultureel Erfgoed",
+    "commons": "Images from the Rijksdienst voor het Cultureel Erfgoed",
+    "n": 52.1561113,
+    "e": 5.3878266,
+    "count": 486068,
+    "typo": "other"
+  },
+  {
+    "id": 1,
+    "name": "Nationaal Archief",
+    "commons": "Images from Nationaal Archief",
+    "n": 52.0704978,
+    "e": 4.3006999,
+    "count": 349967,
+    "typo": "archive"
+  },
+  {
+    "id": 2,
+    "name": "Naturalis Biodiversity Center",
+    "commons": "Media donated by Naturalis Biodiversity Center",
+    "n": 52.1652617,
+    "e": 4.4736566,
+    "count": 277581,
+    "typo": "other"
+  },
+  {
+    "id": 3,
+    "name": "National Archives and Records Administration",
+    "commons": "Images from the National Archives and Records Administration",
+    "n": 47.7510741,
+    "e": -120.7401385,
+    "count": 206593,
+    "typo": "archive"
+  },
+  {
+    "id": 5,
+    "name": "West Midlands Police",
+    "commons": "westmidlandspolice",
+    "n": 52.4750743,
+    "e": -1.829833,
+    "count": 87111,
+    "typo": "other"
+  },
+  {
+    "id": 6,
+    "name": "German Federal Archive",
+    "commons": "Images from the German Federal Archive",
+    "n": 50.3425,
+    "e": 7.5722,
+    "count": 83424,
+    "typo": "archive"
+  },
+  {
+    "id": 7,
+    "name": "Deutsche Fotothek",
+    "commons": "Images from the Deutsche Fotothek",
+    "n": 51.0278,
+    "e": 13.7367,
+    "count": 62105,
+    "typo": "library"
+  },
+  {
+    "id": 8,
+    "name": "ETH Library",
+    "commons": "Media contributed by the ETH-Bibliothek",
+    "n": 47.3764,
+    "e": 8.548,
+    "count": 52077,
+    "typo": "library"
+  },
+  {
+    "id": 9,
+    "name": "Tropenmuseum",
+    "commons": "Images from the Tropenmuseum",
+    "n": 52.3627,
+    "e": 4.9223,
+    "count": 49993,
+    "typo": "museum"
+  },
+  {
+    "id": 11,
+    "name": "Veikkos Archive",
+    "commons": "Images from the Veikkos Archive",
+    "n": 51.165691,
+    "e": 10.451526,
+    "count": 43477,
+    "typo": "archive"
+  },
+  {
+    "id": 12,
+    "name": "State Library of Queensland",
+    "commons": "Images from the State Library of Queensland",
+    "n": -27.4712,
+    "e": 153.0181,
+    "count": 23700,
+    "typo": "library"
+  },
+  {
+    "id": 13,
+    "name": "Biblioteca europea di informazione e cultura",
+    "commons": "Media from BEIC",
+    "n": 45.4649,
+    "e": 9.1892,
+    "count": 19367,
+    "typo": "library"
+  },
+  {
+    "id": 14,
+    "name": "Livrustkammaren",
+    "commons": "Images from Livrustkammaren",
+    "n": 59.3267,
+    "e": 18.0730,
+    "count": 18462,
+    "typo": "museum"
+  },
+  {
+    "id": 15,
+    "name": "National Library of Wales",
+    "commons": "Images uploaded as part of NLW - WMUK collaboration",
+    "n": 52.41530299999999,
+    "e": -4.082920000000058,
+    "count": 16797,
+    "typo": "library"
+  },
+  {
+    "id": 16,
+    "name": "Koninklijke Bibliotheek",
+    "commons": "Media contributed by Koninklijke Bibliotheek",
+    "n": 52.0819,
+    "e": 4.3275,
+    "count": 13105,
+    "typo": "library"
+  },
+  {
+    "id": 17,
+    "name": "Stiftelsen Hallwylska museet",
+    "commons": "Images_from_Livrustkammaren_och_Skoklosters_slott_med_Stiftelsen_Hallwylska_museet",
+    "n": 59.32665319999999,
+    "e": 18.073036300000012,
+    "count": 46284,
+    "typo": "musuem"
+  },
+  {
+    "id": 18,
+    "name": "Swiss National Library",
+    "commons": "Media contributed by the Swiss National Library",
+    "n": 46.9411,
+    "e": 7.4497,
+    "count": 11954,
+    "typo": "library"
+  },
+  {
+    "id": 19,
+    "name": "Gerald R. Ford Presidential Library and Museum",
+    "commons": "Media contributed by the Gerald R. Ford Presidential Library and Museum",
+    "n": 42.9685,
+    "e": -85.6773,
+    "count": 11370,
+    "typo": "library"
+  },
+  {
+    "id": 20,
+    "name": "Bulgarian Archives State Agency",
+    "commons": "Images from the Bulgarian Archives State Agency",
+    "n": 42.696741,
+    "e": 23.329338,
+    "count": 11248,
+    "typo": "archive"
+  },
+  {
+    "id": 21,
+    "name": "The Yorck Project",
+    "commons": "PD-Art (Yorck Project)",
+    "n": 51.165691,
+    "e": 10.451526000000058,
+    "count": 10535,
+    "typo": "other"
+  },
+  {
+    "id": 22,
+    "name": "Brooklyn Museum",
+    "commons": "Media contributed by the Brooklyn Museum",
+    "n": 40.6712,
+    "e": -73.9636,
+    "count": 10170,
+    "typo": "museum"
+  },
+  {
+    "id": 23,
+    "name": "Archives municipales de Toulouse",
+    "commons": "Media contributed by the Archives municipales de Toulouse",
+    "n": 43.6241,
+    "e": 1.4615,
+    "count": 9701,
+    "typo": "archive"
+  },
+  {
+    "id": 24,
+    "name": "LGBT Free Media Collective",
+    "commons": "LGBT Free Media Collective",
+    "n": null,
+    "e": null,
+    "count": 9381,
+    "typo": "other"
+  },
+  {
+    "id": 25,
+    "name": "Media from ZooKeys",
+    "commons": "Media from ZooKeys",
+    "n": null,
+    "e": null,
+    "count": 6739,
+    "typo": "other"
+  },
+  {
+    "id": 26,
+    "name": "Projet Phoebus",
+    "commons": "Supported by Projet Phoebus",
+    "n": null,
+    "e": null,
+    "count": 5943,
+    "typo": "other"
+  },
+  {
+    "id": 27,
+    "name": "Royal Netherlands Institute of Southeast Asian and Caribbean Studies",
+    "commons": "Media contributed by KITLV",
+    "n": 52.1601144,
+    "e": 4.497009700000035,
+    "count": 5588,
+    "typo": "other"
+  },
+  {
+    "id": 28,
+    "name": "Swiss Federal Archives",
+    "commons": "Media contributed by the Swiss Federal Archives",
+    "n": 46.9404,
+    "e": 7.4465,
+    "count": 5444,
+    "typo": "archive"
+  },
+  {
+    "id": 29,
+    "name": "Museo Nazionale della Scienza e della Tecnologia (Milan)",
+    "commons": "Media from Museo Nazionale della Scienza e della Tecnologia (Milan)",
+    "n": 45.4618,
+    "e": 9.171,
+    "count": 5415,
+    "typo": "museum"
+  },
+  {
+    "id": 30,
+    "name": "National Library of Israel",
+    "commons": "GLAM National Library of Israel",
+    "n": 31.7759,
+    "e": 35.1966,
+    "count": 4768,
+    "typo": "library"
+  },
+  {
+    "id": 31,
+    "name": "Media from the National Museums of World Culture",
+    "commons": "Media from the National Museums of World Culture",
+    "n": 62.92558229999999,
+    "e": 14.516063400000007,
+    "count": 4520,
+    "typo": "museum"
+  },
+  {
+    "id": 32,
+    "name": "Bibliothèque interuniversitaire de santé",
+    "commons": "Media contributed by the Bibliothèque interuniversitaire de santé",
+    "n": 48.8512,
+    "e": 2.3409,
+    "count": 3803,
+    "typo": "library"
+  },
+  {
+    "id": 33,
+    "name": "Nordiska museet",
+    "commons": "Images from Nordiska museet",
+    "n": 59.329,
+    "e": 18.0943,
+    "count": 3662,
+    "typo": "library"
+  },
+  {
+    "id": 34,
+    "name": "Archives cantonales jurassiennes",
+    "commons": "Media contributed by the Archives cantonales jurassiennes",
+    "n": 47.416647,
+    "e": 7.0765656999999464,
+    "count": 3299,
+    "typo": "archive"
+  },
+  {
+    "id": 36,
+    "name": "Library of the National Congress of Chile",
+    "commons": "Media contributed by the Library of the National Congress of Chile",
+    "n": -33.0482,
+    "e": -71.6058,
+    "count": 2959,
+    "typo": "library"
+  },
+  {
+    "id": 37,
+    "name": "Pearson Scott Foresman publisher",
+    "commons": "Pearson Scott Foresman publisher",
+    "n": null,
+    "e": null,
+    "count": 2736,
+    "typo": "other"
+  },
+  {
+    "id": 38,
+    "name": "Museum van Wereldculturen",
+    "commons": "Files from the Nationaal Museum van Wereldculturen",
+    "n": 52.3627,
+    "e": 4.9223,
+    "count": 2732,
+    "typo": "museum"
+  },
+  {
+    "id": 39,
+    "name": "Media from Atlas of Mutual Heritage",
+    "commons": "Media from Atlas of Mutual Heritage",
+    "n": null,
+    "e": null,
+    "count": 2481,
+    "typo": "other"
+  },
+  {
+    "id": 40,
+    "name": "Museum of World Culture (Göteborg)",
+    "commons": "Media from the Museum of World Culture (Göteborg)",
+    "n": 57.70887,
+    "e": 11.974559999999997,
+    "count": 4520,
+    "typo": "museum"
+  },
+  {
+    "id": 41,
+    "name": "Expedition Wikipedia project",
+    "commons": "Files from the Expedition Wikipedia project",
+    "n": null,
+    "e": null,
+    "count": 2420,
+    "typo": "other"
+  },
+  {
+    "id": 42,
+    "name": "Musées de la Haute-Saône",
+    "commons": "Media contributed by the Musées de la Haute-Saône",
+    "n": 46.227638,
+    "e": 2.213749000000007,
+    "count": 2356,
+    "typo": "museum"
+  },
+  {
+    "id": 43,
+    "name": "EnergieAgentur.NRW",
+    "commons": "Photos by EnergieAgentur.NRW",
+    "n": 51.2277411,
+    "e": 6.773455600000034,
+    "count": 2254,
+    "typo": "other"
+  },
+  {
+    "id": 44,
+    "name": "Geographicus",
+    "commons": "Images from Geographicus",
+    "n": 40.6781784,
+    "e": -73.9441579,
+    "count": 2192,
+    "typo": "gallery"
+  },
+  {
+    "id": 46,
+    "name": "Image stock of Wilhelm Walther",
+    "commons": "Digitization of the image stock of Wilhelm Walther",
+    "n": 51.165691,
+    "e": 10.451526000000058,
+    "count": 2141,
+    "typo": "other"
+  },
+  {
+    "id": 47,
+    "name": "Images from the Peace Palace Library",
+    "commons": "Images from the Peace Palace Library",
+    "n": 52.0866,
+    "e": 4.2956,
+    "count": 2063,
+    "typo": "library"
+  },
+  {
+    "id": 48,
+    "name": "Russian International News Agency (RIA Novosti)",
+    "commons": "Images from RIA Novosti",
+    "n": 55.755826,
+    "e": 37.617299900000035,
+    "count": 1998,
+    "typo": "other"
+  },
+  {
+    "id": 49,
+    "name": "Zentralbibliothek Solothurn",
+    "commons": "Media contributed by Zentralbibliothek Solothurn",
+    "n": 47.2099,
+    "e": 7.5297,
+    "count": 1645,
+    "typo": "library"
+  },
+  {
+    "id": 50,
+    "name": "Rijksmuseum",
+    "commons": "Birdwatching Rijksmuseum",
+    "n": 52.3600,
+    "e": 4.8852,
+    "count": 1631,
+    "typo": "museum"
+  },
+  {
+    "id": 51,
+    "name": "Netwerk Oorlogsbronnen",
+    "commons": "Media from Netwerk Oorlogsbronnen",
+    "n": 52.3702157,
+    "e": 4.895167899999933,
+    "count": 1593,
+    "typo": "other"
+  },
+  {
+    "id": 52,
+    "name": "Media from Etnografiska museet",
+    "commons": "Media from Etnografiska museet",
+    "n": 59.32932349999999,
+    "e": 18.068580800000063,
+    "count": 1478,
+    "typo": "museum"
+  },
+  {
+    "id": 53,
+    "name": "Bibliothèque nationale de France",
+    "commons": "Books provided by the BNF",
+    "n": 48.8336,
+    "e": 2.3758,
+    "count": 1440,
+    "typo": "library"
+  },
+  {
+    "id": 55,
+    "name": "Nederlands Instituut voor Militaire Historie",
+    "commons": "Media donated by Nederlands Instituut voor Militaire Historie",
+    "n": 52.0704978,
+    "e": 4.317111000000068,
+    "count": 4.3006999000000405,
+    "typo": "other"
+  },
+  {
+    "id": 56,
+    "name": "Files from the LGBT Free Media Collective",
+    "commons": "Files from the LGBT Free Media Collective",
+    "n": null,
+    "e": null,
+    "count": 1176,
+    "typo": "other"
+  },
+  {
+    "id": 57,
+    "name": "African Studies Centre (Leiden)",
+    "commons": "Images from the African Studies Centre (Leiden)",
+    "n": 52.1601144,
+    "e": 4.497009700000035,
+    "count": 1157,
+    "typo": "other"
+  },
+  {
+    "id": 58,
+    "name": "Museum of the City of Lodz",
+    "commons": "Media contributed by the Museum of the City of Lodz",
+    "n": 51.7592485,
+    "e": 19.45598330000007,
+    "count": 1024,
+    "typo": "museum"
+  },
+  {
+    "id": 59,
+    "name": "Musée dhistoire naturelle",
+    "commons": "GLAM Lille - Musée d'histoire naturelle",
+    "n": 50.62925,
+    "e": 3.057256000000052,
+    "count": 999,
+    "typo": "musuem"
+  },
+  {
+    "id": 60,
+    "name": "Thinktank, Birmingham",
+    "commons": "Files from 2015 Thinktank residency",
+    "n": 52.4829,
+    "e": -1.88606,
+    "count": 980,
+    "typo": "other"
+  },
+  {
+    "id": 61,
+    "name": "Biblioteca comunale di Trento",
+    "commons": "Media from Biblioteca comunale di Trento",
+    "n": 46.0747793,
+    "e": 11.121748600000046,
+    "count": 921,
+    "typo": "library"
+  },
+  {
+    "id": 62,
+    "name": "ELTE",
+    "commons": "Media contributed by ELTE",
+    "n": null,
+    "e": null,
+    "count": 909,
+    "typo": "other"
+  },
+  {
+    "id": 63,
+    "name": "Musei del cibo",
+    "commons": "Media from Musei del cibo",
+    "n": 44.801485,
+    "e": 10.327903600000013,
+    "count": 883,
+    "typo": "museum"
+  },
+  {
+    "id": 64,
+    "name": "Museo Nacional de Bellas Artes",
+    "commons": "Files provided by the Museo Nacional de Bellas Artes",
+    "n": -34.6036844,
+    "e": -58.381559100000004,
+    "count": 865,
+    "typo": "museum"
+  },
+  {
+    "id": 65,
+    "name": "Artgate Fondazione Cariplo",
+    "commons": "Artgate Fondazione Cariplo",
+    "n": 45.4642035,
+    "e": 9.189981999999986,
+    "count": 853,
+    "typo": "other"
+  },
+  {
+    "id": 66,
+    "name": "Internet Archive",
+    "commons": "Scans by the Internet Archive selected by BEIC",
+    "n": null,
+    "e": null,
+    "count": 853,
+    "typo": "other"
+  },
+  {
+    "id": 67,
+    "name": "Groeningemuseum",
+    "commons": "Images from the Groeningemuseum",
+    "n": 51.2052,
+    "e": 3.2267,
+    "count": 844,
+    "typo": "museum"
+  },
+  {
+    "id": 68,
+    "name": "NIOD",
+    "commons": "Media from NIOD",
+    "n": 52.3681,
+    "e": 4.88633,
+    "count": 839,
+    "typo": "other"
+  },
+  {
+    "id": 71,
+    "name": "National Museum in Warsaw",
+    "commons": "Media contributed by the National Museum in Warsaw",
+    "n": 52.2296756,
+    "e": 21.012228700000037,
+    "count": 785,
+    "typo": "museum"
+  },
+  {
+    "id": 72,
+    "name": "Donation by Roel Coutinho",
+    "commons": "Images of Guinea-Bissau and Senegal 1973-1974 donated by Roel Coutinho",
+    "n": 52.1601144,
+    "e": 4.497009700000035,
+    "count": 760,
+    "typo": "other"
+  },
+  {
+    "id": 73,
+    "name": "Provincial Archives of Alberta",
+    "commons": "Files from Provincial Archives of Alberta",
+    "n": 53.9333,
+    "e": -116.5765,
+    "count": 722,
+    "typo": "archive"
+  },
+  {
+    "id": 74,
+    "name": "Archives Nationales (France)",
+    "commons": "Media contributed by the Archives Nationales (France)",
+    "n": 46.2276,
+    "e": 2.2137,
+    "count": 701,
+    "typo": "archives"
+  },
+  {
+    "id": 75,
+    "name": "Rio from above",
+    "commons": "Rio from above",
+    "n": -22.9068467,
+    "e": -43.17289649999998,
+    "count": 692,
+    "typo": "other"
+  },
+  {
+    "id": 76,
+    "name": "State Archive in Poznań",
+    "commons": "Media contributed by the State Archive in Poznań",
+    "n": 52.406374,
+    "e": 16.925168100000064,
+    "count": 671,
+    "typo": "archive"
+  },
+  {
+    "id": 77,
+    "name": "Swiss Foundation Public Domain",
+    "commons": "Media contributed by the Swiss Foundation Public Domain",
+    "n": 47.31892269999999,
+    "e": 8.584470499999952,
+    "count": 669,
+    "typo": "other"
+  },
+  {
+    "id": 78,
+    "name": "Archives municipales de Toulouse",
+    "commons": "Fonds Trutat - Archives municipales de Toulouse",
+    "n": 43.604652,
+    "e": 1.4442090000000007,
+    "count": 608,
+    "typo": "archive"
+  },
+  {
+    "id": 79,
+    "name": "Erfgoed Leiden en Omstreken",
+    "commons": "Media contributed by Erfgoed Leiden en Omstreken",
+    "n": 52.1601144,
+    "e": 4.497009700000035,
+    "count": 604,
+    "typo": "other"
+  },
+  {
+    "id": 80,
+    "name": "Archiwum Główne Akt Dawnych",
+    "commons": "Documents from Archiwum Główne Akt Dawnych",
+    "n": 52.2500,
+    "e": 21.0083,
+    "count": 597,
+    "typo": "archive"
+  },
+  {
+    "id": 81,
+    "name": "National Museum of Iran",
+    "commons": "Islamic ceramics from Nishapur in the Islamic Museum Of National Museum of Iran",
+    "n": 35.6850205932,
+    "e": 51.4174399969,
+    "count": 107,
+    "typo": "museum"
+  },
+  {
+    "id": 83,
+    "name": "Muséum de Toulouse",
+    "commons": "Fonds Trutat - Muséum de Toulouse",
+    "n": 43.6241,
+    "e": 1.4615,
+    "count": 494,
+    "typo": "museum"
+  },
+  {
+    "id": 86,
+    "name": "National Archives of Sweden",
+    "commons": "Images from the National Archives of Sweden",
+    "n": 59.32932349999999,
+    "e": 18.068580800000063,
+    "count": 374,
+    "typo": "archive"
+  },
+  {
+    "id": 87,
+    "name": "Istituto Centrale per gli Archivi",
+    "commons": "Media from ICAR",
+    "n": 41.9027835,
+    "e": 12.496365500000024,
+    "count": 334,
+    "typo": "archive"
+  },
+  {
+    "id": 88,
+    "name": "Archives of American Art",
+    "commons": "Media contributed by the Archives of American Art",
+    "n": 38.8994,
+    "e": -77.0244,
+    "count": 328,
+    "typo": "archive"
+  },
+  {
+    "id": 89,
+    "name": "Photographs produced by WCLA",
+    "commons": "Photographs produced by WCLA",
+    "n": null,
+    "e": null,
+    "count": 318,
+    "typo": "-"
+  },
+  {
+    "id": 90,
+    "name": "Media from the National Archives and Records Administration",
+    "commons": "Media from the National Archives and Records Administration",
+    "n": null,
+    "e": null,
+    "count": 309,
+    "typo": "-"
+  },
+  {
+    "id": 91,
+    "name": "Media contributed by the National Maritime Museum in Gdańsk",
+    "commons": "Media contributed by the National Maritime Museum in Gdańsk",
+    "n": null,
+    "e": null,
+    "count": 300,
+    "typo": "-"
+  },
+  {
+    "id": 92,
+    "name": "Images by the State Library of New South Wales",
+    "commons": "Images by the State Library of New South Wales",
+    "n": null,
+    "e": null,
+    "count": 297,
+    "typo": "-"
+  },
+  {
+    "id": 93,
+    "name": "Media from PhytoKeys",
+    "commons": "Media from PhytoKeys",
+    "n": null,
+    "e": null,
+    "count": 288,
+    "typo": "-"
+  },
+  {
+    "id": 94,
+    "name": "Biblioteca Brasiliana Guita e José Mindlin",
+    "commons": "Media contributed by the Biblioteca Brasiliana Guita e José Mindlin",
+    "n": -23.5625,
+    "e": -46.7217,
+    "count": 265,
+    "typo": "library"
+  },
+  {
+    "id": 95,
+    "name": "Images from Universiteitsbibliotheek Maastricht",
+    "commons": "Images from Universiteitsbibliotheek Maastricht",
+    "n": null,
+    "e": null,
+    "count": 253,
+    "typo": "-"
+  },
+  {
+    "id": 97,
+    "name": "Images from Philippopolis Numismatic Society",
+    "commons": "Images from Philippopolis Numismatic Society",
+    "n": null,
+    "e": null,
+    "count": 237,
+    "typo": "-"
+  },
+  {
+    "id": 98,
+    "name": "Photographs uploaded as part of GLAM Israeli Cartoon Museum",
+    "commons": "Photographs uploaded as part of GLAM Israeli Cartoon Museum",
+    "n": null,
+    "e": null,
+    "count": 234,
+    "typo": "-"
+  },
+  {
+    "id": 99,
+    "name": "Media from the National Liberation Museum 1944-1945",
+    "commons": "Media from the National Liberation Museum 1944-1945",
+    "n": null,
+    "e": null,
+    "count": 227,
+    "typo": "-"
+  },
+  {
+    "id": 100,
+    "name": "2011 Ansel Adams donation from U.S. National Archives",
+    "commons": "2011 Ansel Adams donation from U.S. National Archives",
+    "n": null,
+    "e": null,
+    "count": 221,
+    "typo": "-"
+  },
+  {
+    "id": 101,
+    "name": "Images from the Thessaloniki and the Bulgarians project",
+    "commons": "Images from the Thessaloniki and the Bulgarians project",
+    "n": null,
+    "e": null,
+    "count": 217,
+    "typo": "-"
+  },
+  {
+    "id": 102,
+    "name": "Media from EYE Film Institute Netherlands",
+    "commons": "Media from EYE Film Institute Netherlands",
+    "n": null,
+    "e": null,
+    "count": 215,
+    "typo": "-"
+  },
+  {
+    "id": 103,
+    "name": "Media from the Point Seekers",
+    "commons": "Media from the Point Seekers",
+    "n": null,
+    "e": null,
+    "count": 207,
+    "typo": "-"
+  },
+  {
+    "id": 104,
+    "name": "Images from the Institute for Housing and Urban Development Studies",
+    "commons": "Images from the Institute for Housing and Urban Development Studies",
+    "n": null,
+    "e": null,
+    "count": 190,
+    "typo": "-"
+  },
+  {
+    "id": 105,
+    "name": "Pronunciations from Sounds of Change",
+    "commons": "Pronunciations from Sounds of Change",
+    "n": null,
+    "e": null,
+    "count": 187,
+    "typo": "-"
+  },
+  {
+    "id": 106,
+    "name": "Files provided by Museo Nacional de Artes Visuales de Uruguay",
+    "commons": "Files provided by Museo Nacional de Artes Visuales de Uruguay",
+    "n": null,
+    "e": null,
+    "count": 176,
+    "typo": "-"
+  },
+  {
+    "id": 107,
+    "name": "Wikimedia and the National Library of Wales",
+    "commons": "Wikimedia and the National Library of Wales",
+    "n": null,
+    "e": null,
+    "count": 174,
+    "typo": "-"
+  },
+  {
+    "id": 108,
+    "name": "Media contributed by Tartu Art Museum",
+    "commons": "Media contributed by Tartu Art Museum",
+    "n": null,
+    "e": null,
+    "count": 172,
+    "typo": "-"
+  },
+  {
+    "id": 109,
+    "name": "Media from the Prelinger Archives",
+    "commons": "Media from the Prelinger Archives",
+    "n": null,
+    "e": null,
+    "count": 168,
+    "typo": "-"
+  },
+  {
+    "id": 110,
+    "name": "Regional Institute of Culture in Katowice",
+    "commons": "Media contributed by the Regional Institute of Culture in Katowice",
+    "n": 50.26489189999999,
+    "e": 19.02378150000004,
+    "count": 166,
+    "typo": "other"
+  },
+  {
+    "id": 111,
+    "name": "Files created by COSV",
+    "commons": "Files created by COSV",
+    "n": null,
+    "e": null,
+    "count": 164,
+    "typo": "-"
+  },
+  {
+    "id": 112,
+    "name": "Universiteitsbibliotheek Utrecht",
+    "commons": "Images from Universiteitsbibliotheek Utrecht - Bijzondere Collecties",
+    "n": 52.09073739999999,
+    "e": 5.121420100000023,
+    "count": 158,
+    "typo": "other"
+  },
+  {
+    "id": 113,
+    "name": "Cooperation images - Museum für Hamburgische Geschichte",
+    "commons": "Cooperation images - Museum für Hamburgische Geschichte",
+    "n": null,
+    "e": null,
+    "count": 156,
+    "typo": "-"
+  },
+  {
+    "id": 114,
+    "name": "National Library of Serbia",
+    "commons": "National Library of Serbia",
+    "n": null,
+    "e": null,
+    "count": 152,
+    "typo": "-"
+  },
+  {
+    "id": 115,
+    "name": "ENVT thesis digitized by Wikimedia France",
+    "commons": "ENVT thesis digitized by Wikimedia France",
+    "n": null,
+    "e": null,
+    "count": 150,
+    "typo": "-"
+  },
+  {
+    "id": 116,
+    "name": "Images from Akademiska Föreningens arkiv",
+    "commons": "Images from Akademiska Föreningens arkiv",
+    "n": null,
+    "e": null,
+    "count": 143,
+    "typo": "-"
+  },
+  {
+    "id": 117,
+    "name": "Files provided by Centro de Fotografía de Montevideo",
+    "commons": "Files provided by Centro de Fotografía de Montevideo",
+    "n": null,
+    "e": null,
+    "count": 142,
+    "typo": "-"
+  },
+  {
+    "id": 118,
+    "name": "Contributions from Llotja",
+    "commons": "Contributions from Llotja",
+    "n": null,
+    "e": null,
+    "count": 139,
+    "typo": "-"
+  },
+  {
+    "id": 119,
+    "name": "Media contributed by the State Archive in Łódź",
+    "commons": "Media contributed by the State Archive in Łódź",
+    "n": null,
+    "e": null,
+    "count": 137,
+    "typo": "-"
+  },
+  {
+    "id": 120,
+    "name": "Media contributed by the Archives cantonales vaudoises",
+    "commons": "Media contributed by the Archives cantonales vaudoises",
+    "n": null,
+    "e": null,
+    "count": 132,
+    "typo": "-"
+  },
+  {
+    "id": 121,
+    "name": "Media from Atria, kennisinstituut voor emancipatie en vrouwengeschiedenis",
+    "commons": " kennisinstituut voor emancipatie en vrouwengeschiedenis",
+    "n": null,
+    "e": null,
+    "count": "-",
+    "typo": "-"
+  },
+  {
+    "id": 122,
+    "name": "Files provided by Archivo General de la Nación Argentina",
+    "commons": "Files provided by Archivo General de la Nación Argentina",
+    "n": -34.6046,
+    "e": -58.3705,
+    "count": 129,
+    "typo": "archive"
+  },
+  {
+    "id": 123,
+    "name": "Files provided by the Museo del Bicentenario",
+    "commons": "Files provided by the Museo del Bicentenario",
+    "n": null,
+    "e": null,
+    "count": 121,
+    "typo": "-"
+  },
+  {
+    "id": 124,
+    "name": "Media contributed by Spread the sign",
+    "commons": "Media contributed by Spread the sign",
+    "n": null,
+    "e": null,
+    "count": 119,
+    "typo": "-"
+  },
+  {
+    "id": 125,
+    "name": "Immigration Museum of the State of São Paulo",
+    "commons": "Media contributed by the Immigration Museum of the State of São Paulo",
+    "n": -23.5505199,
+    "e": -46.63330939999997,
+    "count": 119,
+    "typo": "-"
+  },
+  {
+    "id": 126,
+    "name": "Images from the Royal Museum of Fine Arts Antwerp",
+    "commons": "Images from the Royal Museum of Fine Arts Antwerp",
+    "n": null,
+    "e": null,
+    "count": 118,
+    "typo": "-"
+  },
+  {
+    "id": 127,
+    "name": "Images from Harrogate Museums and Arts",
+    "commons": "Images from Harrogate Museums and Arts",
+    "n": null,
+    "e": null,
+    "count": 116,
+    "typo": "-"
+  },
+  {
+    "id": 128,
+    "name": "Musée dAquitaine",
+    "commons": "Musée d'Aquitaine",
+    "n": null,
+    "e": null,
+    "count": 115,
+    "typo": "-"
+  },
+  {
+    "id": 129,
+    "name": "SAN - Sistema archivistico nazionale",
+    "commons": "SAN - Sistema archivistico nazionale",
+    "n": 41.87194,
+    "e": 12.567379999999957,
+    "count": 109,
+    "typo": "archive"
+  },
+  {
+    "id": 130,
+    "name": "Files provided by Fundación Española para la Ciencia y la Tecnología",
+    "commons": "Files provided by Fundación Española para la Ciencia y la Tecnología",
+    "n": null,
+    "e": null,
+    "count": 105,
+    "typo": "-"
+  },
+  {
+    "id": 131,
+    "name": "Media contributed by the Solomon R. Guggenheim Museum",
+    "commons": "Media contributed by the Solomon R. Guggenheim Museum",
+    "n": null,
+    "e": null,
+    "count": 105,
+    "typo": "-"
+  },
+  {
+    "id": 132,
+    "name": "GLAM Project",
+    "commons": "GLAM Project",
+    "n": null,
+    "e": null,
+    "count": 103,
+    "typo": "-"
+  },
+  {
+    "id": 133,
+    "name": "Zentralbibliothek Zürich",
+    "commons": "Media contributed by Zentralbibliothek Zürich",
+    "n": 47.3743,
+    "e": 8.5455,
+    "count": 102,
+    "typo": "library"
+  },
+  {
+    "id": 134,
+    "name": "Fragments of the past",
+    "commons": "Fragments of the past",
+    "n": null,
+    "e": null,
+    "count": 100,
+    "typo": "-"
+  },
+  {
+    "id": 135,
+    "name": "Media contributed by the Museo de la Memoria y los Derechos Humanos",
+    "commons": "Media contributed by the Museo de la Memoria y los Derechos Humanos",
+    "n": null,
+    "e": null,
+    "count": 99,
+    "typo": "-"
+  },
+  {
+    "id": 136,
+    "name": "Museum für Kunst und Gewerbe Sammlung Online",
+    "commons": "Museum für Kunst und Gewerbe Sammlung Online",
+    "n": null,
+    "e": null,
+    "count": 99,
+    "typo": "-"
+  },
+  {
+    "id": 137,
+    "name": "Media contributed by the Museum of Modern Art in Warsaw",
+    "commons": "Media contributed by the Museum of Modern Art in Warsaw",
+    "n": null,
+    "e": null,
+    "count": 97,
+    "typo": "-"
+  },
+  {
+    "id": 138,
+    "name": "Files from Memoria Chilena",
+    "commons": "Files from Memoria Chilena",
+    "n": null,
+    "e": null,
+    "count": 90,
+    "typo": "-"
+  },
+  {
+    "id": 139,
+    "name": "Media contributed by the Archives municipales de Rennes",
+    "commons": "Media contributed by the Archives municipales de Rennes",
+    "n": null,
+    "e": null,
+    "count": 90,
+    "typo": "-"
+  },
+  {
+    "id": 140,
+    "name": "Files provided by the Asociación Amigos del Tranvía",
+    "commons": "Files provided by the Asociación Amigos del Tranvía",
+    "n": null,
+    "e": null,
+    "count": 88,
+    "typo": "-"
+  },
+  {
+    "id": 141,
+    "name": "Images from the Royal Library of Belgium",
+    "commons": "Images from the Royal Library of Belgium",
+    "n": null,
+    "e": null,
+    "count": 84,
+    "typo": "-"
+  },
+  {
+    "id": 142,
+    "name": "Muzeum Cyfrowe 2016",
+    "commons": "Muzeum Cyfrowe 2016",
+    "n": null,
+    "e": null,
+    "count": 84,
+    "typo": "-"
+  },
+  {
+    "id": 143,
+    "name": "Images from Museo Galileo",
+    "commons": "Images from Museo Galileo",
+    "n": null,
+    "e": null,
+    "count": 83,
+    "typo": "-"
+  },
+  {
+    "id": 144,
+    "name": "GLAM presentations",
+    "commons": "GLAM presentations",
+    "n": null,
+    "e": null,
+    "count": 82,
+    "typo": "-"
+  },
+  {
+    "id": 145,
+    "name": "GLAM buildings needing review",
+    "commons": "GLAM buildings needing review",
+    "n": null,
+    "e": null,
+    "count": 81,
+    "typo": "-"
+  },
+  {
+    "id": 146,
+    "name": "Images from the University of Edinburgh",
+    "commons": "Images from the University of Edinburgh",
+    "n": null,
+    "e": null,
+    "count": 79,
+    "typo": "-"
+  },
+  {
+    "id": 147,
+    "name": "Images from Regionarkivet",
+    "commons": "Images from Regionarkivet",
+    "n": null,
+    "e": null,
+    "count": 76,
+    "typo": "-"
+  },
+  {
+    "id": 148,
+    "name": "Media contributed by Brno Observatory and Planetarium",
+    "commons": "Media contributed by Brno Observatory and Planetarium",
+    "n": null,
+    "e": null,
+    "count": 76,
+    "typo": "-"
+  },
+  {
+    "id": 149,
+    "name": "GLAM in Brazil",
+    "commons": "GLAM in Brazil",
+    "n": null,
+    "e": null,
+    "count": 74,
+    "typo": "-"
+  },
+  {
+    "id": 150,
+    "name": "Media contributed by the European Solidarity Centre",
+    "commons": "Media contributed by the European Solidarity Centre",
+    "n": null,
+    "e": null,
+    "count": 71,
+    "typo": "-"
+  },
+  {
+    "id": 151,
+    "name": "GLAM in Poland",
+    "commons": "GLAM in Poland",
+    "n": null,
+    "e": null,
+    "count": 68,
+    "typo": "-"
+  },
+  {
+    "id": 152,
+    "name": "Mary Rose Museum",
+    "commons": "Mary Rose Trust donation",
+    "n": 50.8197675,
+    "e": -1.0879769000000579,
+    "count": 67,
+    "typo": "other"
+  },
+  {
+    "id": 153,
+    "name": "Erfgoed Gelderland",
+    "commons": "Erfgoed_Gelderland",
+    "n": 52.13263300000001,
+    "e": 5.2912659999999505,
+    "count": 79,
+    "typo": "other"
+  },
+  {
+    "id": 154,
+    "name": "Museo Memoria y Tolerancia",
+    "commons": "Images donated by Museo Memoria y Tolerancia",
+    "n": 19.4342,
+    "e": -99.1446,
+    "count": 63,
+    "typo": "museum"
+  },
+  {
+    "id": 155,
+    "name": "Musée des Augustins de Toulouse",
+    "commons": "Musée des Augustins de Toulouse",
+    "n": 43.6241,
+    "e": 1.4615,
+    "count": 62,
+    "typo": "museum"
+  },
+  {
+    "id": 156,
+    "name": "Salvador Allende Foundation",
+    "commons": "Media contributed by Salvador Allende Foundation",
+    "n": -33.4488897,
+    "e": -70.6692655,
+    "count": 60,
+    "typo": "other"
+  },
+  {
+    "id": 157,
+    "name": "Musée de lardoise (Trélazé)",
+    "commons": "Musée de l'ardoise (Trélazé)",
+    "n": 47.4470,
+    "e": -0.4898,
+    "count": 60,
+    "typo": "museum"
+  },
+  {
+    "id": 158,
+    "name": "GLAM 3D reconstructions by Cicero Moraes",
+    "commons": "GLAM 3D reconstructions by Cicero Moraes",
+    "n": 42.02797400000001,
+    "e": 35.15172499999994,
+    "count": 58,
+    "typo": "other"
+  },
+  {
+    "id": 159,
+    "name": "Koninklijke Bibliotheek",
+    "commons": "GLAM at Koninklijke Bibliotheek",
+    "n": 52.0819,
+    "e": 4.3275,
+    "count": 58,
+    "typo": "library"
+  },
+  {
+    "id": 160,
+    "name": "Museo de Arte Popular",
+    "commons": "Images from the Museo de Arte Popular",
+    "n": 19.4340,
+    "e": -99.1463,
+    "count": 58,
+    "typo": "museum"
+  },
+  {
+    "id": 161,
+    "name": "Espacio Memoria y Derechos Humanos",
+    "commons": "Files provided by Espacio Memoria y Derechos Humanos",
+    "n": -34.5381,
+    "e": -58.4633,
+    "count": 56,
+    "typo": "other"
+  },
+  {
+    "id": 162,
+    "name": "Biblioteca del Senado de la provincia de Buenos Aires",
+    "commons": "Files provided by Biblioteca del Senado de la provincia de Buenos Aires",
+    "n": -34.60368440000001,
+    "e": -58.381559100000004,
+    "count": 54,
+    "typo": "library"
+  },
+  {
+    "id": 163,
+    "name": "Herbert Art Gallery and Museum",
+    "commons": "Images from Herbert Art Gallery and Museum",
+    "n": 52.4076,
+    "e": 1.5065,
+    "count": 50,
+    "typo": "galley"
+  },
+  {
+    "id": 164,
+    "name": "Gallen-Kallela Museum",
+    "commons": "Media contributed by The Gallen-Kallela Museum",
+    "n": 60.2065,
+    "e": 24.8389,
+    "count": 50,
+    "typo": "museum"
+  },
+  {
+    "id": 166,
+    "name": "Images from Dig It!",
+    "commons": "Images from Dig It!",
+    "n": 56.49067119999999,
+    "e": -4.2026458000000275,
+    "count": 49,
+    "typo": "other"
+  },
+  {
+    "id": 167,
+    "name": "Contributions from EDRA",
+    "commons": "Contributions from EDRA",
+    "n": null,
+    "e": null,
+    "count": 47,
+    "typo": "-"
+  },
+  {
+    "id": 168,
+    "name": "Media contributed by Archaeological Museum Hamburg",
+    "commons": "Media contributed by Archaeological Museum Hamburg",
+    "n": null,
+    "e": null,
+    "count": 46,
+    "typo": "-"
+  },
+  {
+    "id": 169,
+    "name": "Media contributed by the City Museum of Ljubljana",
+    "commons": "Media contributed by the City Museum of Ljubljana",
+    "n": null,
+    "e": null,
+    "count": 46,
+    "typo": "-"
+  },
+  {
+    "id": 170,
+    "name": "Files donated by VocalEyes",
+    "commons": "Files donated by VocalEyes",
+    "n": null,
+    "e": null,
+    "count": 43,
+    "typo": "-"
+  },
+  {
+    "id": 171,
+    "name": "Documents from Centro de Estudios de Historia de México Carso Fundación Carlos Slim",
+    "commons": "Documents from Centro de Estudios de Historia de México Carso Fundación Carlos Slim",
+    "n": null,
+    "e": null,
+    "count": 41,
+    "typo": "-"
+  },
+  {
+    "id": 172,
+    "name": "Images from the Victor Horta Museum",
+    "commons": "Images from the Victor Horta Museum",
+    "n": null,
+    "e": null,
+    "count": 40,
+    "typo": "-"
+  },
+  {
+    "id": 173,
+    "name": "Musée national de céramique (Sèvres)",
+    "commons": "Musée national de céramique (Sèvres)",
+    "n": null,
+    "e": null,
+    "count": 39,
+    "typo": "-"
+  },
+  {
+    "id": 174,
+    "name": "Files provided by the Casal de Catalunya",
+    "commons": "Files provided by the Casal de Catalunya",
+    "n": null,
+    "e": null,
+    "count": 38,
+    "typo": "-"
+  },
+  {
+    "id": 175,
+    "name": "Contributions from Serra i Abella",
+    "commons": "Contributions from Serra i Abella",
+    "n": null,
+    "e": null,
+    "count": 38,
+    "typo": "-"
+  },
+  {
+    "id": 180,
+    "name": "Library of the Chilean National Congress",
+    "commons": "Files from the BCN",
+    "n": -33.048286,
+    "e": -71.605464,
+    "count": 33,
+    "typo": "library"
+  },
+  {
+    "id": 181,
+    "name": "Files provided by Biblioteca Nacional de España",
+    "commons": "Files provided by Biblioteca Nacional de España",
+    "n": null,
+    "e": null,
+    "count": 31,
+    "typo": "-"
+  },
+  {
+    "id": 182,
+    "name": "Files provided by Fundación Cultural Prieto Coussent",
+    "commons": "Files provided by Fundación Cultural Prieto Coussent",
+    "n": null,
+    "e": null,
+    "count": 31,
+    "typo": "-"
+  },
+  {
+    "id": 183,
+    "name": "Historical Archives of Belgrade",
+    "commons": "Historical Archives of Belgrade",
+    "n": null,
+    "e": null,
+    "count": 31,
+    "typo": "-"
+  },
+  {
+    "id": 184,
+    "name": "Media from CBA UNISA",
+    "commons": "Media from CBA UNISA",
+    "n": null,
+    "e": null,
+    "count": 31,
+    "typo": "-"
+  },
+  {
+    "id": 185,
+    "name": "Media from Archivi Mondadori",
+    "commons": "Media from Archivi Mondadori",
+    "n": null,
+    "e": null,
+    "count": 30,
+    "typo": "-"
+  },
+  {
+    "id": 186,
+    "name": "Media contributed by the Museum of Polish History",
+    "commons": "Media contributed by the Museum of Polish History",
+    "n": null,
+    "e": null,
+    "count": 30,
+    "typo": "-"
+  },
+  {
+    "id": 187,
+    "name": "QRpedia",
+    "commons": "QRpedia",
+    "n": null,
+    "e": null,
+    "count": 29,
+    "typo": "-"
+  },
+  {
+    "id": 188,
+    "name": "Images from Bonnier",
+    "commons": "Images from Bonnier",
+    "n": null,
+    "e": null,
+    "count": 29,
+    "typo": "-"
+  },
+  {
+    "id": 189,
+    "name": "Media owned by simpleshow",
+    "commons": "Media owned by simpleshow",
+    "n": null,
+    "e": null,
+    "count": 28,
+    "typo": "-"
+  },
+  {
+    "id": 190,
+    "name": "Wikipedians-in-Residence",
+    "commons": "Wikipedians-in-Residence",
+    "n": null,
+    "e": null,
+    "count": 27,
+    "typo": "-"
+  },
+  {
+    "id": 191,
+    "name": "Media contributed by the Mazovian Digital Library",
+    "commons": "Media contributed by the Mazovian Digital Library",
+    "n": null,
+    "e": null,
+    "count": 27,
+    "typo": "-"
+  },
+  {
+    "id": 192,
+    "name": "Napoléon et lEmpire - Archives Nationales",
+    "commons": "Napoléon et l'Empire - Archives Nationales",
+    "n": null,
+    "e": null,
+    "count": 26,
+    "typo": "-"
+  },
+  {
+    "id": 193,
+    "name": "Theater Bosko Buha",
+    "commons": "Theater Bosko Buha",
+    "n": null,
+    "e": null,
+    "count": 26,
+    "typo": "-"
+  },
+  {
+    "id": 194,
+    "name": "Media contributed by the Archives Nationales (France)/9",
+    "commons": "Media contributed by the Archives Nationales (France)/9",
+    "n": null,
+    "e": null,
+    "count": 26,
+    "typo": "-"
+  },
+  {
+    "id": 195,
+    "name": "MUSE - Science Museum",
+    "commons": "MUSE - Science Museum",
+    "n": null,
+    "e": null,
+    "count": 24,
+    "typo": "-"
+  },
+  {
+    "id": 196,
+    "name": "Wiki Loves Monuments",
+    "commons": "Wiki Loves Monuments",
+    "n": null,
+    "e": null,
+    "count": 24,
+    "typo": "-"
+  },
+  {
+    "id": 197,
+    "name": "Contributions from Museu Nacional Arqueològic de Tarragona",
+    "commons": "Contributions from Museu Nacional Arqueològic de Tarragona",
+    "n": null,
+    "e": null,
+    "count": 24,
+    "typo": "-"
+  },
+  {
+    "id": 198,
+    "name": "High-quality images of the Charters of Freedom from the National Archives and Records Administration",
+    "commons": "High-quality images of the Charters of Freedom from the National Archives and Records Administration",
+    "n": null,
+    "e": null,
+    "count": 24,
+    "typo": "-"
+  },
+  {
+    "id": 199,
+    "name": "Images from Umeå University",
+    "commons": "Images from Umeå University",
+    "n": null,
+    "e": null,
+    "count": 24,
+    "typo": "-"
+  },
+  {
+    "id": 200,
+    "name": "Media contributed by Museo Nacional de Bellas Artes (Chile)",
+    "commons": "Media contributed by Museo Nacional de Bellas Artes (Chile)",
+    "n": null,
+    "e": null,
+    "count": 24,
+    "typo": "-"
+  },
+  {
+    "id": 201,
+    "name": "Media from Flipje & Streekmuseum Tiel",
+    "commons": "Media from Flipje & Streekmuseum Tiel",
+    "n": null,
+    "e": null,
+    "count": 24,
+    "typo": "-"
+  },
+  {
+    "id": 202,
+    "name": "Files from the Australian Broadcasting Corporation",
+    "commons": "Files from the Australian Broadcasting Corporation",
+    "n": null,
+    "e": null,
+    "count": 23,
+    "typo": "-"
+  },
+  {
+    "id": 203,
+    "name": "Media owned by Consumer Reports",
+    "commons": "Media owned by Consumer Reports",
+    "n": null,
+    "e": null,
+    "count": 23,
+    "typo": "-"
+  },
+  {
+    "id": 204,
+    "name": "Wikipassport",
+    "commons": "Wikipassport",
+    "n": null,
+    "e": null,
+    "count": 22,
+    "typo": "-"
+  },
+  {
+    "id": 205,
+    "name": "Images from Paisley Museum",
+    "commons": "Images from Paisley Museum",
+    "n": null,
+    "e": null,
+    "count": 22,
+    "typo": "-"
+  },
+  {
+    "id": 206,
+    "name": "GLAM in Germany",
+    "commons": "GLAM in Germany",
+    "n": null,
+    "e": null,
+    "count": 21,
+    "typo": "-"
+  },
+  {
+    "id": 207,
+    "name": "Contributions from Escola dArt i Disseny de Tarragona",
+    "commons": "Contributions from Escola d'Art i Disseny de Tarragona",
+    "n": null,
+    "e": null,
+    "count": 21,
+    "typo": "-"
+  },
+  {
+    "id": 208,
+    "name": "WikiArS",
+    "commons": "WikiArS",
+    "n": null,
+    "e": null,
+    "count": 20,
+    "typo": "-"
+  },
+  {
+    "id": 209,
+    "name": "Watercolours from Herbert Art Gallery and Museum",
+    "commons": "Watercolours from Herbert Art Gallery and Museum",
+    "n": null,
+    "e": null,
+    "count": 20,
+    "typo": "-"
+  },
+  {
+    "id": 210,
+    "name": "This Month in GLAM",
+    "commons": "This Month in GLAM",
+    "n": null,
+    "e": null,
+    "count": 19,
+    "typo": "-"
+  },
+  {
+    "id": 211,
+    "name": "Wikimedia and York Museums Trust",
+    "commons": "Wikimedia and York Museums Trust",
+    "n": null,
+    "e": null,
+    "count": 19,
+    "typo": "-"
+  },
+  {
+    "id": 212,
+    "name": "Terazije Theatre",
+    "commons": "Terazije Theatre",
+    "n": null,
+    "e": null,
+    "count": 18,
+    "typo": "-"
+  },
+  {
+    "id": 213,
+    "name": "GLAM in Serbia",
+    "commons": "GLAM in Serbia",
+    "n": null,
+    "e": null,
+    "count": 17,
+    "typo": "-"
+  },
+  {
+    "id": 214,
+    "name": "Images from Eindhoven University of Technology - Information Expertise Center",
+    "commons": "Images from Eindhoven University of Technology - Information Expertise Center",
+    "n": null,
+    "e": null,
+    "count": 17,
+    "typo": "-"
+  },
+  {
+    "id": 215,
+    "name": "Wikimedia and the National Library of Scotland",
+    "commons": "Wikimedia and the National Library of Scotland",
+    "n": null,
+    "e": null,
+    "count": 17,
+    "typo": "-"
+  },
+  {
+    "id": 216,
+    "name": "GLAMwiki toolset project",
+    "commons": "GLAMwiki toolset project",
+    "n": null,
+    "e": null,
+    "count": 16,
+    "typo": "-"
+  },
+  {
+    "id": 217,
+    "name": "Musée national de la Marine",
+    "commons": "Musée national de la Marine",
+    "n": null,
+    "e": null,
+    "count": 16,
+    "typo": "-"
+  },
+  {
+    "id": 218,
+    "name": "Images from Rijksvoorlichtingsdienst",
+    "commons": "Images from Rijksvoorlichtingsdienst",
+    "n": null,
+    "e": null,
+    "count": 15,
+    "typo": "-"
+  },
+  {
+    "id": 219,
+    "name": "Paedophryne amauensis featured content",
+    "commons": "Paedophryne amauensis featured content",
+    "n": null,
+    "e": null,
+    "count": 15,
+    "typo": "-"
+  },
+  {
+    "id": 220,
+    "name": "Images from Glasgow Womens Library",
+    "commons": "Images from Glasgow Women's Library",
+    "n": null,
+    "e": null,
+    "count": 13,
+    "typo": "-"
+  },
+  {
+    "id": 221,
+    "name": "Images from the King Baudouin Foundation",
+    "commons": "Images from the King Baudouin Foundation",
+    "n": null,
+    "e": null,
+    "count": 13,
+    "typo": "-"
+  },
+  {
+    "id": 222,
+    "name": "GLAM activists",
+    "commons": "GLAM activists",
+    "n": null,
+    "e": null,
+    "count": 11,
+    "typo": "-"
+  },
+  {
+    "id": 223,
+    "name": "Images from Groam House Museum",
+    "commons": "Images from Groam House Museum",
+    "n": null,
+    "e": null,
+    "count": 11,
+    "typo": "-"
+  },
+  {
+    "id": 224,
+    "name": "Media contributed by Roman Catholic Diocese of Brno",
+    "commons": "Media contributed by Roman Catholic Diocese of Brno",
+    "n": null,
+    "e": null,
+    "count": 11,
+    "typo": "-"
+  },
+  {
+    "id": 225,
+    "name": "Wikimedia and the British Library",
+    "commons": "Wikimedia and the British Library",
+    "n": null,
+    "e": null,
+    "count": 11,
+    "typo": "-"
+  },
+  {
+    "id": 226,
+    "name": "GLAM in Uruguay",
+    "commons": "GLAM in Uruguay",
+    "n": null,
+    "e": null,
+    "count": 10,
+    "typo": "-"
+  },
+  {
+    "id": 227,
+    "name": "Media contributed by the George Washington University",
+    "commons": "Media contributed by the George Washington University",
+    "n": null,
+    "e": null,
+    "count": 10,
+    "typo": "-"
+  },
+  {
+    "id": 228,
+    "name": "Wikimedia medicine",
+    "commons": "Wikimedia medicine",
+    "n": null,
+    "e": null,
+    "count": 10,
+    "typo": "-"
+  },
+  {
+    "id": 229,
+    "name": "GLAM in Macedonia",
+    "commons": "GLAM in Macedonia",
+    "n": null,
+    "e": null,
+    "count": 9,
+    "typo": "-"
+  },
+  {
+    "id": 230,
+    "name": "Files provided by Fundación Miguel Delibes",
+    "commons": "Files provided by Fundación Miguel Delibes",
+    "n": null,
+    "e": null,
+    "count": 9,
+    "typo": "-"
+  },
+  {
+    "id": 231,
+    "name": "Images from the Swiss Federal Statistical Office",
+    "commons": "Images from the Swiss Federal Statistical Office",
+    "n": null,
+    "e": null,
+    "count": 9,
+    "typo": "-"
+  },
+  {
+    "id": 232,
+    "name": "GLAM in Italy",
+    "commons": "GLAM in Italy",
+    "n": null,
+    "e": null,
+    "count": 8,
+    "typo": "-"
+  },
+  {
+    "id": 233,
+    "name": "Images from the National Museum of Australia",
+    "commons": "Images from the National Museum of Australia",
+    "n": null,
+    "e": null,
+    "count": 8,
+    "typo": "-"
+  },
+  {
+    "id": 234,
+    "name": "GLAM in Argentina",
+    "commons": "GLAM in Argentina",
+    "n": null,
+    "e": null,
+    "count": 8,
+    "typo": "-"
+  },
+  {
+    "id": 235,
+    "name": "GLAM in Austria",
+    "commons": "GLAM in Austria",
+    "n": null,
+    "e": null,
+    "count": 8,
+    "typo": "-"
+  },
+  {
+    "id": 236,
+    "name": "Contributions from Escuela de arte diez",
+    "commons": "Contributions from Escuela de arte diez",
+    "n": null,
+    "e": null,
+    "count": 7,
+    "typo": "-"
+  },
+  {
+    "id": 237,
+    "name": "Creative Commons toolkits booksprint",
+    "commons": "Creative Commons toolkits booksprint",
+    "n": null,
+    "e": null,
+    "count": 7,
+    "typo": "-"
+  },
+  {
+    "id": 238,
+    "name": "Musée de Bretagne",
+    "commons": "Musée de Bretagne",
+    "n": null,
+    "e": null,
+    "count": 7,
+    "typo": "-"
+  },
+  {
+    "id": 239,
+    "name": "RIAN Archive photos of Perm",
+    "commons": "RIAN Archive photos of Perm",
+    "n": null,
+    "e": null,
+    "count": 7,
+    "typo": "-"
+  },
+  {
+    "id": 240,
+    "name": "Wiki From Above",
+    "commons": "Wiki From Above",
+    "n": null,
+    "e": null,
+    "count": 6,
+    "typo": "-"
+  },
+  {
+    "id": 241,
+    "name": "OpenGLAM",
+    "commons": "OpenGLAM",
+    "n": null,
+    "e": null,
+    "count": 6,
+    "typo": "-"
+  },
+  {
+    "id": 242,
+    "name": "Images from the Alfredo E. Múlgura Historical Museum",
+    "commons": "Images from the Alfredo E. Múlgura Historical Museum",
+    "n": null,
+    "e": null,
+    "count": 6,
+    "typo": "-"
+  },
+  {
+    "id": 243,
+    "name": "GLAM in Armenia",
+    "commons": "GLAM in Armenia",
+    "n": null,
+    "e": null,
+    "count": 6,
+    "typo": "-"
+  },
+  {
+    "id": 244,
+    "name": "Files provided by Instituto Andaluz del Patrimonio Histórico",
+    "commons": "Files provided by Instituto Andaluz del Patrimonio Histórico",
+    "n": null,
+    "e": null,
+    "count": 6,
+    "typo": "-"
+  },
+  {
+    "id": 245,
+    "name": "Washing in Auckland Museum",
+    "commons": "Washing in Auckland Museum",
+    "n": null,
+    "e": null,
+    "count": 6,
+    "typo": "-"
+  },
+  {
+    "id": 246,
+    "name": "Media contributed by Epigraphic Database Heidelberg",
+    "commons": "Media contributed by Epigraphic Database Heidelberg",
+    "n": null,
+    "e": null,
+    "count": 5,
+    "typo": "-"
+  },
+  {
+    "id": 247,
+    "name": "Media from Medelhavsmuseet",
+    "commons": "Media from Medelhavsmuseet",
+    "n": null,
+    "e": null,
+    "count": 5,
+    "typo": "-"
+  },
+  {
+    "id": 248,
+    "name": "National Museum in Warsaw - Europeana Art History challenge 2016",
+    "commons": "National Museum in Warsaw - Europeana Art History challenge 2016",
+    "n": null,
+    "e": null,
+    "count": 5,
+    "typo": "-"
+  },
+  {
+    "id": 249,
+    "name": "GLAM in Hungary",
+    "commons": "GLAM in Hungary",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 250,
+    "name": "Media contributed by the Basel University Library",
+    "commons": "Media contributed by the Basel University Library",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 251,
+    "name": "GLAM project process diagrams",
+    "commons": "GLAM project process diagrams",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 252,
+    "name": "Media contributed by the National Historical Museum",
+    "commons": "Media contributed by the National Historical Museum",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 253,
+    "name": "SaveMLAK",
+    "commons": "SaveMLAK",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 254,
+    "name": "Wikimedia and Derby Museums",
+    "commons": "Wikimedia and Derby Museums",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 255,
+    "name": "Wikimedia and Herbert Art Gallery and Museum",
+    "commons": "Wikimedia and Herbert Art Gallery and Museum",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 256,
+    "name": "National Library in Jagodina",
+    "commons": "National Library in Jagodina",
+    "n": null,
+    "e": null,
+    "count": 4,
+    "typo": "-"
+  },
+  {
+    "id": 257,
+    "name": "GLAM in Bulgaria",
+    "commons": "GLAM in Bulgaria",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 258,
+    "name": "GLAM in the USA",
+    "commons": "GLAM in the USA",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 259,
+    "name": "Spanish Civil War contest",
+    "commons": "Spanish Civil War contest",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 260,
+    "name": "GLAM in Mexico",
+    "commons": "GLAM in Mexico",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 261,
+    "name": "CENFOTO",
+    "commons": "CENFOTO",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 262,
+    "name": "Files provided by Fundación Joaquín Díaz",
+    "commons": "Files provided by Fundación Joaquín Díaz",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 263,
+    "name": "Media contributed by the Cambridge Public Library",
+    "commons": "Media contributed by the Cambridge Public Library",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 264,
+    "name": "Media from Östasiatiska museet",
+    "commons": "Media from Östasiatiska museet",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 265,
+    "name": "Public Library Bora Stanković",
+    "commons": "Public Library 'Bora Stanković', Vranje",
+    "n": null,
+    "e": null,
+    "count": "-",
+    "typo": "3"
+  },
+  {
+    "id": 266,
+    "name": "Videos from the National Archives and Records Administration",
+    "commons": "Videos from the National Archives and Records Administration",
+    "n": null,
+    "e": null,
+    "count": 3,
+    "typo": "-"
+  },
+  {
+    "id": 267,
+    "name": "GLAM in Canada",
+    "commons": "GLAM in Canada",
+    "n": null,
+    "e": null,
+    "count": 2,
+    "typo": "-"
+  },
+  {
+    "id": 268,
+    "name": "GLAM in Sweden",
+    "commons": "GLAM in Sweden",
+    "n": null,
+    "e": null,
+    "count": 2,
+    "typo": "-"
+  },
+  {
+    "id": 269,
+    "name": "Media contributed by Agrupación Amigos del Winnipeg",
+    "commons": "Media contributed by Agrupación Amigos del Winnipeg",
+    "n": null,
+    "e": null,
+    "count": 2,
+    "typo": "-"
+  },
+  {
+    "id": 270,
+    "name": "Media contributed by the Musée national de la Marine",
+    "commons": "Media contributed by the Musée national de la Marine",
+    "n": null,
+    "e": null,
+    "count": 2,
+    "typo": "-"
+  },
+  {
+    "id": 271,
+    "name": "Media from AlterJT",
+    "commons": "Media from AlterJT",
+    "n": null,
+    "e": null,
+    "count": 2,
+    "typo": "-"
+  },
+  {
+    "id": 272,
+    "name": "Wikistation",
+    "commons": "Wikistation",
+    "n": null,
+    "e": null,
+    "count": 2,
+    "typo": "-"
+  },
+  {
+    "id": 273,
+    "name": "W in Auckland Museum",
+    "commons": "W in Auckland Museum",
+    "n": null,
+    "e": null,
+    "count": 2,
+    "typo": "-"
+  },
+  {
+    "id": 274,
+    "name": "GLAM in Israel",
+    "commons": "GLAM in Israel",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 275,
+    "name": "GLAM in Russia",
+    "commons": "GLAM in Russia",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 276,
+    "name": "GLAM Y. & S. Nazarian Library, University of Haifa",
+    "commons": "GLAM Y. & S. Nazarian Library, University of Haifa",
+    "n": null,
+    "e": null,
+    "count": "-",
+    "typo": "1"
+  },
+  {
+    "id": 277,
+    "name": "GLAM in Taiwan",
+    "commons": "GLAM in Taiwan",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 278,
+    "name": "Media contributed by Masaryk University",
+    "commons": "Media contributed by Masaryk University",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 279,
+    "name": "Wikimedia projects in zoos",
+    "commons": "Wikimedia projects in zoos",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 280,
+    "name": "GLAM in Ukraine",
+    "commons": "GLAM in Ukraine",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 281,
+    "name": "GLAM in Norway",
+    "commons": "GLAM in Norway",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 282,
+    "name": "GLAMout",
+    "commons": "GLAMout",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 283,
+    "name": "Images uploaded as part of S4C - WMUK collaboration",
+    "commons": "Images uploaded as part of S4C - WMUK collaboration",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 284,
+    "name": "Media from Biblioteca civica G. Tartarotti",
+    "commons": "Media from Biblioteca civica G. Tartarotti",
+    "n": null,
+    "e": null,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 285,
+    "name": "Media from Biblioteca San Giorgio",
+    "commons": "Media from Biblioteca San Giorgio",
+    "n": 43.9303475,
+    "e": 10.90785870000002,
+    "count": 1,
+    "typo": "-"
+  },
+  {
+    "id": 286,
+    "name": "Musée des Hospices civils de Lyon",
+    "commons": "Musée des Hospices civils de Lyon",
+    "n": 45.764043,
+    "e": 4.835658999999964,
+    "count": 1,
+    "typo": "museum"
+  },
+  {
+    "id": 287,
+    "name": " British Museum",
+    "commons": "Wikimedia and the British Museum",
+    "n": 51.5194,
+    "e": 0.1270,
+    "count": 1,
+    "typo": "museum"
+  },
+  {
+    "id": 288,
+    "name": "Wikimedia and Museums Galleries Scotland",
+    "commons": "Wikimedia and Museums Galleries Scotland",
+    "n": 55.9532,
+    "e": -3.1885,
+    "count": 1,
+    "typo": "museum"
+  },
+  {
+    "id": 289,
+    "name": "Musée des Beaux-Arts de Lyon",
+    "commons": "Musée des Beaux-Arts de Lyon",
+    "n": 45.764043,
+    "e": 4.835658999999964,
+    "count": 1,
+    "typo": "museum"
+  },
+  {
+    "id": 290,
+    "name": "University of Amsterdam‎",
+    "commons": "Images from the Special Collections of the University of Amsterdam‎",
+    "n": 52.3702157,
+    "e": 4.895167899999933,
+    "count": 28720,
+    "typo": "other"
+  },
+  {
+    "id": 291,
+    "name": "University Museum Utrecht‎",
+    "commons": "Media from the University Museum Utrecht‎",
+    "n": 52.09073739999999,
+    "e": 5.121420100000023,
+    "count": 45,
+    "typo": "museum"
+  },
+  {
+    "id": 292,
+    "name": "Work With Sounds",
+    "commons": "Media from Work With Sounds",
+    "n": null,
+    "e": null,
+    "count": 660,
+    "typo": "other"
+  },
+  {
+    "id": 293,
+    "name": "Working Group of Specialised Academic Libraries",
+    "commons": "Media from Work With Sounds",
+    "n": 52.13263300000001,
+    "e": 5.2912659999999505,
+    "count": 205,
+    "typo": "other"
+  },
+  {
+    "id": 294,
+    "name": "NASA",
+    "commons": "Great Images in NASA‎",
+    "n": 47.7510741,
+    "e": -120.7401385,
+    "count": 1369,
+    "typo": "other"
+  },
+  {
+    "id": 295,
+    "name": "Museum für Kunst und Gewerbe Hamburg",
+    "commons": "Files of Museum für Kunst und Gewerbe Hamburg uploaded by RKBot",
+    "n": 53.5510846,
+    "e": 9.993681899999956,
+    "count": 93,
+    "typo": "museum"
+  },
+  {
+    "id": 296,
+    "name": "Metropolitan Museum of Art",
+    "commons": "Metropolitan Museum of Art by department",
+    "n": 40.7794,
+    "e": -73.9632,
+    "count": 62557,
+    "typo": "museum"
+  },
+  {
+    "id": 296,
+    "name": "New York Public Library",
+    "commons": "NYPL_maps",
+    "n": 40.7127753,
+    "e": -74.0059728,
+    "count": 3706,
+    "typo": "library"
+  },
+  {
+    "id": 297,
+    "name": "Library of Congress",
+    "commons": "Files from the Historic American Buildings Survey",
+    "n": 47.7510741,
+    "e": -120.7401385,
+    "count": 309628,
+    "typo": "library"
+  },
+  {
+    "id": 299,
+    "name": "University of Toronto",
+    "commons": "University of Toronto Wenceslas Hollar Digital Collection",
+    "n": 43.653226,
+    "e": -79.38318429999998,
+    "count": 2475,
+    "typo": "other"
+  },
+  {
+    "id": 301,
+    "name": "Bodleian Libraries",
+    "commons": "Files uploaded by the Bodleian Libraries' Wikimedian In Residence",
+    "n": 51.7520209,
+    "e": -1.2577263000000585,
+    "count": 8004,
+    "typo": "library"
+  },
+  {
+    "id": 302,
+    "name": "Harrogate Museums and Arts",
+    "commons": "Images from Harrogate Museums and Arts",
+    "n": 53.9915028,
+    "e": -1.5412014999999428,
+    "count": 8004,
+    "typo": "museum"
+  },
+  {
+    "id": 303,
+    "name": "University of Edinburgh",
+    "commons": "Images from the University of Edinburgh",
+    "n": 55.953252,
+    "e": -3.188266999999996,
+    "count": 79,
+    "typo": "other"
+  },
+  {
+    "id": 304,
+    "name": "National Library of Wales",
+    "commons": "Wikimedia and the National Library of Wales",
+    "n": 52.4145,
+    "e": 4.0685,
+    "count": 174,
+    "typo": "library"
+  },
+  {
+    "id": 305,
+    "name": "Denver Art Museum",
+    "commons": "Berger Collection",
+    "n": 39.7365,
+    "e": -104.9900,
+    "count": 145,
+    "typo": "museum"
+  },
+  {
+    "id": 305,
+    "name": "Denver Art Museum",
+    "commons": "Berger Collection",
+    "n": 39.7365,
+    "e": -104.9900,
+    "count": 145,
+    "typo": "museum"
+  }
 ]

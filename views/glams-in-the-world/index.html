@@ -13,7 +13,7 @@
 	<body>
 		<!-- <header id="header"></header> -->
 		
-		<div class="main_dataviz" id="map" style="width: 100%; height: 700px;">
+		<div class="main_dataviz" id="map" style="width: 100%; height: 70vh;">
 			<!-- <img src="../../assets/img/map-of-glams.png" alt="Map of the GLAMs in the world" width="1690" height="1120" style="margin:0 auto; height: 100%; display:block; width: auto; "> -->
 		</div>
 		
@@ -22,7 +22,13 @@
 			<!-- <p class="description" style="margin-bottom:36px;">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium neque tellus, et sodales tellus euismod non. Duis condimentum eros eget sem vulputate ullamcorper. Nullam vulputate magna et odio tempus, ac feugiat enim cursus. Donec at diam pulvinar tortor porta blandit. Integer eget lacinia nunc, nec porta nibh. Sed posuere congue porta. Aliquam erat volutpat. Duis sagittis tristique orci, condimentum fringilla nunc. Donec porttitor porttitor metus, ut ultrices nibh porttitor eu. Praesent ante orci, laoreet eget justo eget, sodales lacinia leo.
 			</p> -->
+			<p>
+				<a href="../../">
+					back
+				</a>
+			</p>
 		</section>
+		<section id="glam_list" class="container" style="margin-top: 30px;"></section>
 
 		<!-- <footer class="footer full_container" id="footer"></footer> -->
 
@@ -32,6 +38,33 @@
 				top: 0;
 				left: 0;
 			}	
+			#glam_list {
+				margin-bottom: 60px;
+			}
+			.glam_list {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.glam {
+				border-bottom: 1px solid lightgray;
+				padding: 5px 0;
+				cursor: pointer;
+			}
+			.glam:after {
+				content: "";
+				clear:both;
+    			display:block;
+			}
+			.count {
+				display: block;
+				float: right;
+			}
+			.name{
+				width: 90%;
+				display: block;
+				float: left;
+			}
 		</style>
 		
 		<script type="text/javascript" src="../../bower_components/d3/d3.min.js"></script>
@@ -39,20 +72,24 @@
 
 		<script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- <script type="text/javascript" src="../../assets/functions/main_functions.js"></script> -->
+		<script type="text/javascript" src="../../bower_components/handlebars/handlebars.min.js"></script>
 		<script type="text/javascript" src="functions.js"></script>
 
 		<script type="text/javascript">
 	
 			// map parameters
-			var center_x = 0
-				center_y = 20
-				zoom = 2
+			var center_x = 0,
+				center_y = 30,
+				zoom = 2,
+				min_bubble_size = 3,
+				max_bubble_size = 40,
+				treshold = 50;
 	        
 	        var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 	        	mapAttr = '&copy; ' + mapLink + ' Contributors';
 
 	        // https://wiki.openstreetmap.org/wiki/Tiles
-		    var map = L.map('map').setView([center_x,center_y], zoom);
+		    var map = L.map('map').setView([center_y,center_x], zoom);
 		    	tiles = [
 		    		"http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
 		    		"https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
@@ -81,42 +118,132 @@
     			.attr("height",700)
 			var plot = svg.append("g").attr("class","plot")
 
+			var to_check = 0
 	       	d3.json("datapoints.json", function(data) {
-	       		data.forEach(function(d) {
-					d.LatLng = new L.LatLng(d[1],d[2])
-					d.Size = d[3]
+
+	       		data.forEach(function(d,i) {
+	       			if (d.n == null && d.e == null){
+	       				if(d.typo !== "-"){
+	       					d.LatLng = new L.LatLng(-55,i/2)
+	       				}
+	       				else {
+	       					d.LatLng = new L.LatLng(0,0)
+	       					if (d.count >= 50){
+	       						to_check += 1
+	       						// console.log(d.id, d.count)
+	       					}
+	       				}
+	       			}
+	       			else {
+	       				d.LatLng = new L.LatLng(d.n,d.e)
+	       			}
+					d.Size = d.count
+					d.Name = d.name
 				})
-				console.log(data)
+				// console.log(data)
+				// console.log(data[0].n)
+				console.log(to_check)
+
+				var gallery = 0
+					library = 0
+					archive = 0
+					museum = 0
+					other = 0
+					unknown = 0
+				data.forEach(function(d,i) {
+					if (d.count >= treshold){
+						if (d.typo == "gallery"){
+							gallery+=1
+						}
+						else if (d.typo == "library"){
+							library+=1
+						}
+						else if (d.typo == "archive"){
+							archive+=1
+						}
+						else if (d.typo == "museum"){
+							museum+=1
+						}
+						else if (d.typo == "other"){
+							other+=1
+						}
+						else if (d.typo == "-"){
+							unknown+=1
+						}
+					}
+				})
+				// console.log(gallery, library, archive, museum, other)
 				
 				min_size = d3.min(data, function(d) { return d.Size })
 				max_size = d3.max(data, function(d) { return d.Size;})
-				scale_size = d3.scaleLinear()
-					.domain([min_size, max_size])
-    				.range([10, 20]);
+				// console.log(treshold,max_size)
 
-    			var point = plot.selectAll("g")
+				scale_size = d3.scaleSqrt() // scaleLinear
+					.domain([treshold, max_size])
+    				.range([min_bubble_size, max_bubble_size]);
+
+    			var points = plot.append("g")
+    				.attr("class","points")
+
+    			var point = points.selectAll("g")
     				.data(data)
 					.enter()
 					.append("g")
+					.filter(function(d) { 
+						return d.Size >= treshold 
+					})
 					
 				var text = point.append("text")
 					.text(function(d){
-						return d[0]
+						return d.Name
 					})
 					.attr("text-anchor","middle")
 					.style("opacity", 0) 
+					.attr("font-size",10)
 
 				var bubbles = point.append("circle")
 					.style("stroke", "gray")  
 					.style("opacity", .5) 
-					.style("fill", "red")
+					.style("fill", function(d,i){
+						if (d.typo=="gallery"){
+							return "blue"
+						}
+						else if (d.typo=="library"){
+							return "blue"
+						}
+						else if (d.typo=="archive"){
+							return "green"
+						}
+						else if (d.typo=="museum"){
+							return "red"
+						}
+						else if (d.typo=="other"){
+							return "yellow"
+						}
+						else {
+							return "gray"
+						}
+					})
 					.attr("r", function(d,i){
-						return scale_size(d.Size)
+						return scale_size(d.Size/3.14)
+						// return Math.sqrt(d.Size/3.14)/13
 					});  
 
 				map.on("viewreset", update_a);
-				// map.on("moveend", update_b);
 				update_a();
+
+				// function reset() {
+				// 	var bottomLeft = project(data),
+			 //        	topRight = project(data);
+
+			 //        plot.attr("transform", "translate(" + -bottomLeft[0] + "," + -topRight[1] + ")");
+			 //    }
+			 //    function project(x) {
+			 //    	console.log(x)
+				// 	var new_point = map.latLngToLayerPoint(new L.LatLng(x[0], x[0]));
+				// 	return [new_point.x, new_point.y];
+					
+				// }
 
 				point.on("mouseover", function() {
 					d3.select(this).select("text")
@@ -138,29 +265,61 @@
 					)
 				}
 
-				function update_b() {
-					// bubbles.attr("transform", 
-					// function(d) { 
-					// 	var layerPoint = map.latLngToLayerPoint(d.LatLng);
-					// 	return "translate(" + 
-					// 		layerPoint.x + "," + 
-					// 		layerPoint.y + ")";
-					// 	}
-					// )
-				}
+				// function update_b() {
+				// 	// bubbles.attr("transform", 
+				// 	// function(d) { 
+				// 	// 	var layerPoint = map.latLngToLayerPoint(d.LatLng);
+				// 	// 	return "translate(" + 
+				// 	// 		layerPoint.x + "," + 
+				// 	// 		layerPoint.y + ")";
+				// 	// 	}
+				// 	// )
+				// }
 
+				var text = "g: " + gallery + " - l: "+ library + " - a: "+ archive + " - m: "+ museum + " - o: "+ other + " - u: " + unknown + " - tot: " + (gallery+library+archive+museum+other+unknown)
+				var count = plot.append("g")
+					.attr("class","counter")
+					.append("text")
+					.text(text)
+					.attr("transform","translate(20,600)")
 			})
-
-	        // plot data with leaflet
-	       	/*for (var i = 0; i < planes.length; i++) {
-				marker = new L.marker([planes[i][1],planes[i][2]])
-				.bindPopup(planes[i][0])
-				.addTo(map)
-				// .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-			 //    .openPopup();
-			}*/
-			   
 		</script>
 
+		<script type="text/javascript">
+			var tpl = "<ul class='glam_list'>\
+				{{#each this}}\
+					<li class='glam'>\
+						<span class='name'>\
+							{{@index}}) \
+							<a href='https://commons.wikimedia.org/wiki/Category:{{commons}}' target='_blank'>\
+							{{name}} ({{typo}})\
+							</a>\
+						</span>\
+						<span class='count'>{{count}}</span>\
+					</li>\
+				{{/each}}\
+				</ul>"
+
+			var container = $("#glam_list"),
+				data_source = "datapoints.json",
+				treshold = 50
+
+			// $.get(tpl, function(tpl) {
+				$.getJSON(data_source, function(data) {
+					var template = Handlebars.compile(tpl);
+
+					sorted_data = data.sort(function (a, b) {
+						return b.count - a.count;
+					})
+					my_treshold = $.grep(sorted_data, function (a, i) {
+						if (a.count >= treshold) {
+							return true
+						}
+					})
+					container.html(template(my_treshold));
+				})
+			//})
+
+		</script>
 	</body>
 </html>

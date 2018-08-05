@@ -77,8 +77,10 @@ limit = 500
 # -----------------------------------
 # Script
 
-def get_files(category,cont):
 
+def get_files(category,cont):
+	counter = 0
+	
 	f_out = folder + "/data/" + str(category) + ".tsv"
 
 	if cont == 0:
@@ -97,22 +99,26 @@ def get_files(category,cont):
 				title = x["title"];
 				output = title + n
 
+				counter+=1
+
 				f.write(output)
-				# print(index)
+				print(counter)
 
 			except:
 				pass
 
 		# index = 0	
+			try:
+				new_new_cont = data["continue"]["cmcontinue"]
 
-		new_new_cont = data["continue"]["cmcontinue"]
-
-		if (new_new_cont != 0 and new_new_cont != cont): 
-			get_files(category,new_new_cont)
-			# index += 1
-			# print(index)
-		else:
-			print("stop")
+				if (new_new_cont != 0 and new_new_cont != cont): 
+					get_files(category,new_new_cont)
+					# index += 1
+					# print(index)
+				else:
+					print("stop")
+			except:
+				pass
 
 
 def check_files(f_name):
@@ -219,10 +225,10 @@ def test():
 # Launch scripts
 
 
-check_files("Media_contributed_by_the_ETH-Bibliothek")
+# check_files("Media_contributed_by_the_ETH-Bibliothek")
 
 # test()
 
 # get_files("Media_contributed_by_the_ETH-Bibliothek",0) # Media_contributed_by_the_Swiss_National_Library Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_Swiss_Federal_Archives Media_contributed_by_the_ETH-Bibliothek
-
+get_files("GWToolset Batch Upload",0)
 
