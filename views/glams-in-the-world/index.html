@@ -28,7 +28,21 @@
 				</a>
 			</p>
 		</section>
-		<section id="glam_list" class="container" style="margin-top: 30px;"></section>
+		<section class="container" style="margin-top: 30px;">
+			<div style="margin-bottom: 30px;">
+				<span id="g" class="controller">G</span>
+				<span id="l" class="controller">L</span>
+				<span id="a" class="controller">A</span>
+				<span id="m" class="controller">M</span>
+				<span id="o" class="controller">O</span>
+				<span id="t" class="controller">ALL</span>
+			</div>
+			<div id="header_list">
+				<span style="float:left">GLAM</span>
+				<span style="float:right">files</span>
+			</div>
+			<div id="glam_list"></div>
+		</section>
 
 		<!-- <footer class="footer full_container" id="footer"></footer> -->
 
@@ -51,7 +65,7 @@
 				padding: 5px 0;
 				cursor: pointer;
 			}
-			.glam:after {
+			.glam:after, #header_list:after {
 				content: "";
 				clear:both;
     			display:block;
@@ -60,10 +74,18 @@
 				display: block;
 				float: right;
 			}
+			#header_list {
+				margin-bottom: 20px;
+				border-bottom: 1px solid lightgray;
+			}
 			.name{
 				width: 90%;
 				display: block;
 				float: left;
+			}
+			.controller{
+				padding: 30px 30px 30px 0;
+				cursor: pointer;
 			}
 		</style>
 		
@@ -107,7 +129,7 @@
 	            attribution: mapAttr,
 	            minZoom: 0,
 	            maxZoom: 13,
-	            // zoomSnap: 0.25
+	            zoomSnap: 0.25
 	        }).addTo(map);
 
 	        map._initPathRoot() 
@@ -124,7 +146,8 @@
 	       		data.forEach(function(d,i) {
 	       			if (d.n == null && d.e == null){
 	       				if(d.typo !== "-"){
-	       					d.LatLng = new L.LatLng(-55,i/2)
+	       					// d.LatLng = new L.LatLng(-60,i/2)
+	       					d.LatLng = new L.LatLng(-80,i/2)
 	       				}
 	       				else {
 	       					d.LatLng = new L.LatLng(0,0)
@@ -201,12 +224,13 @@
 					.style("opacity", 0) 
 					.attr("font-size",10)
 
+				var opacity = .4
 				var bubbles = point.append("circle")
-					.style("stroke", "gray")  
-					.style("opacity", .5) 
+					// .style("stroke", "gray")  
+					.style("opacity", opacity) 
 					.style("fill", function(d,i){
 						if (d.typo=="gallery"){
-							return "blue"
+							return "darkviolet"
 						}
 						else if (d.typo=="library"){
 							return "blue"
@@ -218,7 +242,7 @@
 							return "red"
 						}
 						else if (d.typo=="other"){
-							return "yellow"
+							return "darkorange"
 						}
 						else {
 							return "gray"
@@ -227,9 +251,13 @@
 					.attr("r", function(d,i){
 						return scale_size(d.Size/3.14)
 						// return Math.sqrt(d.Size/3.14)/13
-					});  
+					})
+					.attr("class", function(d){
+						return d.typo
+					})
 
 				map.on("viewreset", update_a);
+				map.on("moveend", update_a);
 				update_a();
 
 				// function reset() {
@@ -265,23 +293,52 @@
 					)
 				}
 
-				// function update_b() {
-				// 	// bubbles.attr("transform", 
-				// 	// function(d) { 
-				// 	// 	var layerPoint = map.latLngToLayerPoint(d.LatLng);
-				// 	// 	return "translate(" + 
-				// 	// 		layerPoint.x + "," + 
-				// 	// 		layerPoint.y + ")";
-				// 	// 	}
-				// 	// )
-				// }
+				$("#g").on("click", function() {
+					console.log("gallery")
+					d3.selectAll(".library,.archive,.museum,.other")
+						.style("opacity", 0)
+					d3.selectAll(".gallery")
+						.style("opacity", opacity)
+				})
+				$("#l").on("click", function() {
+					console.log("library")
+					d3.selectAll(".gallery,.archive,.museum,.other")
+						.style("opacity", 0)
+					d3.selectAll(".library")
+						.style("opacity", opacity)
+				})
+				$("#a").on("click", function() {
+					console.log("archive")
+					d3.selectAll(".gallery,.library,.museum,.other")
+						.style("opacity", 0)
+					d3.selectAll(".archive")
+						.style("opacity", opacity)
+				})
+				$("#m").on("click", function() {
+					console.log("museum")
+					d3.selectAll(".gallery,.library,.archive,.other")
+						.style("opacity", 0)
+					d3.selectAll(".museum")
+						.style("opacity", opacity)
+				})
+				$("#o").on("click", function() {
+					console.log("other")
+					d3.selectAll(".gallery,.library,.archive,.museum")
+						.style("opacity", 0)
+					d3.selectAll(".other")
+						.style("opacity", opacity)
+				})
+				$("#t").on("click", function() {
+					d3.selectAll(".gallery,.library,.archive,.museum,.other")
+						.style("opacity", opacity)
+				})
 
-				var text = "g: " + gallery + " - l: "+ library + " - a: "+ archive + " - m: "+ museum + " - o: "+ other + " - u: " + unknown + " - tot: " + (gallery+library+archive+museum+other+unknown)
+				var text = "galleries: " + gallery + " - libraries: "+ library + " - archives: "+ archive + " - museums: "+ museum + " - others: "+ other /* + " - u: " + unknown + */ + " - tot: " + (gallery+library+archive+museum+other+unknown)
 				var count = plot.append("g")
 					.attr("class","counter")
 					.append("text")
 					.text(text)
-					.attr("transform","translate(20,600)")
+					.attr("transform","translate(15,630)")
 			})
 		</script>
 
@@ -316,6 +373,7 @@
 							return true
 						}
 					})
+					// $("#header_list").append("GLAM - files")
 					container.html(template(my_treshold));
 				})
 			//})
