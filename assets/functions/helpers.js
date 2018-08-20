@@ -18,3 +18,12 @@ Handlebars.registerHelper("author_bar", function(pic, max_pic, max_h){
 		return result
 	}
 })
+
+Handlebars.registerHelper("alternate_background", function(id){
+	if (id % 2 === 0) { 
+		return "bg_light"
+	}
+   	else {
+   		return "bg_dark"
+   	}
+})

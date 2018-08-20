@@ -1,3 +1,14 @@
+function truncate(string){
+	var max_size = 60;
+   	if (string.length > max_size){
+   		var extension = string.split(".").pop(-1);
+   		return string.substring(0,max_size) + ' … .' + extension;
+    }
+	else{
+		return string;
+	}
+};
+
 function sidebar(data_file,title){
 	// console.log("sidebar");
 
@@ -42,6 +53,11 @@ function sidebar(data_file,title){
 			sorted_data = data.sort(function (a, b) {
 				return b.file - a.file;
 			})
+
+			$.each(sorted_data, function(i,v){
+				v["file_short"] = truncate(v.file)
+			})
+			// console.log(sorted_data)
 
 			$(list).html(template(sorted_data));
 

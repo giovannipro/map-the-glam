@@ -136,12 +136,7 @@ section {
 .header_full {
   width: calc(100% - 40px);
   float: left;
-  margin-left: 20px;
-  margin-left: 0; }
-  .header_full::after {
-    clear: both;
-    content: "";
-    display: block; }
+  margin-left: 20px; }
   @media screen and (max-width: 500px) {
     .header_full {
       padding: 5px; } }
@@ -297,7 +292,7 @@ section {
     color: white; }
   .sidenav .closebtn {
     right: 25px;
-    font-size: 30px;
+    font-size: 21px;
     padding-left: 200px;
     border-bottom: 1px solid #4e4e4e;
     cursor: pointer; }
@@ -357,7 +352,7 @@ section {
         font-size: 9.3333333333px; } }
 
 #sidebar {
-  height: 120%;
+  height: 100vh;
   width: 456px;
   position: fixed;
   right: -456px;
@@ -384,7 +379,8 @@ section {
     #sidebar #sidebar_header .closebtn {
       float: right;
       font-size: 30px;
-      cursor: pointer; }
+      cursor: pointer;
+      margin-right: 30px; }
     #sidebar #sidebar_header .closebtn:hover {
       text-decoration: none; }
   #sidebar #files_list ul {
@@ -394,9 +390,7 @@ section {
     #sidebar #files_list ul li {
       font-size: 11.2px;
       border-bottom: 1px solid #cccdcf;
-      height: 48px;
-      padding-left: 12px;
-      padding-right: 12px;
+      padding: 4px 4px 4px 12px;
       vertical-align: middle; }
 
 #overlay {
@@ -407,6 +401,12 @@ section {
   position: fixed;
   z-index: 1;
   display: none; }
+
+.bg_light {
+  background-color: white; }
+
+.bg_dark {
+  background-color: #f2f2f2; }
 
 .protocol, .data {
   margin: 0;

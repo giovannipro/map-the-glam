@@ -177,9 +177,9 @@ section
 
 .header_full
 	//padding: 5px 
-	@include grid-container
+	//@include grid-container
 	@include grid-column(12)
-	margin-left: 0
+	//margin-left: 0
 	
 	@media screen and (max-width: $smartphone)
 		padding: 5px
@@ -333,7 +333,7 @@ section
 
 	.closebtn 
 		right: 25px
-		font-size: 30px
+		font-size: $f_l // 30px
 		padding-left: 200px
 		border-bottom: 1px solid $gray
 		cursor: pointer
@@ -402,7 +402,7 @@ section
 //	Sidebar
 
 #sidebar
-	height: 120%
+	height: 100vh
 	width: $x*38
 	position: fixed
 	right: -$x*38
@@ -432,6 +432,7 @@ section
 			float: right
 			font-size: 30px
 			cursor: pointer
+			margin-right: $x*2.5
 
 		.closebtn:hover
 			text-decoration: none
@@ -446,9 +447,7 @@ section
 			li
 				font-size: $f_m*0.8
 				border-bottom: 1px solid $bar
-				height: $x*4
-				padding-left: $x
-				padding-right: $x
+				padding: $x/3 $x/3 $x/3 $x 
 				vertical-align: middle
 
 #overlay
@@ -459,6 +458,12 @@ section
 	position: fixed
 	z-index: 1
 	display: none
+
+.bg_light
+	background-color: $background
+
+.bg_dark
+	background-color: darken( $background, 5% )
 
 //	---------------------------
 //	Dataviz

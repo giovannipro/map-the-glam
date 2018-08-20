@@ -1,5 +1,5 @@
 {
-  "name": "Map the GLAM",
+  "name": "map_the_glam",
   "homepage": "http://www.gprofeta.it/map-the-glam/",
   "description": "Visualising the contributions of ETH Library to Wikipedia",
   "version": "0.0.0",
@@ -14,7 +14,7 @@
     "neat": "2.0.0",
     "handlebars": "4.0.11",
     "isotope": "3.0.6",
-    "isotope-packery": "2.1.2"
+    "isotope-packery": "latest"
   },
   "keywords": [
     "cultural institutions",
