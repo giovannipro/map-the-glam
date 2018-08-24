@@ -107,8 +107,8 @@ def get_img_size_analogic(f_name,start_id):
 	index = 0
 
 	f_in = folder + "/data/" + f_name + ".tsv"
-	f_out = folder + "/data/" + f_name + "_" + func + "-output_2.tsv" 
-	f_err = folder + "/data/" + f_name + "_" + func + "-errors_2.tsv" 
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
 
 	with open(f_in, "r") as f1:
 		with open(f_out, "a") as f2:
@@ -229,9 +229,126 @@ def get_img_size_analogic(f_name,start_id):
 	# print (running_time)
 
 
+def get_medium(f_name,start_id):
+	# start = time.time()
+	# print(start)
+
+	func = "medium"
+	index = 0
+	print(func)
+
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
+
+	with open(f_in, "r") as f1:
+		with open(f_out, "a") as f2:
+			with open(f_err, "a") as f3:
+
+				tsv_file = csv.reader(f1, delimiter="\t")
+
+				for file in tsv_file:
+					index += 1
+					file_id = file[0]
+					file_name = file[1]
+					# print(file_name)
+
+					if (index >= start_id):
+
+						try:
+							url = commons_page + file_name
+							html = urlopen(url) 
+							bsObj = BeautifulSoup(html,"html.parser")
+							print(file_id)
+
+							with open(f_out, "a") as f:
+								try:
+									raw_data = bsObj.find("div",{"class":"commons-file-information-table"})
+
+									output = str(file_id) + t + file_name + t
+									# print(output)
+									f2.write(output)
+								except Exception as e:
+									output = str(file_id) + t + commons_page + file_name + t + "error_1"
+									f3.write(output)
+									pass
+
+								try:
+									row = raw_data.findAll("tr")[1]
+									val = row.findAll("td")[0].get_text().replace(n,s)
+									value_1 = row.findAll("td")[1].get_text().replace(n,s)
+
+									if val == "Medium":
+										output = val + t + value_1
+										print(value_1)
+										f2.write(output + n)
+								except Exception as e:
+									pass
+
+								try:
+									row = raw_data.findAll("tr")[2]
+									val = row.findAll("td")[0].get_text().replace(n,s)
+									value_2 = row.findAll("td")[1].get_text().replace(n,s)
+
+									if val == "Medium":
+										output = val + t + value_2
+										print(value_2)
+										f2.write(output + n)
+								except Exception as e:
+									pass
+
+								try:
+									row = raw_data.findAll("tr")[3]
+									val = row.findAll("td")[0].get_text().replace(n,s)
+									value_3 = row.findAll("td")[1].get_text().replace(n,s)
+
+									if val == "Medium":
+										output = val + t + value_3
+										print(value_3)
+										f2.write(output + n)
+								except Exception as e:
+									pass
+
+								try:
+									row = raw_data.findAll("tr")[4]
+									val = row.findAll("td")[0].get_text().replace(n,s)
+									value_4 = row.findAll("td")[1].get_text().replace(n,s)
+
+									if val == "Medium":
+										output = val + t + value_4
+										print(value_4)
+										f2.write(output + n)
+								except Exception as e:
+									pass
+
+								try:
+									row = raw_data.findAll("tr")[5]
+									val = row.findAll("td")[0].get_text().replace(n,s)
+									value_5 = row.findAll("td")[1].get_text().replace(n,s)
+
+									if val == "Medium":
+										output = val + t + value_5
+										print(value_5)
+										f2.write(output + n)
+								except Exception as e:
+									pass
+
+
+						except Exception as e:
+							output = str(file_id) + t + commons_page + file_name + t + "error 1"
+							print(e)
+							# f3.write(output + n)
+							pass
+	
+	# end = time()
+	# running_time = end - start
+	# print (running_time)
+
+
 # -----------------------------------
 # Launch scripts
 
-get_img_size_analogic("test",48766);
+# get_img_size_analogic("test",48766);
 
+get_medium("file_medium",0);
 

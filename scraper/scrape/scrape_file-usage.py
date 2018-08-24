@@ -73,7 +73,9 @@ def get_file_usage(f_name,start_id):
 
 								for a in commons_usage:
 									count_c+=1
-									output = str(file_id) + t + file_name + t + "commons" + t + a["href"] + t + a.contents[0]
+									link = a["href"] 
+									c_page = a.contents[0] 
+									output = str(file_id) + t + file_name + t + "commons" + t + link + t + c_page
 									f2.write(output + n)
 							except Exception as e:
 								# output = str(file_id) + t + commons_page+file_name + t + "error 2"
@@ -88,7 +90,9 @@ def get_file_usage(f_name,start_id):
 								
 								for a in external_usage:
 									count_e+=1
-									output = str(file_id) + t + file_name + t + "external" + t + a["href"] + t + a.contents[0]
+									link = a["href"] 
+									e_page = a.contents[0] 
+									output = str(file_id) + t + file_name + t + "external" + t + link + t + e_page
 									f2.write(output + n)
 							except Exception as e:
 								# output = str(file_id) + t + commons_page+file_name + t + "error 3"
@@ -110,6 +114,6 @@ def get_file_usage(f_name,start_id):
 # -----------------------------------
 # Launch scripts
 
-get_file_usage("test",0); # test_data test
+get_file_usage("test_usage",0); # test_data test
 
 

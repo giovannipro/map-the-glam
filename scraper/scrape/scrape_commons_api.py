@@ -167,7 +167,7 @@ def img_size(f_name):
 						pass
 
 def img_timestamp(f_name,start_id):
-	start = time.time()
+	# start = time.time()
 
 	func = "img-timestamp"
 	index = 0
@@ -178,53 +178,55 @@ def img_timestamp(f_name,start_id):
 	
 	with open(f_in, "r") as f1:
 		with open(f_out, "a+") as f2:
-			for file in f1:
+			with open(f_err, "a+") as f3:
 
-				request = base_api + "&" + api_fileInfo + "&" + proprierties_1 + "&titles=" + file
-				#print(request)
+				for file in f1:
 
-				if (index >= start_id):
-					try:
-						response = urlopen(request).read()
-						data = json.loads(response)
-						output = ""
-					
-						for x in data["query"]["pages"]:
-							id_ = str(x)
+					request = base_api + "&" + api_fileInfo + "&" + proprierties_1 + "&titles=" + file
+					#print(request)
+
+					if (index >= start_id):
+						try:
+							response = urlopen(request).read()
+							data = json.loads(response)
+							output = ""
 						
-						for y in data["query"]["pages"].values():
+							for x in data["query"]["pages"]:
+								id_ = str(x)
+							
+							for y in data["query"]["pages"].values():
 
-							title = y["title"]
-							extension = ''.join(y["title"].split(".")[-1:])
-							values = y["imageinfo"]
+								title = y["title"]
+								extension = ''.join(y["title"].split(".")[-1:])
+								values = y["imageinfo"]
 
-							for z in values:
-								try:
-								
-									timestamp = z["timestamp"]
-									license = z["extmetadata"]["LicenseShortName"]["value"]
-									mediatype = z["mediatype"]									
+								for z in values:
+									try:
 									
-									output =  str(index) + t + title + t +  extension + t + timestamp + t + license + t + mediatype + n # 
-									print (index)
+										timestamp = z["timestamp"]
+										license = z["extmetadata"]["LicenseShortName"]["value"]
+										mediatype = z["mediatype"]									
+										
+										# output =  str(index) + t + title + t +  extension + t + timestamp + t + license + t + mediatype + n # 
+										output =  str(index) + t + title + t + timestamp
+										print (output)
+										f2.write(output + n)
 
-								except:
-									print("error 2")
-									print(request)
-									pass
+									except:
+										output = str(index) + t + title + t + "error_2"
+										f3.write(output + n)
+										pass
 
-								f2.write(output)
+						except:
+							output = str(index) + t + title + t + "error_1"
+							f3.write(output + n)
+							pass
 
-					except:
-						print("error 1")
-						print(request)
-						pass
+					index += 1
 
-				index += 1
-
-	end = time.time()
-	running_time = end - start
-	print (running_time)
+	# end = time.time()
+	# running_time = end - start
+	# print (running_time)
 
 # -----------------------------------
 # Launch scripts
