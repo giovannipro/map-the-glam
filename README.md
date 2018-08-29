@@ -1,5 +1,5 @@
 # Map the GLAM
-Visualising the contributions of ETH Library to Wikipedia
+Visualising the ETH Bibliothek's collection in Wikipedia
 
 ## Installation
 - Go to the project folder in your computer

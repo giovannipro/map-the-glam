@@ -343,7 +343,7 @@ section {
     padding: 12px 24px;
     font-weight: bold;
     position: absolute;
-    bottom: -30px; }
+    bottom: -45px; }
     @media screen and (max-width: 768px) {
       #intro .next button {
         font-size: 11.2px; } }
