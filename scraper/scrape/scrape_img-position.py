@@ -31,11 +31,11 @@ s = " "
 
 w_rev_limit = 1 # max 50
 w_rev_api = ".wikipedia.org/w/api.php?action=parse&format=json&page=" # action=query (json) action=parse(html) &format=json
-w_prop = "&prop=revisions&rvprop=timestamp|user|comment|size|content&rvdir=older&rvlimit=" + str(w_rev_limit)
+# w_prop = "&prop=revisions&rvprop=timestamp|user|comment|size|content&rvdir=older&rvlimit=" + str(w_rev_limit)
 
-c_rev_limit = 50 # max 50
-c_api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&rvlimit=" + str(c_rev_limit)
-c_revisions = c_api + "&prop=revisions&rvprop=timestamp|user|comment|size|content&rvdir=newer&titles="
+c_rev_limit = 1 # max 50
+c_rev_api = "https://commons.wikimedia.org/w/api.php?action=parse&format=json&page=" #+ str(c_rev_limit)
+# c_revisions = c_api + "&prop=revisions&rvprop=timestamp|user|comment|size|content&rvdir=newer&titles="
 
 def time():
 	my_format = "%d %m %Y %I:%M%p" 
@@ -168,17 +168,14 @@ def find_str_b(full, sub):
 
 # Wikipedia revisions
 def get_img_position_w(f_name):
-	# time()
 
-	func = "wiki_revisions"
+	func = "wiki_img_position"
 	index = 0
 
 	f_in = folder + "/data/" + f_name + ".tsv"
 	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
 	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
 	print(func)
-
-	# f = codecs.open("suess_sweet.txt", "r", )    # suess_sweet.txt file contains two
 
 	with open(f_in, "r") as f1: # codecs.open(f_in, "r", "utf-8") 
 		with open(f_out, "a") as f2:
@@ -248,108 +245,99 @@ def get_img_position_w(f_name):
 							f3.write(output + n)
 							pass
 
-					# request = "https://" + page_lang + w_rev_api + page_name + w_prop
 					request = "https://" + page_lang + w_rev_api + page_name				
 					get_data(request)
 
 # Commons revisions
-# def get_commons_revisions(f_name):
-# 	# time()
+def get_img_position_c(f_name):
 
-# 	func = "commons_revisions"
-# 	index = 0
+	func = "commons_img_position"
+	index = 0
 
-# 	f_in = folder + "/data/" + f_name + ".tsv"
-# 	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
-# 	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
-# 	print(func)
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
+	print(func)
 
-# 	with open(f_in, "r") as f1:
-# 		with open(f_out, "a") as f2:
-# 			with open(f_err, "a") as f3:
+	# f = codecs.open("suess_sweet.txt", "r", )    # suess_sweet.txt file contains two
 
-# 				tsv_file = csv.reader(f1, delimiter=t)
+	with open(f_in, "r") as f1: # codecs.open(f_in, "r", "utf-8") 
+		with open(f_out, "a") as f2:
+			with open(f_err, "a") as f3:
 
-# 				for row in tsv_file:
-# 					id_file = row[0]
-# 					file = row[1]
-# 					link = row[3]
-# 					the_page = row[5]
-# 					page_type = row[6]
-# 					# lang = row[4]
-# 					# print(lang)
+				tsv_file = csv.reader(f1, delimiter=t)
 
-# 					index += 1
-# 					file_clean = file.replace("_",s).replace("File:","")
+				for row in tsv_file:
+					id_file = row[0]
+					file = row[1]
+					outbound = row[2]
+					link = row[3]
+					page_lang = row[4]
+					page_name = row[5]
+					page_typo = row[6]
+					# print(link + t + page_typo)
 
-# 					def get_data(request):
-# 						try:
-# 							response = urlopen(request).read()
-# 							data = json.loads(response)
-# 							# print(data)
+					index += 1
+					file_clean = file.replace("File:","").replace(s,"_") #.replace('"',"\"") # .replace("_",s)
 
-# 							for x in data["query"]["pages"].values():
-# 								try:
-# 									page = x["title"]
-# 									revisions = x["revisions"]
-# 									# print(page)
+					def get_data(request):
+						try:
+							response = urlopen(request).read()
+							data = json.loads(response)
+							# print(data)
 
-# 									for y in revisions:
-# 										try:
-# 											user = y["user"]
-# 											timestamp = y["timestamp"]
-# 											size = y["size"]
-# 											content = y["*"]
+							for x in data.values():
+								try:
+									page = x["title"]
+									content = x["text"]["*"]
+									# print(content)
 
-# 											if (file_clean in content or file in content):
-# 												img = True
-# 											else:
-# 												img = False
+									my_file = urllib.quote_plus(file_clean) # unicode(file_clean, "utf-8") #urllib.quote_plus(file_clean.encode("utf-8")) # clean_url_c(file_clean.decode("utf-8")) # clean_url_a(file_clean) unicode(file_clean, encoding="utf-8") #
+									my_content = content.encode("utf-8") #content.encode("utf-8") # clean_url_a(content) unicode(content, encoding="utf-8") # 
 
-# 											output = id_file + t + file_clean + t + t + page_type + t + page + t + timestamp + t + str(img) + t + user + t + str(size) 
-# 											# print(output)
-# 											f2.write(output + n)
-											
-# 										except Exception as e:
-# 											output = request + t + file_clean + t + page + t + "error_2"
-# 											# print(e)
-# 											f3.write(output + n)
-# 											pass
+									page_length = len(content)
+									img_position = find_str_a(my_content, my_file)
+									img_position_relative = (img_position*100)/float(page_length)
 
-# 								except Exception as e:
-# 									output = request + t + file_clean + t + page + t + "error_1"
-# 									# print(e)
-# 									f3.write(output + n)
-# 									pass
+									if (img_position != -1):
+										output = str(id_file) + t + \
+											file + t + \
+											page + t + \
+											page_lang + t + \
+											page_typo + t + \
+											str(page_length) + t + \
+											str(img_position) + t + \
+											str(img_position_relative)
+										print(str(id_file))
+										f2.write(output + n)
+									else:
+										output = str(id_file) + t + request + t + file
+										print(output)
+										f3.write(output + n)	
+										f2.write(output + n)	
+								except:
+									PrintException()
+									output = str(id_file) + t + request + t + file_clean + t + "error_1"
+									# print(output)
+									f3.write(output + n)
+									f2.write(output + n)
+									pass
 
-# 							try:
-# 								new_rvcontinue = data["continue"]["rvcontinue"]
-# 								if new_rvcontinue != 0: # and new_rvcontinue != rvcontinue:
-# 									request = c_revisions + page + "&rvcontinue=" + str(new_rvcontinue)
-# 									get_data(request)
-# 								print(new_rvcontinue)
-# 							except Exception as e:
-# 								pass
+						except:
+							PrintException()
+							output = str(id_file) + t + request + t + file_clean + t + "error_0"
+							# print(output)
+							f3.write(output + n)
+							f2.write(output + n)
+							pass
 
-# 						except Exception as e:
-# 							print e
-# 							output = request + t + "error_0"
-# 							f3.write(output + n)
-# 							pass
-
-# 					rvcontinue = 0
-# 					if rvcontinue != 0:
-# 						request = c_revisions + the_page + "&rvcontinue=" + str(rvcontinue)
-# 						get_data(request)
-# 					else:
-# 						request = c_revisions + the_page
-# 						get_data(request)
-
-# 					# print(str(index) + t + str(rvcontinue))
-# 					print(request)
-
+					request = c_rev_api + page_name	
+					# print(request)			
+					get_data(request)
 
 # -----------------------------------
 # Launch script
 
-get_img_position_w("w_pages_using_files") #w_pages_using_files test
+# get_img_position_w("w_pages_using_files") #w_pages_using_files test
+get_img_position_c("c_pages_using_files") #c_pages_using_files test
+
