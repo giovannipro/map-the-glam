@@ -36,6 +36,8 @@ api = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipe
 
 root_api = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/"
 
+#https://tools.wmflabs.org/pageviews/?project=commons.wikimedia.org&platform=all-access&agent=all-agents&start=2015-07&end=2018-07&pages=Category:Media_contributed_by_the_ETH-Bibliothek
+
 # https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Cat|Dog
 # http://stats.grok.se/json/en/200801/hiv
 # https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Day_of_Reconciliation/monthly/20120101/20161231

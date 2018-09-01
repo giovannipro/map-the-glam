@@ -249,7 +249,7 @@ def get_img_position_w(f_name):
 					get_data(request)
 
 # Commons revisions
-def get_img_position_c(f_name):
+def get_img_position_c(f_name,start_line):
 
 	func = "commons_img_position"
 	index = 0
@@ -278,66 +278,71 @@ def get_img_position_c(f_name):
 					# print(link + t + page_typo)
 
 					index += 1
-					file_clean = file.replace("File:","").replace(s,"_") #.replace('"',"\"") # .replace("_",s)
 
-					def get_data(request):
-						try:
-							response = urlopen(request).read()
-							data = json.loads(response)
-							# print(data)
+					if (index > start_line):
+						# print (str(index) + t + str(id_file) + t + "<<<")
+					# else:
+					# 	print(str(index) + t + str(id_file))
+						file_clean = file.replace("File:","").replace(s,"_") #.replace('"',"\"") # .replace("_",s)
 
-							for x in data.values():
-								try:
-									page = x["title"]
-									content = x["text"]["*"]
-									# print(content)
+						def get_data(request):
+							try:
+								response = urlopen(request).read()
+								data = json.loads(response)
+								# print(data)
 
-									my_file = urllib.quote_plus(file_clean) # unicode(file_clean, "utf-8") #urllib.quote_plus(file_clean.encode("utf-8")) # clean_url_c(file_clean.decode("utf-8")) # clean_url_a(file_clean) unicode(file_clean, encoding="utf-8") #
-									my_content = content.encode("utf-8") #content.encode("utf-8") # clean_url_a(content) unicode(content, encoding="utf-8") # 
+								for x in data.values():
+									try:
+										page = x["title"]
+										content = x["text"]["*"]
+										# print(content)
 
-									page_length = len(content)
-									img_position = find_str_a(my_content, my_file)
-									img_position_relative = (img_position*100)/float(page_length)
+										my_file = urllib.quote_plus(file_clean) # unicode(file_clean, "utf-8") #urllib.quote_plus(file_clean.encode("utf-8")) # clean_url_c(file_clean.decode("utf-8")) # clean_url_a(file_clean) unicode(file_clean, encoding="utf-8") #
+										my_content = content.encode("utf-8") #content.encode("utf-8") # clean_url_a(content) unicode(content, encoding="utf-8") # 
 
-									if (img_position != -1):
-										output = str(id_file) + t + \
-											file + t + \
-											page + t + \
-											page_lang + t + \
-											page_typo + t + \
-											str(page_length) + t + \
-											str(img_position) + t + \
-											str(img_position_relative)
-										print(str(id_file))
+										page_length = len(content)
+										img_position = find_str_a(my_content, my_file)
+										img_position_relative = (img_position*100)/float(page_length)
+
+										if (img_position != -1):
+											output = str(id_file) + t + \
+												file + t + \
+												page + t + \
+												page_lang + t + \
+												page_typo + t + \
+												str(page_length) + t + \
+												str(img_position) + t + \
+												str(img_position_relative)
+											print(str(id_file))
+											f2.write(output + n)
+										else:
+											output = str(id_file) + t + request + t + file
+											print(output)
+											f3.write(output + n)	
+											f2.write(output + n)	
+									except:
+										PrintException()
+										output = str(id_file) + t + request + t + file_clean + t + "error_1"
+										# print(output)
+										f3.write(output + n)
 										f2.write(output + n)
-									else:
-										output = str(id_file) + t + request + t + file
-										print(output)
-										f3.write(output + n)	
-										f2.write(output + n)	
-								except:
-									PrintException()
-									output = str(id_file) + t + request + t + file_clean + t + "error_1"
-									# print(output)
-									f3.write(output + n)
-									f2.write(output + n)
-									pass
+										pass
 
-						except:
-							PrintException()
-							output = str(id_file) + t + request + t + file_clean + t + "error_0"
-							# print(output)
-							f3.write(output + n)
-							f2.write(output + n)
-							pass
+							except:
+								PrintException()
+								output = str(id_file) + t + request + t + file_clean + t + "error_0"
+								# print(output)
+								f3.write(output + n)
+								f2.write(output + n)
+								pass
 
-					request = c_rev_api + page_name	
-					# print(request)			
-					get_data(request)
+						request = c_rev_api + page_name	
+						# print(request)			
+						get_data(request)
 
 # -----------------------------------
 # Launch script
 
 # get_img_position_w("w_pages_using_files") #w_pages_using_files test
-get_img_position_c("c_pages_using_files") #c_pages_using_files test
+get_img_position_c("c_pages_using_files",24528) #c_pages_using_files test
 
