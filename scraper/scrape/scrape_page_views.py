@@ -187,7 +187,7 @@ def scrape_w_pv(proj,f_name,start,end):
 # -----------------------------------
 # Launch script
 
-# scrape_w_pv("wikipedia","test_w","20150701","20180730") 
-scrape_w_pv("commons","test_c","20150701","20180730")
+scrape_w_pv("wikipedia","test_w","20160501","20180730") 
+# scrape_w_pv("commons","test_c","20150701","20180730")
 
 
