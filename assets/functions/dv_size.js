@@ -144,7 +144,6 @@ function size(){
 					.domain([0,max_max])
 	        		.range([c_height,0])
 
-
 				var blocks = chart.selectAll("blocks")
 	        		.data(data)
 	        		.enter()
@@ -211,7 +210,7 @@ function size(){
 					);
 	        })
 		}
-		render_blocks_digital();
+		//render_blocks_digital();
 
 		function render_blocks_analogic(){
 			d3.tsv("assets/data/original_size_heatmap.tsv", function (error, data) {
@@ -360,21 +359,24 @@ function size(){
 				})
 	        })
 		}
-		render_blocks_analogic();
+		//render_blocks_analogic();	
 
-		/*function render_bubbles(){
-	        d3.tsv("assets/data/digital_size.tsv", function (error, data) {
+		var opacity = .3
+		var min_size = 3
+		var max_size = 30
+		function render_bubbles_digital(){
+	        d3.tsv("assets/data/_old/digital_size.tsv", function (error, data) {
 				if (error) throw error;
 				
 				data.forEach(function (d) {
-					d.width_ = +d.width;
-					d.height_ = +d.height;
+					d.x = +d.width;
+					d.y = +d.height;
 					d.count = +d.count;
 				})
 				console.log(data)
 
 				// dots
-				var chart = plot.append("g")
+				var chart = plot_digital.append("g")
 	        		.attr("class","bubbles")
 	        		// .attr("transform", function(d,i){ 
 	        		// 	return "translate(" + chart_shift.left + "," + chart_shift.top + ")"
@@ -391,15 +393,15 @@ function size(){
 	        		.range([0.15, 1])
 
 	        	var xMax = d3.max(data, function (d) {
-					return d.width_
+					return d.x
 				})
 				var yMax = d3.max(data, function (d) {
-					return d.height_
+					return d.y
 				})
 
 	        	var scale_count_bubbles = d3.scaleLinear()
 					.domain([countMin, countMax])
-	        		.range([5, 20])
+	        		.range([min_size, max_size])
 
 	        	var x_scale = d3.scaleLinear()
 					.domain([0, xMax])
@@ -420,11 +422,194 @@ function size(){
 	        			return scale_count_bubbles(d.count)
 	        		})
 	        		.attr("class","bubble")
-	        		.attr("opacity",0.5)
-	        		.attr("fill", "red")
+	        		.attr("opacity", opacity)
+	        		.attr("fill", colors.item_b)
+	        		// .attr("fill", "red")
+
+	        	var xMax = d3.max(data, function (d) {
+					return d.x
+				})
+				var yMax = d3.max(data, function (d) {
+					return d.y
+				})
+
+				if (xMax > yMax){
+					var max_max = xMax + 1
+				}
+				else {
+					var max_max = yMax + 1
+				}
+				// console.log(max_max)
+
+	        	var grid = max_max,
+					heatmap_grid = 500,
+					grid_size = c_width/grid;
+
+				// axis
+				var axis = plot_digital.append("g")
+					.attr("class","axis")
+
+				var xAxis = axis.append("g")
+					.attr("transform", "translate(" + c_shift.left + "," + (c_height+(grid_size/12)) + ")")
+					.attr("class","xAxis")
+					.attr("fill", colors.myAxis)
+					// .transition()
+					// .delay(transition)
+					.call(d3.axisBottom(x_scale) // x_axis_scale
+						.tickFormat(d3.format(".2s")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
+						.tickSize(5)
+						.ticks(20)
+						.tickPadding(5)
+						// .tickValues(
+						// 	x_scale.domain().filter(function(d, i) { 
+						// 		return i <= 10
+						// 		// return !(i % o_ticks) && !(i==data.length-1) && !(i==data.length-2) //|| (i!=data.length-2)
+						// 	})
+						// )
+					);
+
+				var yAxis = axis.append("g")
+					.attr("transform", "translate(30,0)")
+					.attr("class","xAxis")
+					.attr("fill", colors.myAxis)
+					// .transition()
+					// .delay(transition)
+					.call(d3.axisLeft(y_scale) // y_axis_scale
+						.tickFormat(d3.format(".2s")) //.every(o_ticks)) //d3.timeMonth.every(o_ticks))
+						.tickSize(5)
+						.ticks(20)
+						.tickPadding(5)
+						// .tickValues(
+						// 	x_scale.domain().filter(function(d, i) { 
+						// 		return i <= 10
+						// 		// return !(i % o_ticks) && !(i==data.length-1) && !(i==data.length-2) //|| (i!=data.length-2)
+						// 	})
+						// )
+					);
 	        })
 	    }
-	    // render_bubbles();*/
+	    render_bubbles_digital();
+
+	    function render_bubbles_analogic(){
+	        d3.tsv("assets/data/_old/original_size.tsv", function (error, data) {
+				if (error) throw error;
+				
+				data.forEach(function (d) {
+					d.x = +d.width;
+					d.y = +d.height;
+					d.count = +d.count;
+				})
+				console.log(data)
+
+				// dots
+				var chart = plot_analogic.append("g")
+	        		.attr("class","bubbles")
+	        		// .attr("transform", function(d,i){ 
+	        		// 	return "translate(" + chart_shift.left + "," + chart_shift.top + ")"
+	        		// });
+
+	        	var countMin = d3.min(data, function (d) {
+					return d.count
+				})
+				var countMax = d3.max(data, function (d) {
+					return d.count
+				})
+	        	var scale_count_blocks = d3.scaleLinear()
+					.domain([countMin, countMax])
+	        		.range([min_size, max_size])
+
+	        	var xMax = d3.max(data, function (d) {
+					return d.x
+				})
+				var yMax = d3.max(data, function (d) {
+					return d.y
+				})
+
+	        	var scale_count_bubbles = d3.scaleLinear()
+					.domain([countMin, countMax])
+	        		.range([5, 40])
+
+	        	var x_scale = d3.scaleLinear()
+					.domain([0, xMax])
+	        		.range([0, width])
+
+	        	var y_scale = d3.scaleLinear()
+					.domain([yMax,0])
+	        		.range([0,height])
+
+	        	var min_opacity = 0.01
+					max_opacity = 1
+	        	var scale_count_blocks = d3.scaleLinear() //scaleLog() // scaleLinear scaleLog
+					.domain([countMin, countMax])
+	        		.range([min_opacity,max_opacity])
+		
+				var bubbles = chart.selectAll("bubble")
+	        		.data(data)
+	        		.enter()
+	        		.append("circle")
+	        		.attr("transform",function(d,i){
+	        			return "translate(" + x_scale(d.x) + "," + y_scale(d.y) + ")"
+	        		})
+	        		.attr("r",function(d,i){
+	        			return scale_count_bubbles(d.count)
+	        		})
+	        		.attr("class","bubble")
+	        		.attr("opacity",0.6)
+	        		// .attr("opacity",function(d,i){
+	        		// 	return scale_count_bubbles(d.count)
+	        		// })
+	        		.attr("fill", colors.item_b)
+	        		// .attr("fill", "red")
+
+	        	var xMax = d3.max(data, function (d) {
+					return d.x
+				})
+				var yMax = d3.max(data, function (d) {
+					return d.y
+				})
+
+				if (xMax > yMax){
+					var max_max = xMax + 1
+				}
+				else {
+					var max_max = yMax + 1
+				}
+				// console.log(max_max)
+
+	        	var grid = max_max,
+					heatmap_grid = 500,
+					grid_size = c_width/grid;
+
+				// axis
+				var axis = plot_analogic.append("g")
+					.attr("class","axis")
+
+				var xAxis = axis.append("g")
+					.attr("transform", "translate(" + c_shift.left + "," + (c_height+(grid_size/12)) + ")")
+					.attr("class","xAxis")
+					.attr("fill", colors.myAxis)
+					// .transition()
+					// .delay(transition)
+					.call(d3.axisBottom(x_scale) // x_axis_scale)
+						.tickSize(5)
+						.ticks(20)
+						.tickPadding(5)
+					);
+
+				var yAxis = axis.append("g")
+					.attr("transform", "translate(30,0)")
+					.attr("class","xAxis")
+					.attr("fill", colors.myAxis)
+					// .transition()
+					// .delay(transition)
+					.call(d3.axisLeft(y_scale) // y_axis_scale)
+						.tickSize(5)
+						.ticks(20)
+						.tickPadding(5)
+					);
+	        })
+	    }
+	    render_bubbles_analogic();
 	}
 	render_size(window_w)
 

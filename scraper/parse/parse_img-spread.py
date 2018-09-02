@@ -26,7 +26,6 @@ com = ","
 # -----------------------------------
 # Script
 
-
 def img_spread(f_name):
 
 	func = "img_spread"
@@ -123,7 +122,7 @@ def img_spread(f_name):
 				# 			wik_p -= 1
 				# 		else:
 				# 			dis_p -= 1
-				
+
 				# Wikipedia - page_lang
 				if (img_present == "True"):
 					if (img_present != new_img_present):	
@@ -166,12 +165,86 @@ def img_spread(f_name):
 						str(nl) + t + \
 						str(other_lang)
 
-					# print(output_w_page_lang)
-					# f2.write(output_user + n)
+					print(output_w_page_lang)
+					f2.write(output_user + n)
 
 				# else:
 				# 	print(date + t + str(art_p) + t + page_link)
 
+				new_date = date
+
+def img_spread_c(f_name):
+
+	func = "img_spread"
+	index = 0
+
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
+	# dataset in descending order of revision_date
+
+	with open(f_in, "r") as f1:
+		with open(f_out, "a") as f2:
+
+			lines = csv.reader(f1, delimiter=t)
+			sorted_tsv_a = sorted(lines, key = operator.itemgetter(4))
+
+			date = "2000-01";
+			date = ""
+			new_date = "";
+			new_page = "";
+			new_file = "";
+			new_img_present = "False";
+
+			art_p = 0;
+			cat_p = 0;
+			fil_p = 0;
+			usr_p = 0;
+			wik_p = 0;
+			
+			for row in sorted_tsv_a:
+				id_file = row[0]
+				file = row[1]
+				page_typology = row[2]
+				page_link = row[3]
+				revision_date = row[4]
+				img_present = row[5]
+				user = row[6]
+				page_size = row[7]
+				# print(row)
+
+				date = revision_date[0:7]
+
+				if (img_present == "True"):
+					# if (new_page != page_link):
+					if (img_present != new_img_present):	
+						if (page_typology == "article/to_check"):
+							art_p += 1
+						elif (page_typology == "category"):
+							cat_p += 1
+						elif (page_typology == "file"):
+							fil_p += 1
+						elif (page_typology == "user_page"):
+							usr_p += 1
+						elif (page_typology == "wikiproject"):
+							wik_p += 1
+						# else:
+						# 	dis_p += 1
+						# print(page_typology)
+
+				if new_date != date:
+					output = date + t + \
+						str(art_p) + t + \
+						str(cat_p) + t + \
+						str(fil_p) + t + \
+						str(usr_p) + t + \
+						str(wik_p)
+
+					print(output)
+					# f2.write(output + n)
+				# else:
+				# 	output = date + t + page_link
+				# 	print(output)
 				
 				new_date = date
 
@@ -196,16 +269,16 @@ def get_user_stream(f_name):
 		with open(f_out, "a") as f2:
 
 			lines = csv.reader(f1, delimiter=t)
-			sorted_tsv_a = sorted(lines, key = operator.itemgetter(5))
+			sorted_tsv_a = sorted(lines, key = operator.itemgetter(4))
 
 			# tsv_file = csv.reader(f1, delimiter=t)
 
 			for row in sorted_tsv_a:
 				id_file = row[0]
-				page_link = row[4]
-				revision_date = row[5]
-				img_present = row[6]
-				user = row[7]
+				page_link = row[3] # 4
+				revision_date = row[4] # 5
+				img_present = row[5] # 6
+				user = row[6] # 7
 
 				date = revision_date[0:7]
 
@@ -233,6 +306,7 @@ def get_user_stream(f_name):
 				if new_date != date:
 					output = date + t + str(reg) + t + str(ann) + t + str(bot) 
 					print(output)
+					f2.write(output + n)
 
 					reg = 0;
 					ann = 0;
@@ -279,7 +353,9 @@ def check_user_typology(f_name):
 # -----------------------------------
 # Launch scripts
 
-# img_spread("w_revisions")
-# get_user_stream("w_revisions") # w_revisions w_revisions_test
+# img_spread_w("w_revisions")
+# img_spread_c("c_revisions")
 
-check_user_typology("w_revisions")
+get_user_stream("c_revisions") # c_revisions w_revisions w_revisions_test
+
+# check_user_typology("w_revisions")

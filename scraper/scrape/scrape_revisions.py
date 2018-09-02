@@ -10,6 +10,7 @@ from urllib import urlopen			# open file
 import datetime						# print time
 import csv							# read csv
 import re						# replace all occurrences
+import linecache
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -100,6 +101,16 @@ def clean_url_b(title):
 		.replace(replace_07,"%26")
 
 	return clean
+
+def PrintException():
+    exc_type, exc_obj, tb = sys.exc_info()
+    f = tb.tb_frame
+    lineno = tb.tb_lineno
+    filename = f.f_code.co_filename
+    linecache.checkcache(filename)
+    line = linecache.getline(filename, lineno, f.f_globals)
+    print 'EXCEPTION IN ({}, LINE {} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj)
+
 
 # -----------------------------------
 # Script
@@ -262,10 +273,9 @@ def get_commons_revisions(f_name):
 					id_file = row[0]
 					file = row[1]
 					link = row[3]
-					the_page = row[5]
-					page_type = row[6]
-					# lang = row[4]
-					# print(lang)
+					the_page = row[3]
+					page_type = row[2]
+					# print(page_type)
 
 					index += 1
 					file_clean = file.replace("_",s).replace("File:","")
@@ -299,12 +309,14 @@ def get_commons_revisions(f_name):
 											f2.write(output + n)
 											
 										except Exception as e:
+											PrintException()
 											output = request + t + file_clean + t + page + t + "error_2"
-											# print(e)
+											print(e)
 											f3.write(output + n)
 											pass
 
 								except Exception as e:
+									PrintException()
 									output = request + t + file_clean + t + page + t + "error_1"
 									# print(e)
 									f3.write(output + n)
@@ -320,7 +332,8 @@ def get_commons_revisions(f_name):
 								pass
 
 						except Exception as e:
-							print e
+							# print e
+							PrintException()
 							output = request + t + "error_0"
 							f3.write(output + n)
 							pass
@@ -333,8 +346,8 @@ def get_commons_revisions(f_name):
 						request = c_revisions + the_page
 						get_data(request)
 
-					# print(str(index) + t + str(rvcontinue))
-					print(request)
+					print(str(index) + t + str(rvcontinue))
+					# print(request)
 
 # file_features
 def used_file_features(f_name,f_base):
@@ -423,8 +436,8 @@ def clean_file_name(f_name):
 # Launch script
 
 # get_wikipedia_revisions("test_revisions_w") 
-# get_commons_revisions("test_revisions_c") 
+get_commons_revisions("test_c")
 
 # used_file_features("test_used_files","files_metadata")
 
-clean_file_name("file_name")
+# clean_file_name("file_name")
