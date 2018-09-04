@@ -288,7 +288,7 @@ def get_user_stream(f_name):
 				if (img_present == "True"):
 					if (page_link != new_page_link):
 						if (user != new_user):
-							if "bot" in user or "Bot" in user or "BOT" in user :
+							if "bot" in user or "Bot" in user or "BOT" in user or "BoT" in user:
 								# output = "bot" + t + user 
 								bot += 1
 							elif anon_1.search(user) or anon_2.search(user):

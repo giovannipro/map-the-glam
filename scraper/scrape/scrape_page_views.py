@@ -62,11 +62,11 @@ def add_zero(x):
 	else:
 		return x
 
-def scrape_w_pv(proj,f_name,start,end):
+def scrape_pv(proj,f_name,start,end):
 	# print(article,start,end)
 	# time()
 
-	func = "wiki_pv"
+	func = "pv_data"
 	index = 0
 
 	f_in = folder + "/data/" + f_name + ".tsv"
@@ -96,7 +96,12 @@ def scrape_w_pv(proj,f_name,start,end):
 									views = x["views"]
 									timestamp = x["timestamp"]
 
-									output = str(file_id) + t + file + t + link + t + lang + t + typo + t + str(timestamp) + t + str(views)
+									year = timestamp[0:4]
+									month = timestamp[4:6]
+									day = timestamp[6:8]
+									parsed_date = year + "-" + month + "-" + day
+
+									output = str(file_id) + t + file + t + link + t + lang + t + typo + t + parsed_date + t + str(views)
 									print(file_id)
 									f2.write(output + n)
 
@@ -119,11 +124,14 @@ def scrape_w_pv(proj,f_name,start,end):
 					try:
 						file_id = row[0]
 						file = row[1]
-						link = row[3]
-						lang = row[4]
-						art = row[5]
-						typo = row[6]
+						page = row[2] # w 2 - c 3
+						link = row[2] # w 2 - c 3
+						lang = row[3] # w 3 - c "-"
+						art = row[3] # w 3 - c 3
+						typo = row[4]  # w 4 - c 2
 						index += 1
+
+						# 0	File:Aettenschwil 1953.jpg	Aettenschwil	de	article	9340	122	1.30620985011
 
 						# article = art.replace(" ","+")
 						article = urllib.quote_plus(art).replace("+","_")
@@ -135,9 +143,6 @@ def scrape_w_pv(proj,f_name,start,end):
 							project = "commons.wikimedia"
 
 						request = root_api + project + "/all-access/user/" + article + "/monthly/" + timespan
-
-						# https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/commons.wikimedia/all-access/user/Commons%3AWikiProject+Aviation%2Frecent+uploads%2F2018+January+20/monthly/20150701/20180730
-						# https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/commons.wikimedia/all-access/user/Commons%3AWikiProject_Aviation%2Frecent_uploads%2F2017_December_19/monthly/2015070100/2018073100
 
 						if (art != new_art):
 							# print(article + t + str(count_img) + t + "<<<<")
@@ -187,7 +192,7 @@ def scrape_w_pv(proj,f_name,start,end):
 # -----------------------------------
 # Launch script
 
-scrape_w_pv("wikipedia","test_w","20160501","20180730") 
-# scrape_w_pv("commons","test_c","20150701","20180730")
+scrape_pv("wikipedia","1_raw/w_pages_using_files_wiki_revisions-output","20160401","20180730") 
+# scrape_pv("commons","1_raw/c_revisions-output","20160401","20180730")
 
 
