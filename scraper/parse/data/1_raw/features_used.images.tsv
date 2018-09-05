@@ -1,0 +1,71 @@
+project	metadata	value	files
+w	date	1950	221
+w	date	1920	187
+w	date	uncertain	185
+w	date	1900	179
+w	date	1930	118
+w	date	1940	105
+w	date	1960	89
+w	date	1910	63
+w	date	1970	17
+w	date	1980	16
+w	date	other	39
+w	author	Walter Mittelholzer	630
+w	author	Werner Friedli	391
+w	author	Leo Wehrli	56
+w	author	unknown	45
+w	author	Comet Photo AG (Zürich)	20
+w	author	Hans Baumann, Comet Photo AG (Zürich)	10
+w	author	not applicable	10
+w	author	Swissair Photo AG	6
+w	author	Jack Metzger	6
+w	author	Hans Gerber	4
+w	author	other	41
+w	medium	photography: negative	505
+w	medium	photography: glass plate negative	345
+w	medium	photography: glas diapositive	176
+w	medium	photography: paper print, mounted on paper	44
+w	medium	photography: gelatin silver print	26
+w	medium	photography: paper print	16
+w	medium	reproduction: glass diapositive	14
+w	medium	photography: paper print mounted on cardboard	13
+w	medium	unknown	12
+w	medium	photography	11
+w	medium	other	57
+w	orientation	landscape	1075
+w	orientation	portrait	133
+c	date	1950	8077
+c	date	1930	3137
+c	date	1900	3066
+c	date	1940	2420
+c	date	1920	2300
+c	date	uncertain	2197
+c	date	1960	2125
+c	date	1910	1168
+c	date	#N/D	622
+c	date	1970	204
+c	date	other	153
+c	author	Werner Friedli	12884
+c	author	Walter Mittelholzer	11604
+c	author	unknown	100
+c	author	Swissair Photo AG	76
+c	author	Johannes Meiner	27
+c	author	Leo Wehrli	24
+c	author	Comet Photo AG (Zürich)	14
+c	author	Hans Baumann, Comet Photo AG (Zürich)	12
+c	author	Jean Gut and Cie	11
+c	author	Johannes Ganz	10
+c	author	other	707
+c	medium	photography: negative	12169
+c	medium	photography: glass plate negative	8245
+c	medium	photography: glas diapositive	2731
+c	medium	photography: gelatin silver print	582
+c	medium	reproduction: glass diapositive	228
+c	medium	photography: paper print	146
+c	medium	photography: gelatin silver print mounted on paper	146
+c	medium	photography: paper print, mounted on paper	134
+c	medium	unknown	117
+c	medium	reproduction: negative	94
+c	medium	other	877
+c	orientation	landscape	23529
+c	orientation	portrait	1318
