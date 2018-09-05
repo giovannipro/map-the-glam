@@ -9,6 +9,7 @@ from operator import itemgetter
 import pandas as pd
 import numpy as np
 import re
+from urllib import unquote
 
 # -----------------------------------
 # Utilities
@@ -25,7 +26,7 @@ com = ","
 # -----------------------------------
 # Script
 
-def parse_pv_date(f_name):
+def parse_pv_date(f_name,project):
 
 	func = "parse_pv"
 	index = 0
@@ -37,18 +38,10 @@ def parse_pv_date(f_name):
 		with open(f_out, "a") as f2:
 
 			lines = csv.reader(f1, delimiter=t)
-			sorted_tsv_a = sorted(lines, key = operator.itemgetter(1))
+			sorted_tsv_a = sorted(lines, key = operator.itemgetter(1,5))
 
-			# data = pd.read_csv(f1, names=["id","file","outbound","link","page","pagetype"], sep=t, header=1, error_bad_lines=False)
-
-			# a = data.groupby(["file"])["outbound"].count() #.sum() #.groups.keys() #.groups["2014-11"] #"outbound"]) #.size()
-			# a = data.groupby(["file","outbound"]).count()  #.count()  # ["file"]
-			# print a
-
-			# new_file = ""
-			# w = 0
-			# c = 0
-			# o = 0
+			# tot = 0;
+			# new_link = "";
 
 			for row in sorted_tsv_a:
 				id_file = row[0]
@@ -57,24 +50,35 @@ def parse_pv_date(f_name):
 				lang = row[3]
 				page_typo = row[4]
 				date = row[5]
-				pv = row[6]
+				pv = int(row[6])
 
 				year = date[0:4]
 				month = date[4:6]
 				day = date[6:8]
 
 				parsed_date = year + "-" + month + "-" + day
-				project = "wikipedia"
+
+				# tot += pv
+				# tot_ = str(tot)
 
 				output = id_file + t + \
 					file + t + \
-					link + t + \
-					lang + t + \
 					project + t + \
+					lang + t + \
+					link + t + \
 					page_typo  + t + \
 					parsed_date + t + \
-					pv
-				print(id_file)
+					str(pv)
+
+				# if link != new_link:
+				# 	print(output + t + tot_ + t + "<<<")
+				# 	tot = 0
+				# else:
+				# 	print(output + t + tot_ + t)
+
+				# new_link = link
+
+				print(output)
 				f2.write(output + n)
 
 			# 	data = []
@@ -95,8 +99,29 @@ def parse_pv_date(f_name):
 			# 		o = 0
 			# 	new_file = file
 
+def parse_link(f_name):
+
+	func = "parse_pv"
+	# index = 0
+
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+
+	with open(f_in, "r") as f1:
+		with open(f_out, "a") as f2:
+			lines = csv.reader(f1, delimiter=t)
+
+			for row in lines:
+				item = row[0]
+
+				clean_item = unquote(item)
+
+				print(clean_item)
+				f2.write(clean_item + n)
+
 # -----------------------------------
 # Launch scripts
 
 
-parse_pv_date("w_pv")
+# parse_pv_date("c_pv","c")
+parse_link("test")

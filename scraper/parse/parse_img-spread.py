@@ -431,11 +431,67 @@ def check_user_typology(f_name):
 				f2.write(output + n)
 
 
+def count_file_per_page(f_name,project):
+
+	func = "file_per_page"
+	index = 0
+
+	f_in = folder + "/data/" + f_name + ".tsv"
+	f_out = folder + "/data/" + f_name + "_" + func + "-output.tsv" 
+	f_err = folder + "/data/" + f_name + "_" + func + "-errors.tsv" 
+	
+	# dataset already in descending order of revision_date
+
+	new_page_link = ""
+	new_file = ""
+
+	with open(f_in, "r") as f1:
+		with open(f_out, "a") as f2:
+			# with open(f_err, "a") as f3:
+			
+			lines = csv.reader(f1, delimiter=t)
+			sorted_tsv_a = sorted(lines, key = operator.itemgetter(2,4,1))
+			
+			count = 0;
+
+			for row in sorted_tsv_a:
+				id_file = row[0]
+				file = row[1]
+				page_lang = row[2]
+				page_typology = row[3]
+				page_link = row[4]
+				revision_date = row[5]
+				img_present = row[6]
+				user = row[7]
+				page_size = row[8]
+
+				page_id = page_lang + "_" + page_link
+
+				if new_file != file:
+					count += 1
+				
+				output = page_id + t + page_lang + t + page_link + t + file + t + str(count)
+
+				if new_page_link != page_link:
+					print (output)
+					count = 0;
+					f2.write(output + n)
+
+				# if img_present == "True" and 
+				# if new_file != file:
+				# print (output)
+
+
+				new_file = file
+
+
 # -----------------------------------
 # Launch scripts
 
 # img_spread_w("c_revisions","c","typo") #w_revisions test_page_spread  lang
 
-get_user_stream("c_revisions") # c_revisions w_revisions w_revisions_test
+# get_user_stream("c_revisions") # c_revisions w_revisions w_revisions_test
 
 # check_user_typology("c_revisions")
+
+count_file_per_page("c_revisions","c")
