@@ -85,7 +85,7 @@ function pictures_timeline(){
 				.attr("height",function(d){
 					return chart_height - y_scale(d.files)
 				})
-				.attr("fill",colors.item_b)
+				.attr("fill","#9fcdde") //colors.item_c)
 
 			// axis
 			var axis = chart.append("g")
@@ -137,12 +137,14 @@ function pictures_timeline(){
 
 			function mouseover(){
 				d3.select(this)
-					.attr("opacity",0.4)
+					// .attr("opacity",0.4)
+					.attr("fill",colors.item_b)
 			}
 
 			function mouseout(){
 				d3.select(this)
-					.attr("opacity",1)
+					.attr("fill","#9fcdde")
+					// .attr("opacity",1)
 			}
 
 			d3.selectAll(".bar")

@@ -1,20 +1,31 @@
 # Map the GLAM
-Visualising the ETH Bibliothek's collection in Wikipedia
+Map the GLAM is part of a PhD thesis focusing on the interface characteristics that may foster the access and use of digital images released under open licenses by Galleries, Libraries, Archives and Museums (GLAMs).
+In particular, Map the GLAM visualises the digital images uploaded by [ETH Bibliothek](https://commons.wikimedia.org/wiki/Category:Media_contributed_by_the_ETH-Bibliothek) to Wikimedia Commons.
+
+
+## Visual interface
+
+![Visual filter](screens/visual-filter.png)
+*Visual filter*
+
+![GLAMs in the world](screens/glams-in-the-world.png)
+*GLAMs in the world*
+
 
 ## Installation
-- Go to the project folder in your computer
+1. Go to the project folder in your computer
 	```
 	$ cd < path_to_the_folder >
 	```
-- Install the bower dependencies
+2. Install the bower dependencies
 	```
 	$ bower install
 	```
-- Run local server 
+3. Run local server 
 	```
 	$ python -m SimpleHTTPServer 8000
 	```
-- Access the webpage at
+4. Access the webpage at
 	```
 	http:localhost:8000 < path_to_the_folder >
 	```
