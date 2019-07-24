@@ -65,3 +65,8 @@ function sidebar(data_file,title){
 		})
 	})
 }
+
+// debug
+$("#open_sidebar").click(function(){
+	sidebar("assets/data/data_sidebar.json","my data")
+})

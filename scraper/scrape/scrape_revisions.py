@@ -435,8 +435,8 @@ def clean_file_name(f_name):
 # -----------------------------------
 # Launch script
 
-# get_wikipedia_revisions("test_revisions_w") 
-get_commons_revisions("test_c")
+get_wikipedia_revisions("test_revisions_w") 
+# get_commons_revisions("test_c")
 
 # used_file_features("test_used_files","files_metadata")
 

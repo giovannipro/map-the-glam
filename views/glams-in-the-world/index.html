@@ -13,7 +13,7 @@
 	<body>
 		<!-- <header id="header"></header> -->
 		
-		<div class="main_dataviz" id="map" style="width: 100%; height: 70vh;">
+		<div class="main_dataviz" id="map" style="width: 100%; height: 80vh;">
 			<!-- <img src="../../assets/img/map-of-glams.png" alt="Map of the GLAMs in the world" width="1690" height="1120" style="margin:0 auto; height: 100%; display:block; width: auto; "> -->
 		</div>
 		
@@ -208,10 +208,20 @@
     			var points = plot.append("g")
     				.attr("class","points")
 
+    			function no_space(string){
+    				string.replace(" ","_")
+    			}
+
     			var point = points.selectAll("g")
     				.data(data)
 					.enter()
 					.append("g")
+					.attr("id",function(d) { 
+						return no_space(d.Name)
+					})
+					.attr("class",function(d) { 
+						return d.typo
+					})
 					.filter(function(d) { 
 						return d.Size >= treshold 
 					})
@@ -296,37 +306,58 @@
 				$("#g").on("click", function() {
 					console.log("gallery")
 					d3.selectAll(".library,.archive,.museum,.other")
-						.style("opacity", 0)
+						.attr("visibility", "hidden")
+						// .hide()
+						//.style("opacity", 0)
 					d3.selectAll(".gallery")
-						.style("opacity", opacity)
+						.attr("visibility", "visible")
+						// .show()
+						// .style("opacity", opacity)
 				})
 				$("#l").on("click", function() {
 					console.log("library")
 					d3.selectAll(".gallery,.archive,.museum,.other")
-						.style("opacity", 0)
+						.attr("visibility", "hidden")
+						// .hide()
+						// .style("opacity", 0)
 					d3.selectAll(".library")
-						.style("opacity", opacity)
+						.attr("visibility", "visible")
+						// .show()
+						// .style("opacity", opacity)
 				})
 				$("#a").on("click", function() {
 					console.log("archive")
 					d3.selectAll(".gallery,.library,.museum,.other")
-						.style("opacity", 0)
+						.attr("visibility", "hidden")
+						// .hide()
+						// .style("opacity", 0)
 					d3.selectAll(".archive")
-						.style("opacity", opacity)
+						.attr("visibility", "visible")
+						// .show()
+						// .style("opacity", opacity)
 				})
 				$("#m").on("click", function() {
 					console.log("museum")
 					d3.selectAll(".gallery,.library,.archive,.other")
-						.style("opacity", 0)
+						.attr("visibility", "hidden")
+						// .hide()
+						// .style("opacity", 0)
 					d3.selectAll(".museum")
-						.style("opacity", opacity)
+						.attr("visibility", "visible")
+						// .show()
+						// .style("opacity", opacity)
 				})
 				$("#o").on("click", function() {
 					console.log("other")
 					d3.selectAll(".gallery,.library,.archive,.museum")
-						.style("opacity", 0)
+						.attr("visibility", "hidden")
+						// .hide()
+						// .style("opacity", 0)
 					d3.selectAll(".other")
-						.style("opacity", opacity)
+						.attr("visibility", "visible")
+						// .show()
+						// .style("opacity", opacity)
+
 				})
 				$("#t").on("click", function() {
 					d3.selectAll(".gallery,.library,.archive,.museum,.other")
@@ -334,11 +365,17 @@
 				})
 
 				var text = "galleries: " + gallery + " - libraries: "+ library + " - archives: "+ archive + " - museums: "+ museum + " - others: "+ other /* + " - u: " + unknown + */ + " - tot: " + (gallery+library+archive+museum+other+unknown)
+
 				var count = plot.append("g")
 					.attr("class","counter")
 					.append("text")
 					.text(text)
 					.attr("transform","translate(15,630)")
+					.attr("visibility","hidden")
+					// .on("mouseover",function() {
+					// 	d3.select(this).attr("visibility","visible")
+					// })
+
 			})
 		</script>
 

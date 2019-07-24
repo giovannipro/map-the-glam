@@ -192,15 +192,17 @@ function uploads_timeline(){
 					.tickPadding(5)
 				);
 
-			// var yAxis = plot.append("g")
-			// 	.attr("class","yAxis")
-			// 	.attr("transform", "translate(-10,0)")
-			// 	// .transition()
-			// 	// .delay(transition * 1.5)
-			// 	.call(d3.axisLeft(y_scale)
-			// 		.ticks(6)
-			// 		.tickFormat(d3.formatPrefix(",.0", 1e3))
-			// 	);
+			var yAxis = plot.append("g")
+				.attr("class","yAxis")
+				.attr("transform", "translate(-10,0)") //40
+				// .transition()
+				// .delay(transition * 1.5)
+				.call(d3.axisLeft(y_scale)
+					.ticks(26)
+					// .tickSize(10)
+					// .tickPadding(5)
+					// .tickFormat(d3.formatPrefix(",.0", 1e3))
+				);
 
 			var highlight_box = svg.append("g")
 				.attr("class","highlight")

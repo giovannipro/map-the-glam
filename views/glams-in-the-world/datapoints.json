@@ -30,8 +30,8 @@
     "id": 3,
     "name": "National Archives and Records Administration",
     "commons": "Images from the National Archives and Records Administration",
-    "n": 47.7510741,
-    "e": -120.7401385,
+    "n": 38.9072,
+    "e": -77.0369,
     "count": 206593,
     "typo": "archive"
   },
@@ -2316,8 +2316,8 @@
     "id": 294,
     "name": "NASA",
     "commons": "Great Images in NASA‎",
-    "n": 47.7510741,
-    "e": -120.7401385,
+    "n": 38.9072,
+    "e": -77.0369,
     "count": 1369,
     "typo": "other"
   },
@@ -2352,8 +2352,8 @@
     "id": 297,
     "name": "Library of Congress",
     "commons": "Files from the Historic American Buildings Survey",
-    "n": 47.7510741,
-    "e": -120.7401385,
+    "n": 38.9072,
+    "e": -77.0369,
     "count": 309628,
     "typo": "library"
   },
